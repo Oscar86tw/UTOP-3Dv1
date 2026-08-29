@@ -1,0 +1,11 @@
+UTOP-3D V5.1.3.35
+=================
+1. 雲端專案改為 Google Drive 實體 JSON 儲存。
+2. Projects 改為索引表：保存 Drive File ID、URL、鎖定、刪除、版本、設備/接線數量、檔案大小與時間。
+3. CloudFolders 新增 driveFolderId，UTOP 分類資料夾會真的建立在指定 Google Drive 根目錄。
+4. 固定 Drive 根資料夾：1tk-xe-G7_25yioCY1cTfrq_GuR7ajOmJ。
+5. 工作表1 A2 的 Apps Script /exec 連結保留，不覆寫。
+6. 舊 Projects.data 可安全轉換為 Drive JSON；成功後清空 data 儲存格。
+7. 鎖定由 Apps Script 後端再次檢查，避免前端誤刪。
+8. 刪除專案時 Drive 檔案移入垃圾桶、Projects.deleted 設為 TRUE。
+9. 版本號與啟動畫面同步為 V5.1.3.35。

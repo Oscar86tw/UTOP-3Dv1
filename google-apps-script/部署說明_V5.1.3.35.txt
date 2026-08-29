@@ -1,0 +1,93 @@
+UTOP-3D V5.1.3.35 Google Apps Script 部署說明
+================================================
+
+固定 Google Sheet：
+https://docs.google.com/spreadsheets/d/1lmEqbYals_uBIOrQFDupYR2hs0iks5zEJM6FTOuOwP0/edit
+
+固定 Drive 根資料夾：
+https://drive.google.com/drive/folders/1tk-xe-G7_25yioCY1cTfrq_GuR7ajOmJ
+
+Apps Script Web App /exec：
+https://script.google.com/macros/s/AKfycbwHi2yjARUuKqxKIu_ddT17T68Rh6TXtl9jFQtwNIjXkRNe_wUS1txX2eTCTAErHAOz/exec
+
+一、工作表1
+------------------------------------------------
+A1：Apps Script Web App /exec
+A2：保留目前已完成授權後的 /exec 連結
+B1：3D專案根資料夾ID
+B2：1tk-xe-G7_25yioCY1cTfrq_GuR7ajOmJ
+C1：UTOP版本
+C2：V5.1.3.35
+
+注意：程式不會覆寫 A2。
+
+二、第一次更新 Apps Script
+------------------------------------------------
+1. Google Sheet → 擴充功能 → Apps Script。
+2. 備份原 Code.gs。
+3. 將 Code_V5.1.3.35.gs 全部內容貼到 Code.gs。
+4. 儲存。
+5. 上方函式選單執行 testSetup。
+6. 第一次會要求 Google Sheet / Google Drive 權限，完成授權。
+7. 再執行 testPing。
+8. 執行紀錄應看到 success:true，並顯示 rootDriveFolderId。
+9. 如果要確認資料夾建立權限，可執行 testCreateFolder；測試完成後可手動刪除測試資料夾。
+
+三、重新部署
+------------------------------------------------
+1. 右上「部署」→「管理部署作業」。
+2. 編輯目前 Web App 部署。
+3. 建立「新版本」。
+4. 執行身分：我。
+5. 誰可以存取：任何人。
+6. 部署。
+7. 若 /exec 網址沒有改，工作表1 A2 不必變更。
+8. 若 Google 產生新的 /exec，請把新網址貼到工作表1 A2。
+
+四、程式會自動建立/補齊的工作表
+------------------------------------------------
+Projects
+CloudFolders
+CloudLog
+
+Projects：只保存索引，不再保存整份 JSON。
+主要欄位：
+projectId, projectName, folderId, driveFileId, fileUrl,
+locked, deleted, version, deviceCount, linkCount, fileSize,
+createdAt, updatedAt, note, legacySourceId
+
+CloudFolders：UTOP 資料夾與 Google Drive 真實資料夾一一對應。
+主要欄位：
+folderId, folderName, parentFolderId, driveFolderId,
+locked, deleted, sortOrder, createdAt, updatedAt, note
+
+CloudLog：記錄建立、更新、移動、刪除、鎖定等操作。
+
+五、舊資料轉換
+------------------------------------------------
+如果舊 Projects 還有 data 欄、且該筆尚未有 driveFileId：
+UTOP 的「匯入 Drive 實體檔」會把 JSON 建立成 Drive 檔案，
+寫回 driveFileId / fileUrl / fileSize，成功後清空該筆 data 儲存格。
+
+如果工作表1 除 A2 之外仍有可辨識的 JSON 舊專案資料，也會以複製方式匯入 Drive；
+工作表1 原資料不刪除。
+
+六、鎖定規則
+------------------------------------------------
+Projects.locked = TRUE 時：
+- 禁止覆蓋
+- 禁止刪除
+- 禁止移動
+必須先解除鎖定。
+
+刪除不是直接永久清除：
+- Projects.deleted 會變 TRUE
+- Drive 實體檔移到 Google Drive 垃圾桶
+
+七、儲存位置
+------------------------------------------------
+沒有選分類資料夾：
+直接存到 Drive 根資料夾 1tk-xe-G7_25yioCY1cTfrq_GuR7ajOmJ
+
+有選分類資料夾：
+UTOP 會先在根資料夾建立真實 Drive 子資料夾，再把 JSON 存入該子資料夾。

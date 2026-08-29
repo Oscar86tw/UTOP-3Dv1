@@ -1,3 +1,12 @@
+## V5.1.3.35
+
+- 雲端專案改為 Google Drive 實體 JSON 檔。
+- Google Sheet `Projects` 僅保存索引、Drive File ID、URL、鎖定、刪除狀態與統計。
+- `CloudFolders` 與 Google Drive 真實資料夾同步建立。
+- `工作表1!A2` 保留 Apps Script `/exec` 連結，不會被後端覆寫。
+- 固定 Drive 根資料夾：`1tk-xe-G7_25yioCY1cTfrq_GuR7ajOmJ`。
+- 舊 `Projects.data` 可安全搬移到 Drive，轉換後清空大型 JSON 儲存格。
+
 ## V5.1.3.34
 - 舊版工作表1雲端專案偵測／安全匯入 Projects。
 - folderName/name 新舊欄位相容。

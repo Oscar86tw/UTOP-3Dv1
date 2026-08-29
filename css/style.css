@@ -9192,3 +9192,38 @@ body.sidebar-manager-collapsed > .sidebar-edge-toggle{
   .shortcut-row-actions{grid-column:auto;display:grid!important;grid-template-columns:1fr 1fr 1fr!important;width:100%}
   .cloud-open-toolbar{grid-template-columns:1fr!important}
 }
+
+
+/* =========================================================
+   V5.1.3.41 — 快捷鍵延遲 / 白底提示 / 控制列貼底 / 頂欄一致
+   ========================================================= */
+/* 快捷鍵新增延遲欄位後，桌機維持 80% 管理寬度 */
+.shortcut-builder{
+  grid-template-columns:minmax(130px,.8fr) minmax(160px,1fr) 120px minmax(185px,1.25fr) minmax(145px,.85fr) minmax(185px,1.25fr) auto auto!important;
+}
+#shortcutDelaySeconds{text-align:center;min-width:0}
+
+/* 主設備快速控制列貼齊視窗底部 */
+.device-control-footer{bottom:0!important;padding-bottom:0!important}
+.workspace{padding-bottom:30px!important}
+.device-inspector-shell.is-open .device-inspector-panel{bottom:50px!important}
+
+/* 上方兩個特殊按鈕不再比相鄰按鈕突出 */
+.header-actions>.theme-toggle-button,
+.header-actions>.debug-status-button{
+  min-height:0!important;
+  height:auto!important;
+  padding:8px 12px!important;
+  border-radius:7px!important;
+  align-self:center!important;
+  white-space:nowrap!important;
+}
+.theme-toggle-label,.debug-status-label{white-space:nowrap!important;line-height:1.2!important}
+.debug-status-dot{flex:0 0 10px}
+
+@media(max-width:1180px){
+  .shortcut-builder{grid-template-columns:1fr 1fr 1fr!important}
+}
+@media(max-width:820px){
+  .device-inspector-shell.is-open .device-inspector-panel{bottom:0!important}
+}

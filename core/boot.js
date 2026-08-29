@@ -1,4 +1,4 @@
-import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.40-shortcut-showcase-20260830';
+import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.41-shortcut-delay-ui-20260830';
 
 const STAGES = Object.freeze([
   {
@@ -7,7 +7,7 @@ const STAGES = Object.freeze([
   },
   {
     name: '3D與設備核心',
-    url: '../runtime/showcase/runtime-v51340-shortcut-showcase.js?v=5.1.3.40-shortcut-showcase-20260830'
+    url: '../runtime/showcase/runtime-v51341-shortcut-delay-ui.js?v=5.1.3.41-shortcut-delay-ui-20260830'
   },
   {
     name: 'Foundation健康檢查',
@@ -36,7 +36,7 @@ async function importStage(stage) {
 
 async function startShowcase() {
   document.documentElement.dataset.utopBoot = 'loading';
-  updateStatus('V5.1.3.40 快捷鍵展示管理與雲端快速索引 啟動中…');
+  updateStatus('V5.1.3.41 快捷鍵延遲與展示介面優化 啟動中…');
 
   for (const stage of STAGES) {
     await importStage(stage);
@@ -53,7 +53,7 @@ async function startShowcase() {
 
   document.title = `${APP_CONFIG.appName} V${APP_CONFIG.version}`;
   document.documentElement.dataset.utopBoot = 'ready';
-  updateStatus('V5.1.3.40 快捷鍵展示管理與雲端快速索引 系統準備就緒');
+  updateStatus('V5.1.3.41 快捷鍵延遲與展示介面優化 系統準備就緒');
 
   window.UTOP_APP = Object.freeze({
     config: APP_CONFIG,
@@ -66,7 +66,7 @@ startShowcase().catch((error) => {
   if (window.__UTOP_IS_IGNORABLE_ERROR__?.(error)) {
     window.__UTOP_HIDE_BOOT_ERROR__?.();
     document.documentElement.dataset.utopBoot = 'ready';
-    updateStatus('V5.1.3.40 快捷鍵展示管理與雲端快速索引 系統準備就緒');
+    updateStatus('V5.1.3.41 快捷鍵延遲與展示介面優化 系統準備就緒');
     return;
   }
 

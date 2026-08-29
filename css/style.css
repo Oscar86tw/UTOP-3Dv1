@@ -9059,3 +9059,47 @@ body.sidebar-manager-collapsed > .sidebar-edge-toggle{
 .cloud-folder-save-create[hidden]{display:none!important}
 .cloud-folder-save-create input{min-height:42px;border:1px solid var(--line);border-radius:7px;background:#0d1a24;color:inherit;padding:8px 10px}
 @media(max-width:700px){.cloud-folder-save-select-row,.cloud-folder-save-create{grid-template-columns:1fr}.cloud-folder-save-select-row button,.cloud-folder-save-create button{width:100%}}
+
+
+/* =========================================================
+   V5.1.3.38 — 3D 全視窗左下角簡報控制／視角寬度
+   ========================================================= */
+.presentation-corner-controls{
+  position:absolute;
+  left:max(12px,env(safe-area-inset-left));
+  bottom:max(12px,env(safe-area-inset-bottom));
+  z-index:92;
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+.presentation-corner-controls[hidden]{display:none!important}
+.presentation-corner-btn{
+  min-height:38px;
+  width:auto;
+  max-width:190px;
+  padding:7px 11px;
+  border:1px solid rgba(105,195,232,.65);
+  border-radius:10px;
+  background:rgba(5,31,45,.88);
+  color:#e8f8ff;
+  font-size:13px;
+  font-weight:900;
+  white-space:nowrap;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(0,0,0,.28);
+  backdrop-filter:blur(10px);
+}
+.presentation-corner-btn:hover,.presentation-corner-btn:focus-visible{background:rgba(24,82,108,.94);outline:none}
+.presentation-toolbar{
+  left:max(12px,env(safe-area-inset-left));
+  bottom:calc(max(12px,env(safe-area-inset-bottom)) + 48px);
+  transform:none;
+  width:min(760px,calc(100% - 24px));
+}
+.presentation-toolbar.is-collapsed{display:none!important}
+@media(max-width:720px){
+  .presentation-corner-controls{left:max(8px,env(safe-area-inset-left));bottom:max(8px,env(safe-area-inset-bottom));gap:6px}
+  .presentation-corner-btn{min-height:42px;max-width:170px;padding:7px 9px;font-size:12px}
+  .presentation-toolbar{left:8px;right:8px;bottom:calc(max(8px,env(safe-area-inset-bottom)) + 50px);width:auto;transform:none}
+}

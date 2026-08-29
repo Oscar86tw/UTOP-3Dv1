@@ -9,15 +9,15 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport"/>
 <meta content="#07111b" id="browserThemeColor" name="theme-color"/>
-<title>昱拓弱電有限公司 UTOP-3D V5.1.3.37 雲端儲存新增資料夾</title>
-<link href="./css/style.css?v=5.1.3.37-cloud-save-folder-20260830" rel="stylesheet"/>
-<link rel="stylesheet" href="services/workspace-v5/workspace-v5.css?v=5.1.3.37-cloud-save-folder-20260830">
+<title>昱拓弱電有限公司 UTOP-3D V5.1.3.38 雲端儲存新增資料夾</title>
+<link href="./css/style.css?v=5.1.3.38-cloud-save-folder-20260830" rel="stylesheet"/>
+<link rel="stylesheet" href="services/workspace-v5/workspace-v5.css?v=5.1.3.38-cloud-save-folder-20260830">
 </head>
 <body>
 <header class="app-header">
 <div class="brand">
 <h1><span>昱拓弱電有限公司</span> UTOP-3D</h1>
-<b>V5.1.3.37 雲端儲存新增資料夾｜Base UI V1.1.4</b>
+<b>V5.1.3.38 雲端儲存新增資料夾｜Base UI V1.1.4</b>
 </div>
 <div class="header-actions">
 <button class="scene-library-btn" id="sceneLibraryBtn" title="切換場景" type="button">🌆 場景</button><button class="graphics-settings-btn" id="graphicsSettingsBtn" title="顯示與效能設定" type="button">🎮 畫質設定</button><button class="global-lock-toggle inactive" id="globalLockToggle" title="固定或解除全部設備的位置" type="button">🔓 全固定：關閉</button><button class="global-label-toggle active" id="globalLabelToggle" title="顯示或隱藏全部設備名稱" type="button">🏷 全名稱：開啟</button><button aria-pressed="false" class="theme-toggle-button" id="themeToggleBtn" title="切換深色／白色介面" type="button">
@@ -256,9 +256,12 @@
 </div>
 <button aria-controls="cameraViewMenu" aria-expanded="false" class="camera-menu-toggle" id="cameraMenuToggle" type="button">🎥 視角</button>
 
-<div class="presentation-toolbar" id="presentationToolbar" hidden aria-label="3D簡報控制">
+<div class="presentation-corner-controls" id="presentationCornerControls" hidden aria-label="3D簡報左下角控制">
+  <button id="presentationFovWidth" class="presentation-corner-btn" type="button" title="調整3D相機視角寬度，不改變全畫面尺寸">↔ 視角寬度：標準</button>
+  <button id="presentationToolbarCollapse" class="presentation-corner-btn presentation-toolbar-collapse" type="button" aria-expanded="false">▴ 控制</button>
+</div>
+<div class="presentation-toolbar is-collapsed" id="presentationToolbar" hidden aria-label="3D簡報控制">
   <div class="presentation-toolbar-main">
-    <button id="presentationToolbarCollapse" class="presentation-toolbar-collapse" type="button" aria-expanded="true">▾ 收合控制</button>
     <button id="presentationPointerToggle" type="button" aria-pressed="false">🔴 指揮棒</button>
     <button id="presentationResetView" type="button">⟳ 重設視角</button>
     <button id="presentationLabelsToggle" type="button">🏷 名稱</button>
@@ -546,18 +549,18 @@
       <button aria-label="關閉" id="closeShortcutDialog" type="button">×</button>
     </header>
     <div class="shortcut-builder">
-      <label><span>鍵盤按鍵</span><input id="shortcutKey" maxlength="20" placeholder="例如：1、A、Space" readonly></label>
+      <label><span>鍵盤按鍵</span><input id="shortcutKey" maxlength="20" placeholder="例如：1、A、Ctrl+A、Shift+Space" readonly></label>
       <label><span>指定設備</span><select id="shortcutDevice"></select></label>
       <label><span>功能類型</span><select id="shortcutIoType"><option value="di">DI 輸入動作</option><option value="do">DO 輸出訊號</option></select></label>
       <label><span>DI／DO 功能</span><select id="shortcutPort"></select></label>
       <button class="cloud-primary" id="shortcutAdd" type="button">＋ 加入快捷鍵</button>
     </div>
-    <div class="shortcut-capture-help">點「鍵盤按鍵」欄位後，直接按下要使用的鍵。Esc、F5、Ctrl/Alt/Meta 組合鍵不會被綁定。</div>
+    <div class="shortcut-capture-help">點「鍵盤按鍵」欄位後，直接按下單鍵或組合鍵，例如 A、1、Ctrl+A、Shift+Space、Ctrl+Shift+1。Esc、F5、F11、Tab 與純修飾鍵不綁定。</div>
     <div class="shortcut-list" id="shortcutList"><div class="cloud-empty">尚未設定快捷鍵。</div></div>
   </div>
 </dialog>
 <div class="google-toast" hidden="" id="googleToast"></div>
-<script src="./js/module-image-registry.js?v=5.1.3.37-cloud-save-folder-20260830" defer></script>
+<script src="./js/module-image-registry.js?v=5.1.3.38-cloud-save-folder-20260830" defer></script>
 <script type="importmap">
 {
   "imports": {
@@ -2272,7 +2275,7 @@ import('./core/boot.js?v=5.1.3.16-presentation-pointer-20260806')
   <button id="worldSyncRepair" type="button">重新同步</button>
 </div>
 
-<script type="module" src="services/workspace-v5/workspace-v5.js?v=5.1.3.37-cloud-save-folder-20260830"></script>
+<script type="module" src="services/workspace-v5/workspace-v5.js?v=5.1.3.38-cloud-save-folder-20260830"></script>
 
 <script>
 (function(){
@@ -2491,6 +2494,8 @@ import('./core/boot.js?v=5.1.3.16-presentation-pointer-20260806')
     const card=document.querySelector('.views .scene-card');
     const sceneWrap=document.getElementById('sceneWrap');
     const toolbar=document.getElementById('presentationToolbar');
+    const cornerControls=document.getElementById('presentationCornerControls');
+    const fovWidthBtn=document.getElementById('presentationFovWidth');
     const pointerToggle=document.getElementById('presentationPointerToggle');
     const pointer=document.getElementById('presentationLaserPointer');
     const deviceName=document.getElementById('presentationDeviceName');
@@ -2550,6 +2555,12 @@ import('./core/boot.js?v=5.1.3.16-presentation-pointer-20260806')
       card.classList.toggle('is-3d-fullscreen',on);
       card.classList.toggle('is-presentation-mode',on);
       toolbar.hidden=!on;
+      if(cornerControls)cornerControls.hidden=!on;
+      if(on){
+        toolbar.classList.add('is-collapsed');
+        const collapseBtn=document.getElementById('presentationToolbarCollapse');
+        if(collapseBtn){collapseBtn.textContent='▴ 控制';collapseBtn.setAttribute('aria-expanded','false');}
+      }
       document.body.classList.toggle('utop-3d-fullscreen-fallback',fallback);
       if(!on)setPointerMode(false);
       renderDeviceControls();
@@ -2582,9 +2593,32 @@ import('./core/boot.js?v=5.1.3.16-presentation-pointer-20260806')
     const toolbarCollapse=document.getElementById('presentationToolbarCollapse');
     toolbarCollapse?.addEventListener('click',()=>{
       const collapsed=toolbar.classList.toggle('is-collapsed');
-      toolbarCollapse.textContent=collapsed?'▴ 展開控制':'▾ 收合控制';
+      toolbarCollapse.textContent=collapsed?'▴ 控制':'▾ 收合';
       toolbarCollapse.setAttribute('aria-expanded',String(!collapsed));
     });
+
+    const fovModes=[
+      {fov:38,label:'窄'},
+      {fov:46,label:'標準'},
+      {fov:58,label:'寬'},
+      {fov:70,label:'超寬'}
+    ];
+    let fovIndex=1;
+    function syncFovButton(){
+      const api=window.UTOP_CAMERA_VIEW;
+      const current=Number(api?.getFov?.()||46);
+      const nearest=fovModes.reduce((best,item,index)=>Math.abs(item.fov-current)<Math.abs(fovModes[best].fov-current)?index:best,0);
+      fovIndex=nearest;
+      if(fovWidthBtn)fovWidthBtn.textContent=`↔ 視角寬度：${fovModes[fovIndex].label}`;
+    }
+    fovWidthBtn?.addEventListener('click',()=>{
+      fovIndex=(fovIndex+1)%fovModes.length;
+      const mode=fovModes[fovIndex];
+      window.UTOP_CAMERA_VIEW?.setFov?.(mode.fov);
+      fovWidthBtn.textContent=`↔ 視角寬度：${mode.label}`;
+    });
+    window.addEventListener('utop-camera-fov-changed',syncFovButton);
+    syncFovButton();
 
     sceneWrap.addEventListener('pointermove',(event)=>{
       if(!pointerMode||!pointer)return;

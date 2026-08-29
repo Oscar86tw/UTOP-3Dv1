@@ -1,4 +1,4 @@
-import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.37-drive-index-rebuild-20260830';
+import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.38-presentation-fov-combo-shortcuts-20260830';
 
 const STAGES = Object.freeze([
   {
@@ -7,7 +7,7 @@ const STAGES = Object.freeze([
   },
   {
     name: '3D與設備核心',
-    url: '../runtime/showcase/runtime-v51331-cloud-lock-shortcuts-longscene.js?v=5.1.3.31-cloud-lock-shortcuts-longscene-20260830'
+    url: '../runtime/showcase/runtime-v51338-presentation-fov-combo-shortcuts.js?v=5.1.3.38-presentation-fov-combo-shortcuts-20260830'
   },
   {
     name: 'Foundation健康檢查',
@@ -15,7 +15,7 @@ const STAGES = Object.freeze([
   },
   {
     name: 'Google雲端橋接',
-    url: '../services/cloud-storage/cloud-save-v51337.js?v=5.1.3.37-cloud-save-folder-20260830'
+    url: '../services/cloud-storage/cloud-save-v51337.js?v=5.1.3.38-cloud-save-folder-20260830'
   }
 ]);
 

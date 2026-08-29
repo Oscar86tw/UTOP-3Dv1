@@ -7,7 +7,7 @@ const STAGES = Object.freeze([
   },
   {
     name: '3D與設備核心',
-    url: '../runtime/showcase/runtime-v51341-shortcut-delay-ui.js?v=5.1.3.41-shortcut-delay-ui-20260830'
+    url: '../runtime/showcase/runtime-v51342-scene-physics-objects.js?v=5.1.3.42-scene-physics-objects-20260830'
   },
   {
     name: 'Foundation健康檢查',
@@ -36,7 +36,7 @@ async function importStage(stage) {
 
 async function startShowcase() {
   document.documentElement.dataset.utopBoot = 'loading';
-  updateStatus('V5.1.3.41 快捷鍵延遲與展示介面優化 啟動中…');
+  updateStatus('V5.1.3.42 場景物理與物件庫 啟動中…');
 
   for (const stage of STAGES) {
     await importStage(stage);
@@ -53,11 +53,11 @@ async function startShowcase() {
 
   document.title = `${APP_CONFIG.appName} V${APP_CONFIG.version}`;
   document.documentElement.dataset.utopBoot = 'ready';
-  updateStatus('V5.1.3.41 快捷鍵延遲與展示介面優化 系統準備就緒');
+  updateStatus('V5.1.3.42 場景物理與物件庫 系統準備就緒');
 
   window.UTOP_APP = Object.freeze({
     config: APP_CONFIG,
-    bootRevision: 'V51340_SHORTCUT_SHOWCASE_FAST_CLOUD',
+    bootRevision: 'V51342_SCENE_PHYSICS_OBJECTS',
     health
   });
 }
@@ -66,7 +66,7 @@ startShowcase().catch((error) => {
   if (window.__UTOP_IS_IGNORABLE_ERROR__?.(error)) {
     window.__UTOP_HIDE_BOOT_ERROR__?.();
     document.documentElement.dataset.utopBoot = 'ready';
-    updateStatus('V5.1.3.41 快捷鍵延遲與展示介面優化 系統準備就緒');
+    updateStatus('V5.1.3.42 場景物理與物件庫 系統準備就緒');
     return;
   }
 

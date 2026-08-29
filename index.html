@@ -9,15 +9,18 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport"/>
 <meta content="#07111b" id="browserThemeColor" name="theme-color"/>
-<title>昱拓弱電有限公司 UTOP-3D V5.1.3.41 快捷鍵延遲與展示介面優化</title>
-<link href="./css/style.css?v=5.1.3.41-shortcut-delay-ui-20260830" rel="stylesheet"/>
-<link rel="stylesheet" href="services/workspace-v5/workspace-v5.css?v=5.1.3.41-shortcut-delay-ui-20260830">
+<title>昱拓弱電有限公司 UTOP-3D V5.1.3.42 場景物理與物件庫</title>
+<link href="./css/style.css?v=5.1.3.42-scene-physics-objects-20260830" rel="stylesheet"/>
+<link rel="stylesheet" href="services/workspace-v5/workspace-v5.css?v=5.1.3.42-scene-physics-objects-20260830">
+<style id="v51342-scene-physics-object-style">
+.object-thumb{font-size:30px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#f4f0e8,#d9d1c4);color:#332d28}.scene-physics-card{border-color:#c6a66b!important;background:linear-gradient(180deg,#fffdf7,#f7f0df)!important}
+</style>
 </head>
 <body>
 <header class="app-header">
 <div class="brand">
 <h1><span>昱拓弱電有限公司</span> UTOP-3D</h1>
-<b>V5.1.3.41 快捷鍵延遲與展示介面優化｜Base UI V1.1.4</b>
+<b>V5.1.3.42 場景物理與物件庫｜Base UI V1.1.4</b>
 </div>
 <div class="header-actions">
 <button class="scene-library-btn" id="sceneLibraryBtn" title="切換場景" type="button">🌆 場景</button><button class="graphics-settings-btn" id="graphicsSettingsBtn" title="顯示與效能設定" type="button">🎮 畫質設定</button><button class="global-lock-toggle inactive" id="globalLockToggle" title="固定或解除全部設備的位置" type="button">🔓 全固定：關閉</button><button class="global-label-toggle active" id="globalLabelToggle" title="顯示或隱藏全部設備名稱" type="button">🏷 全名稱：開啟</button><button aria-pressed="false" class="theme-toggle-button" id="themeToggleBtn" title="切換深色／白色介面" type="button">
@@ -141,6 +144,18 @@
 <p><span class="ready">已完成</span> 左／右／直行／紅叉</p><button data-add="laneindicator">加入場景</button></div></article><article class="module-card" data-search="滿位 車位 數量 顯示器">
 <div class="thumb v320-thumb parkingdisplay-thumb"></div><div><h3>滿位／車位顯示器</h3><small>DISPLAY-PARKING-COUNT-001</small>
 <p><span class="ready">已完成</span> 滿位／剩餘數量</p><button data-add="parkingdisplay">加入場景</button></div></article>
+</details>
+<details class="module-category" data-category="objects"><summary>🧱 物件 <span>10</span></summary>
+<article class="module-card" data-search="物件 建築 外牆 wall"><div class="thumb object-thumb">🧱</div><div><h3>建築物外牆</h3><small>OBJECT-WALL-001</small><p><span class="ready">物件</span> 可調尺寸／位置</p><button data-add="object_wall">加入場景</button></div></article>
+<article class="module-card" data-search="物件 門 door"><div class="thumb object-thumb">🚪</div><div><h3>門</h3><small>OBJECT-DOOR-001</small><p><span class="ready">物件</span> 建築入口</p><button data-add="object_door">加入場景</button></div></article>
+<article class="module-card" data-search="物件 柱子 column"><div class="thumb object-thumb">▥</div><div><h3>柱子</h3><small>OBJECT-COLUMN-001</small><p><span class="ready">物件</span> 結構柱</p><button data-add="object_column">加入場景</button></div></article>
+<article class="module-card" data-search="物件 屋簷 eave"><div class="thumb object-thumb">▰</div><div><h3>屋簷</h3><small>OBJECT-EAVE-001</small><p><span class="ready">物件</span> 可調高度</p><button data-add="object_eave">加入場景</button></div></article>
+<article class="module-card" data-search="物件 柏油路 asphalt"><div class="thumb object-thumb">⬛</div><div><h3>柏油路</h3><small>OBJECT-ASPHALT-001</small><p><span class="ready">物件</span> 路面</p><button data-add="object_asphalt">加入場景</button></div></article>
+<article class="module-card" data-search="物件 馬路 road"><div class="thumb object-thumb">🛣️</div><div><h3>馬路</h3><small>OBJECT-ROAD-001</small><p><span class="ready">物件</span> 含中央線</p><button data-add="object_road">加入場景</button></div></article>
+<article class="module-card" data-search="物件 汽車 car"><div class="thumb object-thumb">🚗</div><div><h3>汽車</h3><small>OBJECT-CAR-001</small><p><span class="ready">物件</span> 車道展示</p><button data-add="object_car">加入場景</button></div></article>
+<article class="module-card" data-search="物件 摩托車 motorcycle"><div class="thumb object-thumb">🏍️</div><div><h3>摩托車</h3><small>OBJECT-MOTORCYCLE-001</small><p><span class="ready">物件</span> 車道展示</p><button data-add="object_motorcycle">加入場景</button></div></article>
+<article class="module-card" data-search="物件 人 person"><div class="thumb object-thumb">🧍</div><div><h3>人</h3><small>OBJECT-PERSON-001</small><p><span class="ready">物件</span> 比例展示</p><button data-add="object_person">加入場景</button></div></article>
+<article class="module-card" data-search="物件 自訂 custom"><div class="thumb object-thumb">➕</div><div><h3>自訂物件</h3><small>OBJECT-CUSTOM-001</small><p><span class="ready">物件</span> 加入後可改名稱／尺寸</p><button data-add="object_custom">加入場景</button></div></article>
 </details>
 <details class="module-category" data-category="building"><summary>🏢 建築設備 <span>3</span></summary>
 <article class="module-card" data-search="鐵捲門 rolling shutter 建築">
@@ -565,7 +580,7 @@
   </div>
 </dialog>
 <div class="google-toast" hidden="" id="googleToast"></div>
-<script src="./js/module-image-registry.js?v=5.1.3.41-shortcut-delay-ui-20260830" defer></script>
+<script src="./js/module-image-registry.js?v=5.1.3.42-scene-physics-objects-20260830" defer></script>
 <script type="importmap">
 {
   "imports": {
@@ -1871,6 +1886,14 @@ import('./core/boot.js?v=5.1.3.16-presentation-pointer-20260806')
 <label><span>場景庫</span><input checked id="gfxSceneLibrary" type="checkbox"/></label>
 <small>啟用場景切換入口，後續可載入不同車道環境。</small>
 </div>
+<div class="graphics-option-card scene-physics-card">
+<label><span>地板接觸</span><input checked id="sceneFloorEnabled" type="checkbox"/></label>
+<small>預設開啟。所有模組與物件不可掉到地板以下，仍可手動調高安裝高度。</small>
+</div>
+<div class="graphics-option-card scene-physics-card">
+<label><span>模組實體防重疊</span><input checked id="sceneCollisionEnabled" type="checkbox"/></label>
+<small>預設開啟。移動模組或物件時避免與其他實體互相穿透；關閉後可自由重疊。</small>
+</div>
 <div class="graphics-option-card">
 <label><span>工程動畫</span><input checked id="gfxAnimations" type="checkbox"/></label>
 <small>柵欄升降、倒數、燈號閃爍與訊號流動動畫。</small>
@@ -2280,7 +2303,7 @@ import('./core/boot.js?v=5.1.3.16-presentation-pointer-20260806')
   <button id="worldSyncRepair" type="button">重新同步</button>
 </div>
 
-<script type="module" src="services/workspace-v5/workspace-v5.js?v=5.1.3.41-shortcut-delay-ui-20260830"></script>
+<script type="module" src="services/workspace-v5/workspace-v5.js?v=5.1.3.42-scene-physics-objects-20260830"></script>
 
 <script>
 (function(){

@@ -1,6 +1,6 @@
 export const APP_CONFIG = Object.freeze({
   appName: '昱拓弱電有限公司 UTOP-3D',
-  version: '5.1.3.41',
+  version: '5.1.3.42',
   defaultQuality: 'ultra',
   revision: 'V51341_SHORTCUT_DELAY_UI',
   baseUiVersion: '1.1.4 Professional UI',

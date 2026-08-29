@@ -1,4 +1,4 @@
-UTOP-3D V5.1.3.48
+UTOP-3D V5.1.3.49
 
 1. 修正鐵捲門畫面已 OPEN，但 doorProgress 舊值造成汽車／機車仍被碰撞層擋住。
 2. 鐵捲門 state=OPEN 時，碰撞層強制視為 100% 開啟。

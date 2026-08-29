@@ -9227,3 +9227,36 @@ body.sidebar-manager-collapsed > .sidebar-edge-toggle{
 @media(max-width:820px){
   .device-inspector-shell.is-open .device-inspector-panel{bottom:0!important}
 }
+
+/* =========================================================
+   V5.1.3.43 — 快捷鍵訊息顯示秒數 / 全視窗左下視角欄內容寬度
+   ========================================================= */
+/* 3D 全視窗展開後的視角／控制欄不再橫跨整個畫面，依內容決定寬度並靠左 */
+.presentation-toolbar{
+  left:max(12px,env(safe-area-inset-left))!important;
+  right:auto!important;
+  width:max-content!important;
+  max-width:calc(100% - 24px)!important;
+  min-width:0!important;
+  transform:none!important;
+}
+.presentation-toolbar-main,
+.presentation-device-buttons{
+  justify-content:flex-start!important;
+  width:max-content;
+  max-width:100%;
+}
+.presentation-toolbar-main{flex-wrap:wrap!important}
+.presentation-corner-controls{
+  left:max(12px,env(safe-area-inset-left))!important;
+  right:auto!important;
+  width:max-content!important;
+  max-width:calc(100% - 24px)!important;
+  justify-content:flex-start!important;
+}
+.presentation-corner-btn{width:max-content!important;max-width:none!important}
+@media(max-width:720px){
+  .presentation-toolbar{left:max(8px,env(safe-area-inset-left))!important;right:auto!important;width:max-content!important;max-width:calc(100% - 16px)!important}
+  .presentation-toolbar-main,.presentation-device-buttons{width:auto;max-width:100%}
+  .presentation-corner-controls{left:max(8px,env(safe-area-inset-left))!important;right:auto!important;width:max-content!important;max-width:calc(100% - 16px)!important}
+}

@@ -1,4 +1,4 @@
-import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.41-shortcut-delay-ui-20260830';
+import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.43-shortcut-message-view-left-20260830';
 
 const STAGES = Object.freeze([
   {
@@ -7,7 +7,7 @@ const STAGES = Object.freeze([
   },
   {
     name: '3D與設備核心',
-    url: '../runtime/showcase/runtime-v51342-scene-physics-objects.js?v=5.1.3.42-scene-physics-objects-20260830'
+    url: '../runtime/showcase/runtime-v51343-shortcut-message-duration.js?v=5.1.3.43-shortcut-message-view-left-20260830'
   },
   {
     name: 'Foundation健康檢查',

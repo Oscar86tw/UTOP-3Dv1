@@ -1,8 +1,8 @@
 export const APP_CONFIG = Object.freeze({
   appName: '昱拓弱電有限公司 UTOP-3D',
-  version: '5.1.3.28',
+  version: '5.1.3.29',
   defaultQuality: 'ultra',
-  revision: 'V51328_FIELD_STATE_SAFETY_HEIGHT',
+  revision: 'V51329_TIMERS_CLOUD_PERFORMANCE',
   baseUiVersion: '1.1.4 Professional UI',
   spreadsheetId: '1lmEqbYals_uBIOrQFDupYR2hs0iks5zEJM6FTOuOwP0',
   configSheetName: '工作表1',

@@ -13,8 +13,8 @@ const SAMPLE_STEP=.08;
 const SCENE_BOUNDS={
  minX:-5,
  maxX:6,
- minZ:0,
- maxZ:13
+ minZ:-1.95,
+ maxZ:14.95
 };
 
 function getHost(){

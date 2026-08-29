@@ -9,15 +9,15 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport"/>
 <meta content="#07111b" id="browserThemeColor" name="theme-color"/>
-<title>昱拓弱電有限公司 UTOP-3D V5.1.3.28 Version & Cache Consistency Fix</title>
-<link href="./css/style.css?v=5.1.3.28-field-state-safety-height-20260829" rel="stylesheet"/>
-<link rel="stylesheet" href="services/workspace-v5/workspace-v5.css?v=5.1.3.28-field-state-safety-height-20260829">
+<title>昱拓弱電有限公司 UTOP-3D V5.1.3.29 Version & Cache Consistency Fix</title>
+<link href="./css/style.css?v=5.1.3.29-timers-cloud-performance-20260829" rel="stylesheet"/>
+<link rel="stylesheet" href="services/workspace-v5/workspace-v5.css?v=5.1.3.29-timers-cloud-performance-20260829">
 </head>
 <body>
 <header class="app-header">
 <div class="brand">
 <h1><span>昱拓弱電有限公司</span> UTOP-3D</h1>
-<b>V5.1.3.28 Version & Cache Consistency Fix｜Base UI V1.1.4</b>
+<b>V5.1.3.29 Version & Cache Consistency Fix｜Base UI V1.1.4</b>
 </div>
 <div class="header-actions">
 <button class="scene-library-btn" id="sceneLibraryBtn" title="切換場景" type="button">🌆 場景</button><button class="graphics-settings-btn" id="graphicsSettingsBtn" title="顯示與效能設定" type="button">🎮 畫質設定</button><button class="global-lock-toggle inactive" id="globalLockToggle" title="固定或解除全部設備的位置" type="button">🔓 全固定：關閉</button><button class="global-label-toggle active" id="globalLabelToggle" title="顯示或隱藏全部設備名稱" type="button">🏷 全名稱：開啟</button><button aria-pressed="false" class="theme-toggle-button" id="themeToggleBtn" title="切換深色／白色介面" type="button">
@@ -494,6 +494,10 @@
 <span>檔案名稱</span>
 <input autocomplete="off" id="googleFileName" placeholder="例如：幸福社區_入口車道"/>
 </label>
+<label class="cloud-field">
+<span>分類資料夾</span>
+<select id="googleFolderSelect"><option value="">根目錄</option></select>
+</label>
 <div class="cloud-destination">
 <b>固定儲存位置</b>
 <span>1tk-xe-G7_25yioCY1cTfrq_GuR7ajOmJ</span>
@@ -513,7 +517,9 @@
 </div>
 <button aria-label="關閉" id="closeGoogleOpen">×</button>
 </header>
+<div class="cloud-folder-create"><input id="googleNewFolderName" placeholder="新增資料夾，例如：幸福社區"/><button id="createGoogleFolder" type="button">＋ 新增資料夾</button></div>
 <div class="cloud-open-toolbar">
+<select id="googleOpenFolderFilter"><option value="">全部資料夾</option></select>
 <input id="googleProjectSearch" placeholder="搜尋檔案名稱" type="search"/>
 <button id="refreshGoogleProjects">重新整理</button>
 </div>
@@ -523,7 +529,7 @@
 </div>
 </dialog>
 <div class="google-toast" hidden="" id="googleToast"></div>
-<script src="./js/module-image-registry.js?v=5.1.3.28-field-state-safety-height-20260829" defer></script>
+<script src="./js/module-image-registry.js?v=5.1.3.29-timers-cloud-performance-20260829" defer></script>
 <script type="importmap">
 {
   "imports": {
@@ -2246,7 +2252,7 @@ import('./core/boot.js?v=5.1.3.16-presentation-pointer-20260806')
   <button id="worldSyncRepair" type="button">重新同步</button>
 </div>
 
-<script type="module" src="services/workspace-v5/workspace-v5.js?v=5.1.3.28-field-state-safety-height-20260829"></script>
+<script type="module" src="services/workspace-v5/workspace-v5.js?v=5.1.3.29-timers-cloud-performance-20260829"></script>
 
 <script>
 (function(){
@@ -2608,7 +2614,7 @@ import('./core/boot.js?v=5.1.3.16-presentation-pointer-20260806')
 
     return {
       schema:'utop-needle-ball-v1',
-      version:'5.1.3.28',
+      version:'5.1.3.29',
       exportedAt:new Date().toISOString(),
       projectName:document.getElementById('googleFileName')?.value||document.getElementById('localFileName')?.value||document.title,
       devices,

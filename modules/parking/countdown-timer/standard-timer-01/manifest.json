@@ -1,0 +1,80 @@
+{
+  "moduleId": "COUNTDOWN-TIMER-001",
+  "runtimeType": "timer",
+  "name": "倒數計時器",
+  "category": "parking",
+  "version": "5.1.2",
+  "baseVersion": "1.1.4",
+  "parameters": [
+    "rotation",
+    "seconds",
+    "remaining",
+    "installationHeight",
+    "partsVisibility",
+    "displayName"
+  ],
+  "digitalInputs": [
+    {
+      "id": "DI1",
+      "name": "開始",
+      "action": "start"
+    },
+    {
+      "id": "DI2",
+      "name": "暫停／繼續",
+      "action": "pause"
+    },
+    {
+      "id": "DI3",
+      "name": "重設",
+      "action": "reset"
+    }
+  ],
+  "digitalOutputs": [
+    {
+      "id": "DO1",
+      "name": "倒數完成",
+      "state": "done"
+    },
+    {
+      "id": "DO2",
+      "name": "倒數中",
+      "state": "running"
+    },
+    {
+      "id": "DO3",
+      "name": "暫停中",
+      "state": "paused"
+    },
+    {
+      "id": "DO4",
+      "name": "待機",
+      "state": "idle"
+    }
+  ],
+  "commonProperties": {
+    "installationHeight": {
+      "default": 0,
+      "min": 0,
+      "max": 12,
+      "step": 0.1,
+      "unit": "m"
+    },
+    "displayName": {
+      "default": "倒數計時器"
+    },
+    "partsVisibility": {
+      "bracket": true,
+      "base": true
+    },
+    "showLabel": {
+      "label": "顯示2D與3D名稱",
+      "default": true
+    },
+    "positionLocked": {
+      "label": "固定設備位置",
+      "default": false
+    }
+  },
+  "revision": "V512_LANE_REBUILD_SIDEBAR_FIX"
+}

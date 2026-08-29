@@ -1,0 +1,48 @@
+{
+  "moduleId": "CONTROL-RELAY-001",
+  "runtimeType": "relay",
+  "name": "繼電器",
+  "category": "control",
+  "version": "5.1.2",
+  "baseVersion": "1.1.4",
+  "parameters": [
+    "rotation",
+    "on",
+    "installationHeight",
+    "partsVisibility",
+    "displayName"
+  ],
+  "digitalInputs": [
+    "on",
+    "off"
+  ],
+  "digitalOutputs": [
+    "no",
+    "nc"
+  ],
+  "commonProperties": {
+    "installationHeight": {
+      "default": 0,
+      "min": 0,
+      "max": 12,
+      "step": 0.1,
+      "unit": "m"
+    },
+    "displayName": {
+      "default": "繼電器"
+    },
+    "partsVisibility": {
+      "bracket": true,
+      "base": true
+    },
+    "showLabel": {
+      "label": "顯示2D與3D名稱",
+      "default": true
+    },
+    "positionLocked": {
+      "label": "固定設備位置",
+      "default": false
+    }
+  },
+  "revision": "V512_LANE_REBUILD_SIDEBAR_FIX"
+}

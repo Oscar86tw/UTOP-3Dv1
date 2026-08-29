@@ -1,0 +1,16 @@
+{
+  "id": "CONTROL-DELAY-TIMER-001",
+  "name": "延遲計時器",
+  "type": "delaytimer",
+  "category": "power-control",
+  "version": "5.1.2",
+  "status": "ready",
+  "features": [
+    "3D",
+    "2D",
+    "DI/DO",
+    "控制模擬",
+    "接線連動"
+  ],
+  "revision": "V512_LANE_REBUILD_SIDEBAR_FIX"
+}

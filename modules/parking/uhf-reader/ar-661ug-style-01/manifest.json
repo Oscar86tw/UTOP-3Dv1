@@ -1,0 +1,24 @@
+{
+  "version": "5.1.2",
+  "moduleId": "LANE-UHF-001",
+  "type": "uhf",
+  "name": "UHF／eTag讀頭",
+  "category": "車道常用設備",
+  "commonProperties": {
+    "installationHeight": {
+      "default": 0,
+      "min": 0,
+      "max": 12,
+      "step": 0.1,
+      "unit": "m"
+    },
+    "showLabel": {
+      "default": true
+    },
+    "positionLocked": {
+      "label": "固定設備位置",
+      "default": false
+    }
+  },
+  "revision": "V512_LANE_REBUILD_SIDEBAR_FIX"
+}

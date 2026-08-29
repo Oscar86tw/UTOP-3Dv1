@@ -1,0 +1,16 @@
+{
+  "id": "SIGNAL-2WAY-001",
+  "name": "雙向號誌主機",
+  "type": "signal2way",
+  "category": "power-control",
+  "version": "5.1.2",
+  "status": "ready",
+  "features": [
+    "3D",
+    "2D",
+    "DI/DO",
+    "控制模擬",
+    "接線連動"
+  ],
+  "revision": "V512_LANE_REBUILD_SIDEBAR_FIX"
+}

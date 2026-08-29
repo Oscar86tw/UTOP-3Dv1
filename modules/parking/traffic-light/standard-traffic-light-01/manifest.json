@@ -1,0 +1,49 @@
+{
+  "moduleId": "PARKING-LIGHT-001",
+  "runtimeType": "traffic",
+  "name": "車道紅綠燈",
+  "category": "parking",
+  "version": "5.1.2",
+  "baseVersion": "1.1.4",
+  "parameters": [
+    "rotation",
+    "mode",
+    "installationHeight",
+    "partsVisibility",
+    "displayName"
+  ],
+  "digitalInputs": [
+    "red",
+    "green",
+    "off"
+  ],
+  "digitalOutputs": [
+    "redOn",
+    "greenOn"
+  ],
+  "commonProperties": {
+    "installationHeight": {
+      "default": 0,
+      "min": 0,
+      "max": 12,
+      "step": 0.1,
+      "unit": "m"
+    },
+    "displayName": {
+      "default": "車道紅綠燈"
+    },
+    "partsVisibility": {
+      "bracket": true,
+      "base": true
+    },
+    "showLabel": {
+      "label": "顯示2D與3D名稱",
+      "default": true
+    },
+    "positionLocked": {
+      "label": "固定設備位置",
+      "default": false
+    }
+  },
+  "revision": "V512_LANE_REBUILD_SIDEBAR_FIX"
+}

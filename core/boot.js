@@ -7,7 +7,7 @@ const STAGES = Object.freeze([
   },
   {
     name: '3D與設備核心',
-    url: '../runtime/showcase/runtime-v51348-shutter-vehicle-pass-fix.js?v=5.1.3.49-shutter-vehicle-pass-fix-20260830'
+    url: '../runtime/showcase/runtime-v51350-shutter-open-no-collision.js?v=5.1.3.50-shutter-open-no-collision-20260830'
   },
   {
     name: 'Foundation健康檢查',

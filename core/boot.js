@@ -1,4 +1,4 @@
-import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.55-scene-surfaces-init-order-fix-20260830';
+import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.57-view-control-stacked-20260830';
 
 const STAGES = Object.freeze([
   {
@@ -7,7 +7,7 @@ const STAGES = Object.freeze([
   },
   {
     name: '3D與設備核心',
-    url: '../runtime/showcase/runtime-v51355-scene-surfaces-init-order-fix.js?v=5.1.3.55-scene-surfaces-init-order-fix-20260830'
+    url: '../runtime/showcase/runtime-v51357-view-control-stacked.js?v=5.1.3.57-view-control-stacked-20260830'
   },
   {
     name: 'Foundation健康檢查',
@@ -36,7 +36,7 @@ async function importStage(stage) {
 
 async function startShowcase() {
   document.documentElement.dataset.utopBoot = 'loading';
-  updateStatus('V5.1.3.53 車輛邊界／左下控制排列 啟動中…');
+  updateStatus('V5.1.3.57 左下視角上下排列 啟動中…');
 
   for (const stage of STAGES) {
     await importStage(stage);

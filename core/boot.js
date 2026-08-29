@@ -7,7 +7,7 @@ const STAGES = Object.freeze([
   },
   {
     name: '3D與設備核心',
-    url: '../runtime/showcase/runtime-v51350-shutter-open-no-collision.js?v=5.1.3.50-shutter-open-no-collision-20260830'
+    url: '../runtime/showcase/runtime-v51352-module-collision-support-longscene.js?v=5.1.3.52-module-collision-support-longscene-20260830'
   },
   {
     name: 'Foundation健康檢查',
@@ -36,7 +36,7 @@ async function importStage(stage) {
 
 async function startShowcase() {
   document.documentElement.dataset.utopBoot = 'loading';
-  updateStatus('V5.1.3.49 鐵捲門車輛通行修正 啟動中…');
+  updateStatus('V5.1.3.52 模組碰撞／支架／長型場景 啟動中…');
 
   for (const stage of STAGES) {
     await importStage(stage);

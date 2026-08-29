@@ -1,0 +1,9 @@
+V5.1.3.36 修改或新增檔案
+
+index.html
+config/app-config.js
+core/boot.js
+services/cloud-storage/cloud-save-v51336.js
+google-apps-script/Code_V5.1.3.36.gs
+README.md
+版本說明_V5.1.3.36.txt

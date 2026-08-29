@@ -7,7 +7,7 @@ const STAGES = Object.freeze([
   },
   {
     name: '3D與設備核心',
-    url: '../runtime/showcase/runtime-v51343-shortcut-message-duration.js?v=5.1.3.43-shortcut-message-view-left-20260830'
+    url: '../runtime/showcase/runtime-v51344-drivable-vehicles.js?v=5.1.3.44-drivable-vehicles-sensors-20260830'
   },
   {
     name: 'Foundation健康檢查',
@@ -36,7 +36,7 @@ async function importStage(stage) {
 
 async function startShowcase() {
   document.documentElement.dataset.utopBoot = 'loading';
-  updateStatus('V5.1.3.42 場景物理與物件庫 啟動中…');
+  updateStatus('V5.1.3.44 車輛駕駛與感應模擬 啟動中…');
 
   for (const stage of STAGES) {
     await importStage(stage);
@@ -53,7 +53,7 @@ async function startShowcase() {
 
   document.title = `${APP_CONFIG.appName} V${APP_CONFIG.version}`;
   document.documentElement.dataset.utopBoot = 'ready';
-  updateStatus('V5.1.3.42 場景物理與物件庫 系統準備就緒');
+  updateStatus('V5.1.3.44 車輛駕駛與感應模擬 系統準備就緒');
 
   window.UTOP_APP = Object.freeze({
     config: APP_CONFIG,
@@ -66,7 +66,7 @@ startShowcase().catch((error) => {
   if (window.__UTOP_IS_IGNORABLE_ERROR__?.(error)) {
     window.__UTOP_HIDE_BOOT_ERROR__?.();
     document.documentElement.dataset.utopBoot = 'ready';
-    updateStatus('V5.1.3.42 場景物理與物件庫 系統準備就緒');
+    updateStatus('V5.1.3.44 車輛駕駛與感應模擬 系統準備就緒');
     return;
   }
 

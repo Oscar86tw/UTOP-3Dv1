@@ -1,21 +1,21 @@
-import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.29-timers-cloud-performance-20260829';
+import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.30-timers-cloud-performance-20260829';
 
 const STAGES = Object.freeze([
   {
     name: '背景工程診斷中心',
-    url: '../services/debug-center/debug-center-v4010.js?v=5.1.3.29-timers-cloud-performance-20260829'
+    url: '../services/debug-center/debug-center-v4010.js?v=5.1.3.30-timers-cloud-performance-20260829'
   },
   {
     name: '3D與設備核心',
-    url: '../runtime/showcase/runtime-v51329-timers-cloud-performance.js?v=5.1.3.29-timers-cloud-performance-20260829'
+    url: '../runtime/showcase/runtime-v51330-signal-transform-feedback-fix.js?v=5.1.3.30-signal-transform-feedback-20260830'
   },
   {
     name: 'Foundation健康檢查',
-    url: '../runtime/foundation/foundation-health-v2400.js?v=5.1.3.29-timers-cloud-performance-20260829'
+    url: '../runtime/foundation/foundation-health-v2400.js?v=5.1.3.30-timers-cloud-performance-20260829'
   },
   {
     name: 'Google雲端橋接',
-    url: '../services/cloud-storage/cloud-save-v51329.js?v=5.1.3.29-timers-cloud-performance-20260829'
+    url: '../services/cloud-storage/cloud-save-v51329.js?v=5.1.3.30-timers-cloud-performance-20260829'
   }
 ]);
 
@@ -36,7 +36,7 @@ async function importStage(stage) {
 
 async function startShowcase() {
   document.documentElement.dataset.utopBoot = 'loading';
-  updateStatus('V5.1.3.29 計時雲端與大量連動穩定性修正 啟動中…');
+  updateStatus('V5.1.3.30 計時雲端與大量連動穩定性修正 啟動中…');
 
   for (const stage of STAGES) {
     await importStage(stage);
@@ -53,7 +53,7 @@ async function startShowcase() {
 
   document.title = `${APP_CONFIG.appName} V${APP_CONFIG.version}`;
   document.documentElement.dataset.utopBoot = 'ready';
-  updateStatus('V5.1.3.29 計時雲端與大量連動穩定性修正 系統準備就緒');
+  updateStatus('V5.1.3.30 計時雲端與大量連動穩定性修正 系統準備就緒');
 
   window.UTOP_APP = Object.freeze({
     config: APP_CONFIG,
@@ -66,7 +66,7 @@ startShowcase().catch((error) => {
   if (window.__UTOP_IS_IGNORABLE_ERROR__?.(error)) {
     window.__UTOP_HIDE_BOOT_ERROR__?.();
     document.documentElement.dataset.utopBoot = 'ready';
-    updateStatus('V5.1.3.29 計時雲端與大量連動穩定性修正 系統準備就緒');
+    updateStatus('V5.1.3.30 計時雲端與大量連動穩定性修正 系統準備就緒');
     return;
   }
 

@@ -9,7 +9,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport"/>
 <meta content="#07111b" id="browserThemeColor" name="theme-color"/>
-<title>昱拓弱電有限公司 UTOP-3D V5.1.3.50 鐵捲門車輛通行修正</title>
+<title>昱拓弱電有限公司 UTOP-3D V5.1.3.51 視角按鈕寬度與左下角修正</title>
 <link href="./css/style.css?v=5.1.3.43-shortcut-message-view-left-20260830" rel="stylesheet"/>
 <link rel="stylesheet" href="services/workspace-v5/workspace-v5.css?v=5.1.3.43-shortcut-message-view-left-20260830">
 <style id="v51342-scene-physics-object-style">
@@ -20,12 +20,54 @@
 #presentationCornerControls.presentation-corner-controls{left:max(8px,env(safe-area-inset-left))!important;right:auto!important;bottom:max(8px,env(safe-area-inset-bottom))!important;width:max-content!important;max-width:calc(100% - 16px)!important;}
 #presentationFovWidth.presentation-corner-btn{width:4.2em!important;min-width:4.2em!important;max-width:4.2em!important;padding-left:.45em!important;padding-right:.45em!important;white-space:nowrap!important;text-align:center!important;}
 </style>
+
+<style id="v51351-camera-toggle-fix">
+#sceneWrap > #cameraMenuToggle.camera-menu-toggle{
+  position:absolute!important;
+  left:max(10px,env(safe-area-inset-left))!important;
+  right:auto!important;
+  bottom:max(10px,env(safe-area-inset-bottom))!important;
+  width:3.2em!important;
+  min-width:3.2em!important;
+  max-width:3.2em!important;
+  height:36px!important;
+  min-height:36px!important;
+  padding:0!important;
+  margin:0!important;
+  display:inline-flex!important;
+  flex:0 0 3.2em!important;
+  align-items:center!important;
+  justify-content:center!important;
+  white-space:nowrap!important;
+  box-sizing:border-box!important;
+  z-index:96!important;
+  font-size:14px!important;
+  line-height:1!important;
+}
+.views .scene-card:fullscreen #cameraMenuToggle.camera-menu-toggle,
+.views .scene-card:-webkit-full-screen #cameraMenuToggle.camera-menu-toggle,
+.views .scene-card.is-3d-fullscreen #cameraMenuToggle.camera-menu-toggle{
+  left:max(10px,env(safe-area-inset-left))!important;
+  right:auto!important;
+  bottom:max(10px,env(safe-area-inset-bottom))!important;
+  width:3.2em!important;
+  min-width:3.2em!important;
+  max-width:3.2em!important;
+}
+@media(max-width:720px){
+  #sceneWrap > #cameraMenuToggle.camera-menu-toggle{
+    left:max(8px,env(safe-area-inset-left))!important;
+    bottom:max(8px,env(safe-area-inset-bottom))!important;
+    width:3.2em!important;min-width:3.2em!important;max-width:3.2em!important;
+  }
+}
+</style>
 </head>
 <body>
 <header class="app-header">
 <div class="brand">
 <h1><span>昱拓弱電有限公司</span> UTOP-3D</h1>
-<b>V5.1.3.50 鐵捲門車輛通行修正｜Base UI V1.1.4</b>
+<b>V5.1.3.51 視角按鈕寬度與左下角修正｜Base UI V1.1.4</b>
 </div>
 <div class="header-actions">
 <button class="scene-library-btn" id="sceneLibraryBtn" title="切換場景" type="button">🌆 場景</button><button class="graphics-settings-btn" id="graphicsSettingsBtn" title="顯示與效能設定" type="button">🎮 畫質設定</button><button class="global-lock-toggle inactive" id="globalLockToggle" title="固定或解除全部設備的位置" type="button">🔓 全固定：關閉</button><button class="global-label-toggle active" id="globalLabelToggle" title="顯示或隱藏全部設備名稱" type="button">🏷 全名稱：開啟</button><button aria-pressed="false" class="theme-toggle-button" id="themeToggleBtn" title="切換深色／白色介面" type="button">
@@ -274,7 +316,7 @@
   <strong>3D場景目前顯示在「接線與連動模擬」視窗</strong>
   <span>關閉接線視窗或切回2D後，場景會自動回到這裡。</span>
 </div>
-<button aria-controls="cameraViewMenu" aria-expanded="false" class="camera-menu-toggle" id="cameraMenuToggle" type="button">🎥 視角</button>
+<button aria-controls="cameraViewMenu" aria-expanded="false" class="camera-menu-toggle" id="cameraMenuToggle" type="button" title="開啟視角控制">視角</button>
 
 <div class="presentation-corner-controls" id="presentationCornerControls" hidden aria-label="3D簡報左下角控制">
   <button id="presentationFovWidth" class="presentation-corner-btn" type="button" title="調整3D相機視角寬度，不改變全畫面尺寸">視角寬</button>

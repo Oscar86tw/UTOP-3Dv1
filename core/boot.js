@@ -7,7 +7,7 @@ const STAGES = Object.freeze([
   },
   {
     name: '3D與設備核心',
-    url: '../runtime/showcase/runtime-v51330-signal-transform-feedback-fix.js?v=5.1.3.30-signal-transform-feedback-20260830'
+    url: '../runtime/showcase/runtime-v51331-cloud-lock-shortcuts-longscene.js?v=5.1.3.31-cloud-lock-shortcuts-longscene-20260830'
   },
   {
     name: 'Foundation健康檢查',
@@ -15,7 +15,7 @@ const STAGES = Object.freeze([
   },
   {
     name: 'Google雲端橋接',
-    url: '../services/cloud-storage/cloud-save-v51329.js?v=5.1.3.30-timers-cloud-performance-20260829'
+    url: '../services/cloud-storage/cloud-save-v51331.js?v=5.1.3.31-cloud-lock-shortcuts-longscene-20260830'
   }
 ]);
 

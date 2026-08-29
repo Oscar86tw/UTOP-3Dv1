@@ -8,12 +8,12 @@ let loaded=false;
 let previousBaseSceneVisible=true;
 const createdItemIds=[];
 
-// 原本長度18m，增加30%後為23.4m。
-// 3D與2D可操作範圍同步放大30%，讓更多設備可分散配置。
-const ROAD_LENGTH=23.4;
+// V5.1.3.31：在既有23.4m長車道基礎上再增加50%，改為35.1m。
+// 3D道路、2D可操作深度與設備配置範圍同步拉長，維持長型進出模擬。
+const ROAD_LENGTH=35.1;
 const ROAD_HALF=ROAD_LENGTH/2;
 const TEST_AREA_WIDTH=13;
-const TEST_AREA_DEPTH=15.6;
+const TEST_AREA_DEPTH=23.4;
 
 function getHost(){
   host=window.UTOP_SCENE_HOST;

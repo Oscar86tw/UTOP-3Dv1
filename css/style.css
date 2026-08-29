@@ -8998,3 +8998,29 @@ body.utop-3d-fullscreen-fallback .views .scene-card.is-3d-fullscreen{position:fi
 .cloud-danger{background:#702e32!important;border-color:#a7474d!important}
 .cloud-project-card-actions{display:flex;gap:8px;align-items:center}
 @media(max-width:700px){.cloud-folder-create,.cloud-open-toolbar{grid-template-columns:1fr}.cloud-project-card-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}}
+
+
+/* =========================================================
+   V5.1.3.31 Cloud lock / sidebar / fullscreen / shortcuts
+========================================================= */
+.cloud-project-card-actions .cloud-lock.is-locked{background:#6d5510!important;border-color:#d8ae35!important;color:#fff6c8!important}
+.cloud-project-card-actions .cloud-danger:disabled{opacity:.35!important;cursor:not-allowed!important;filter:grayscale(.6)}
+.presentation-toolbar-collapse{order:-10;background:#234d62!important;border-color:#6fb8d9!important}
+.presentation-toolbar.is-collapsed{width:auto!important;min-width:0!important;padding:6px!important;left:50%!important;right:auto!important;transform:translateX(-50%)!important}
+.presentation-toolbar.is-collapsed .presentation-toolbar-main>button:not(.presentation-toolbar-collapse),
+.presentation-toolbar.is-collapsed .presentation-device-control{display:none!important}
+.presentation-toolbar.is-collapsed .presentation-toolbar-main{display:flex!important}
+.shortcut-dialog{width:min(920px,94vw)}
+.shortcut-dialog-body{max-height:min(82vh,760px);overflow:auto}
+.shortcut-builder{display:grid;grid-template-columns:140px minmax(180px,1.4fr) 170px minmax(190px,1.4fr) auto;gap:10px;align-items:end}
+.shortcut-builder label{display:grid;gap:5px}.shortcut-builder label span{font-size:12px;font-weight:800;opacity:.8}
+.shortcut-builder input,.shortcut-builder select{min-height:42px;border-radius:9px;padding:8px 10px}
+.shortcut-capture-help{margin:10px 0;padding:9px 11px;border-radius:10px;background:rgba(61,137,171,.12);font-size:13px}
+.shortcut-list{display:grid;gap:8px}
+.shortcut-row{display:grid;grid-template-columns:76px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 12px;border:1px solid rgba(122,174,198,.28);border-radius:12px;background:rgba(8,31,43,.45)}
+.shortcut-row kbd{display:grid;place-items:center;min-height:42px;border:1px solid #7598a8;border-bottom-width:4px;border-radius:9px;background:#102f3e;color:#fff;font-size:18px;font-weight:900}
+.shortcut-row div{display:grid;gap:3px}.shortcut-row small{opacity:.72}.shortcut-row button{min-height:38px}
+.signal-quick-seconds{margin-bottom:8px;padding:8px 10px;border:1px solid rgba(120,182,210,.32);border-radius:10px;background:rgba(39,105,137,.1)}
+.signal-quick-seconds input{width:86px;margin:0 6px;min-height:36px;text-align:center;font-weight:900}
+@media(max-width:900px){.shortcut-builder{grid-template-columns:1fr 1fr}.shortcut-builder .cloud-primary{grid-column:1/-1}.shortcut-row{grid-template-columns:62px minmax(0,1fr) auto}}
+@media(max-width:560px){.shortcut-builder{grid-template-columns:1fr}.shortcut-builder .cloud-primary{grid-column:auto}.shortcut-row{grid-template-columns:56px minmax(0,1fr)}.shortcut-row>button{grid-column:1/-1}.presentation-toolbar.is-collapsed{bottom:max(8px,env(safe-area-inset-bottom))!important}}

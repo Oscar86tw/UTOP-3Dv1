@@ -1,0 +1,27 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>UTOP-3D 檔案檢查</title>
+<style>body{font-family:Arial;background:#071721;color:#fff;padding:28px}pre{background:#102735;padding:18px;border-radius:10px}</style>
+<h1>UTOP-3D V2.4.0 R2 檔案檢查</h1>
+<pre id="out">檢查中…</pre>
+<script>
+(async()=>{
+ const files=[
+  './core/boot.js?v=4.0.2-simulation-trace',
+  './runtime/showcase/runtime-v5100-workspace-final.js?v=4.0.2-simulation-trace',
+  './runtime/foundation/foundation-health-v2400.js?v=4.0.2-simulation-trace',
+  './services/cloud-storage/cloud-save-v4330.js?v=4.0.2-simulation-trace'
+ ];
+ const rows=[];
+ for(const file of files){
+  try{
+   const response=await fetch(file,{cache:'no-store'});
+   const text=await response.text();
+   rows.push(`${response.ok?'✓':'✕'} ${file}\nHTTP ${response.status}｜${text.length} bytes｜開頭：${text.slice(0,35)}`);
+  }catch(error){
+   rows.push(`✕ ${file}\n${error.message}`);
+  }
+ }
+ document.getElementById('out').textContent=rows.join('\n\n');
+})();
+</script>

@@ -1,0 +1,19 @@
+UTOP-3D V5.1.3.25｜程式架構診斷中心
+
+本次新增：
+1. architecture-diagnostic.html：獨立程式架構診斷頁。
+2. css/architecture-diagnostic.css：診斷中心響應式介面。
+3. js/architecture-diagnostic.js：檔案排行、篩選、建議拆分顯示。
+4. diagnostics/project-metrics.json：目前專案程式碼統計快照。
+5. index.html：新增「🧩 程式架構」入口。
+
+目前診斷快照：
+- JS/HTML/CSS：243 個檔案
+- 總行數：約 567,357 行（包含保留的歷史 runtime 版本）
+- 8,000 行以上：23 個檔案
+- 3,000–7,999 行：45 個檔案
+- runtime/showcase/runtime-v*：85 個版本檔案
+- 最大單檔：runtime/showcase/runtime-v5100-workspace-final.js，約 11,098 行
+
+注意：
+此數字包含大量歷史/備援 runtime，因此「總行數」不是實際一次載入執行的程式量，而是正式部署包內的程式碼總量。診斷目的為找出維護與部署風險。

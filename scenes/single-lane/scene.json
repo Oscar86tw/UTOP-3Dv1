@@ -1,0 +1,39 @@
+{
+  "id": "single-lane",
+  "name": "單車道",
+  "description": "長距離單向測試車道；道路、3D、2D與設備配置範圍同步增加30%。",
+  "camera": {
+    "position": [
+      10.2,
+      8.8,
+      15.0
+    ],
+    "target": [
+      0,
+      0.2,
+      -1.2
+    ]
+  },
+  "devices": [],
+  "wires": [
+    {
+      "sourceIndex": 2,
+      "sourcePort": "valid",
+      "targetIndex": 0,
+      "targetPort": "open"
+    },
+    {
+      "sourceIndex": 3,
+      "sourcePort": "vehicle",
+      "targetIndex": 1,
+      "targetPort": "red"
+    },
+    {
+      "sourceIndex": 4,
+      "sourcePort": "clear",
+      "targetIndex": 0,
+      "targetPort": "close"
+    }
+  ],
+  "defaultModules": false
+}

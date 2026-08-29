@@ -1,0 +1,26 @@
+{
+  "id": "MONTECARLO_1F_B1",
+  "name": "麗寶南法莊園－蒙地卡羅",
+  "version": "5.1.2",
+  "sceneType": "lane-confirmation-only",
+  "removeRoofAndBuildings": true,
+  "dimensions": {
+    "laneWidth": 3.8,
+    "outdoorStraightLength": 3.0,
+    "coveredStraightLength": 1.0,
+    "rightTurnDegrees": 45,
+    "curvePathLength": 1.0,
+    "b1StraightLength": 1.0,
+    "slopeDegrees": 25,
+    "wallHeight": 1.75
+  },
+  "notes": [
+    "入口立即開始下坡",
+    "前3公尺戶外無屋簷",
+    "再直行1公尺",
+    "向駕駛方向右轉45度",
+    "彎道長約1公尺且持續下坡",
+    "彎道完成處為B1路口",
+    "目前純車道確認版，不放屋簷、建築、設備與植栽"
+  ]
+}

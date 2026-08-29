@@ -1,0 +1,15 @@
+UTOP-3D V5.1.3.27｜版本同步與快取一致性修正
+日期：2026-08-08
+
+完整檢查結果：
+1. modules / runtime / scenes / services / tests 在 V5.1.3.26 並未修改，因此 GitHub 顯示舊 commit 日期屬正常，不代表漏上傳。
+2. 完整程式碼內上述資料夾皆存在，檔案數：modules 38、runtime 105、scenes 6、services 90、tests 1。
+3. 掃描 HTML / JS 相對引用共 585 筆，缺少檔案 0 筆。
+4. 發現主程式仍使用 V5.1.3.20 / V5.1.3.24 的 cache-busting 與啟動狀態文字，可能讓瀏覽器持續沿用舊資源。
+5. 本版統一 index.html、core/boot.js、APP_CONFIG、3D針球三頁及架構診斷頁的版本與快取標記。
+6. 不修改 3D 核心、設備邏輯、接線邏輯、場景、服務功能。
+
+重點：
+- GitHub Pages 使用 Deploy from a branch / main / root 的設定正確。
+- Repo 根目錄與完整包層級正確。
+- 本版主要處理版本顯示與瀏覽器快取一致性。

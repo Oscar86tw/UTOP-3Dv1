@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UTOP-3D 部署檢查</title>
+<style>
+body{font-family:Arial,"Microsoft JhengHei",sans-serif;background:#0c1822;color:#eef6fb;padding:24px}
+.card{max-width:720px;margin:auto;padding:22px;border:1px solid #31566d;border-radius:14px;background:#122836}
+.ok{color:#55da8b}.bad{color:#ff7c73}code{background:#08131c;padding:3px 6px;border-radius:5px}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>UTOP-3D 部署檢查</h1>
+<p>應顯示版本：<strong>V2.0.2.2</strong></p>
+<div id="result">檢查中……</div>
+</div>
+<script type="module">
+const result=document.querySelector('#result');
+try{
+  const response=await fetch('./VERSION.txt?t='+Date.now(),{cache:'no-store'});
+  if(!response.ok)throw new Error('HTTP '+response.status);
+  const text=(await response.text()).trim();
+  result.innerHTML='<p class="ok">✓ 已讀取最新網站檔案</p><p><code>'+text+'</code></p>';
+}catch(error){
+  result.innerHTML='<p class="bad">✗ 無法讀取VERSION.txt</p><pre>'+error.message+'</pre>';
+}
+</script>
+</body>
+</html>

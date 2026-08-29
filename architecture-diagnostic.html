@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07111b">
+<title>UTOP-3D V5.1.3.28｜程式架構診斷中心</title>
+<link rel="stylesheet" href="./css/architecture-diagnostic.css?v=5.1.3.26-20260808">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <div class="eyebrow">昱拓弱電有限公司 · UTOP-3D</div>
+    <h1>程式架構診斷中心</h1>
+    <p>只讀分析目前專案，不修改3D、設備、接線與存檔資料。</p>
+  </div>
+  <div class="top-actions">
+    <button id="blueprintBtn" type="button">🧩 分工藍圖</button>
+    <button id="refreshBtn" type="button">↻ 重新分析</button>
+    <button id="homeBtn" class="primary" type="button">← 返回模擬器</button>
+  </div>
+</header>
+
+<main>
+  <section class="metrics" aria-label="專案摘要">
+    <article><span>分析檔案</span><strong id="mFiles">—</strong><small>JS / HTML / CSS</small></article>
+    <article><span>總程式行數</span><strong id="mLines">—</strong><small>含保留歷史版本</small></article>
+    <article class="danger"><span>超大型檔案</span><strong id="mCritical">—</strong><small>8,000 行以上</small></article>
+    <article class="warn"><span>大型檔案</span><strong id="mHigh">—</strong><small>3,000–7,999 行</small></article>
+    <article><span>Showcase Runtime</span><strong id="mRuntime">—</strong><small>歷史版本數量</small></article>
+  </section>
+
+  <section class="callout">
+    <div>
+      <strong>診斷原則</strong>
+      <p>先把「最容易牽一髮動全身」的區塊拆開，再逐步瘦身主 Runtime。這一版不自動搬檔，先建立安全的拆分順序。</p>
+    </div>
+    <span class="badge">V5.1.3.28</span>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <div><h2>建議拆分優先順序</h2><p>依目前程式大小、耦合風險與後續維護成本排序。</p></div>
+      <select id="priorityFilter" aria-label="優先級篩選">
+        <option value="all">全部建議</option>
+        <option value="1">只看最高優先</option>
+        <option value="2">前2項</option>
+        <option value="3">前3項</option>
+      </select>
+    </div>
+    <div id="recommendationList" class="recommendation-list"></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <div><h2>大型檔案排行</h2><p>可直接看到哪些檔案正在變成維護風險。</p></div>
+      <div class="filters">
+        <input id="searchInput" type="search" placeholder="搜尋檔名或資料夾">
+        <select id="riskFilter" aria-label="風險篩選">
+          <option value="all">全部風險</option>
+          <option value="critical">超大型</option>
+          <option value="high">大型</option>
+          <option value="medium">中型</option>
+          <option value="normal">一般</option>
+        </select>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>檔案</th><th>類型</th><th>行數</th><th>大小</th><th>風險</th></tr></thead>
+        <tbody id="fileRows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><div><h2>版本與資料夾集中度</h2><p>大量歷史 Runtime 留在正式部署中，會增加部署體積與誤載風險。</p></div></div>
+    <div id="familyGrid" class="family-grid"></div>
+  </section>
+</main>
+
+<footer>UTOP-3D Architecture Diagnostic Center · Read Only</footer>
+<script src="./js/architecture-diagnostic.js?v=5.1.3.26-20260808" defer></script>
+</body>
+</html>

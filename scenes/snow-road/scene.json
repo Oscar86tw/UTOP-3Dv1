@@ -1,0 +1,13 @@
+{
+  "id": "snow-road",
+  "name": "雪地道路",
+  "description": "連續S型道路：上層平面、30度下坡、下層平面；3D與2D共用同一路徑。",
+  "planBounds": {
+    "minX": -18,
+    "maxX": 18,
+    "minZ": -32,
+    "maxZ": 32
+  },
+  "devices": [],
+  "defaultModules": false
+}

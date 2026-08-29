@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UTOP-3D 啟動檔案檢查</title>
+<style>
+body{font-family:Arial,"Microsoft JhengHei",sans-serif;background:#0c1822;color:#eef6fb;padding:24px}
+.card{max-width:850px;margin:auto;padding:22px;border:1px solid #31566d;border-radius:14px;background:#122836}
+.ok{color:#55da8b}.bad{color:#ff7c73}.wait{color:#ffd46f}
+pre{white-space:pre-wrap;word-break:break-word;background:#08131c;padding:12px;border-radius:8px}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.180.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.180.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<div class="card">
+<h1>UTOP-3D 啟動檔案檢查</h1>
+<div id="result" class="wait">逐一檢查中……</div>
+</div>
+<script type="module">
+const result=document.getElementById('result');
+const rows=[];
+async function check(name,url){
+  try{
+    await import(url+'?t='+Date.now());
+    rows.push(`<p class="ok">✓ ${name}</p>`);
+  }catch(error){
+    rows.push(`<p class="bad">✗ ${name}</p><pre>${url}\n${error.stack||error}</pre>`);
+    throw error;
+  }finally{
+    result.innerHTML=rows.join('');
+  }
+}
+try{
+  await check('設定檔','./config/app-config.js');
+  await check('3D與設備核心','./runtime/legacy-v114/runtime-v2310.js');
+  await check('Google Drive模組','./services/cloud-storage/cloud-save-v2310.js');
+  rows.push('<p class="ok"><b>全部啟動檔案載入成功</b></p>');
+  result.innerHTML=rows.join('');
+}catch(error){}
+</script>
+</body>
+</html>

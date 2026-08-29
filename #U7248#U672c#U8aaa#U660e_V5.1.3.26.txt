@@ -1,0 +1,16 @@
+UTOP-3D V5.1.3.26｜模組分工與隔離藍圖
+日期：2026-08-08
+
+新增：
+1. architecture-blueprint.html 模組分工藍圖。
+2. diagnostics/architecture-plan.json，細分17個責任區。
+3. core/service-container.js，建立服務容器基礎。
+4. core/contracts/：事件、服務、設備、專案快照、View、Feature契約。
+5. tools_01/check_architecture_boundaries.py，掃描跨層違規。
+6. 主畫面新增「🧩 程式架構」入口。
+7. 架構診斷中心新增「🧩 分工藍圖」入口。
+
+原則：
+- 本版不搬動舊3D Runtime，避免回歸。
+- 新功能不得再直接塞入主Runtime。
+- 後續採 Signal/Wiring/Timer/Relay → 設備 → World Model → UI → Runtime 的順序漸進拆分。

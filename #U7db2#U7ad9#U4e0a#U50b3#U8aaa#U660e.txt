@@ -1,0 +1,17 @@
+UTOP-3D V2.0 Modular Framework 上傳方式
+
+請把「01_UTOP-3D_網站程式」內的全部內容上傳到GitHub儲存庫根目錄。
+
+根目錄應直接看見：
+index.html
+core/
+config/
+pages/
+modules/
+services/
+runtime/
+assets/
+css/
+js/
+
+「02_Google_Apps_Script_橋接程式」不要上傳到GitHub。

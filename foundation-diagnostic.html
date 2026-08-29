@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UTOP-3D V4.0.2 Simulation Foundation 檢查</title>
+<style>
+body{font-family:Arial,sans-serif;background:#071721;color:#eef8ff;padding:28px}
+.card{max-width:900px;margin:auto;background:#102735;border:1px solid #315d76;border-radius:14px;padding:22px}
+.ok{color:#53e79d}.bad{color:#ff7373}.wait{color:#ffd56d}
+pre{white-space:pre-wrap;background:#061018;border-radius:9px;padding:14px}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>UTOP-3D V4.0.2 Simulation Foundation</h1>
+<p id="status" class="wait">正在檢查…</p>
+<pre id="detail"></pre>
+</div>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+<script type="module">
+const status=document.getElementById('status');
+const detail=document.getElementById('detail');
+try{
+  await import('./runtime/showcase/runtime-v5100-workspace-final.js?v=4.0.2-simulation-trace');
+  await import('./runtime/foundation/foundation-health-v2400.js?v=4.0.2-simulation-trace');
+  const health=window.UTOP_FOUNDATION.verify();
+  status.className='ok';
+  status.textContent='✓ Foundation R5 核心載入成功';
+  detail.textContent=JSON.stringify(health,null,2);
+}catch(error){
+  status.className='bad';
+  status.textContent='✕ Foundation R5 載入失敗';
+  detail.textContent=error.stack||error.message||String(error);
+}
+</script>
+</body>
+</html>

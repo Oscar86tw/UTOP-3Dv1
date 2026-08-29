@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07111b">
+<title>UTOP-3D V5.1.3.28｜模組分工藍圖</title>
+<link rel="stylesheet" href="./css/architecture-blueprint.css?v=5.1.3.26-20260808">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <div class="eyebrow">昱拓弱電有限公司 · UTOP-3D</div>
+    <h1>模組分工與隔離藍圖</h1>
+    <p>目標：每個功能只負責自己的工作，任何改動都盡量不影響其他區塊。</p>
+  </div>
+  <div class="top-actions">
+    <button id="diagnosticBtn" type="button">← 架構診斷</button>
+    <button id="homeBtn" class="primary" type="button">返回模擬器</button>
+  </div>
+</header>
+<main>
+  <section class="principles" id="principles"></section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <div><h2>責任分區</h2><p>每一區都有允許依賴與禁止跨界事項。</p></div>
+      <div class="filters">
+        <input id="searchInput" type="search" placeholder="搜尋：接線、2D、影片、存檔…">
+      </div>
+    </div>
+    <div id="zoneGrid" class="zone-grid"></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><div><h2>公開 Facade</h2><p>UI、分頁與 Feature 只呼叫這些公開介面，不碰內部私有函式。</p></div></div>
+    <div id="facadeGrid" class="facade-grid"></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><div><h2>模組溝通事件</h2><p>跨系統通知使用 Event Bus，降低互相 import 的依賴。</p></div></div>
+    <div id="eventList" class="event-list"></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><div><h2>安全搬移順序</h2><p>不一次重寫。每一階段都保持舊版可運作與可回退。</p></div></div>
+    <div id="migrationList" class="migration-list"></div>
+  </section>
+
+  <section class="callout">
+    <strong>隔離規則</strong>
+    <p>新功能從 V5.1.3.28 起不得再直接塞進 11,000 行主 Runtime；先接公開介面。舊功能則逐步搬移，不一次大改。</p>
+  </section>
+</main>
+<footer>UTOP-3D Architecture Blueprint · V5.1.3.28</footer>
+<script src="./js/architecture-blueprint.js?v=5.1.3.26-20260808" defer></script>
+</body>
+</html>

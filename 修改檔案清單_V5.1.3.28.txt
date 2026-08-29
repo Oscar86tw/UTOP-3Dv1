@@ -1,0 +1,21 @@
+UTOP-3D V5.1.3.28 修改檔案清單
+
+核心修改：
+- runtime/showcase/runtime-v51328-field-state-safety-height.js（新增）
+- core/boot.js
+- config/app-config.js
+- index.html
+- css/style.css
+
+版本同步：
+- VERSION.txt
+- README.md
+- 版本說明_V5.1.3.28.txt
+- 修改檔案清單_V5.1.3.28.txt
+- architecture-diagnostic.html
+- architecture-blueprint.html
+- ARCHITECTURE.md
+- docs/UTOP_模組分工與隔離規範.md（原檔名依專案編碼保留）
+- needle-ball-dual.html
+- needle-ball-grouped.html
+- needle-ball-trace.html

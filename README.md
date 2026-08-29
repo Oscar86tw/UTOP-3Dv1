@@ -1,3 +1,8 @@
+## V5.1.3.34
+- 舊版工作表1雲端專案偵測／安全匯入 Projects。
+- folderName/name 新舊欄位相容。
+- Apps Script 新增 legacyStatus / importLegacyProjects。
+
 # UTOP-3D V5.1.3.33
 
 本版重點：模組分工、責任隔離、公開介面與安全重構藍圖。

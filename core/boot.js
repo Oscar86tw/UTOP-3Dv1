@@ -15,7 +15,7 @@ const STAGES = Object.freeze([
   },
   {
     name: 'Google雲端橋接',
-    url: '../services/cloud-storage/cloud-save-v51333.js?v=5.1.3.33-cloud-api-redeploy-20260830'
+    url: '../services/cloud-storage/cloud-save-v51334.js?v=5.1.3.34-legacy-cloud-import-20260830'
   }
 ]);
 

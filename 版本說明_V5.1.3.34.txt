@@ -1,0 +1,12 @@
+UTOP-3D V5.1.3.34
+
+本版修正：
+1. 雲端開啟時可偵測「工作表1」舊版專案。
+2. 偵測到可匯入資料時顯示「匯入新版雲端」。
+3. 匯入只複製到 Projects，不刪除工作表1。
+4. 防止重複匯入：legacySourceId + 專案名稱/資料摘要雙重檢查。
+5. folderName / name、folderId / id 新舊欄位相容。
+6. Google Apps Script 新增 legacyStatus / importLegacyProjects。
+7. Apps Script 固定使用指定 Spreadsheet ID，避免 Web App 執行時 ActiveSpreadsheet 判斷異常。
+
+重要：網站部署 V5.1.3.34 後，Google Apps Script 也必須更新 Code_V5.1.3.34.gs 並重新部署新版本。

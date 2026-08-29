@@ -1,4 +1,4 @@
-import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.53-vehicle-bounds-controls-layout-20260830';
+import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.54-scene-surfaces-full-length-20260830';
 
 const STAGES = Object.freeze([
   {
@@ -7,7 +7,7 @@ const STAGES = Object.freeze([
   },
   {
     name: '3D與設備核心',
-    url: '../runtime/showcase/runtime-v51353-vehicle-bounds-controls-layout.js?v=5.1.3.53-vehicle-bounds-controls-layout-20260830'
+    url: '../runtime/showcase/runtime-v51354-scene-surfaces-full-length.js?v=5.1.3.54-scene-surfaces-full-length-20260830'
   },
   {
     name: 'Foundation健康檢查',

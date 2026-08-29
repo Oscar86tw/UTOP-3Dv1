@@ -15,7 +15,7 @@ const STAGES = Object.freeze([
   },
   {
     name: 'Google雲端橋接',
-    url: '../services/cloud-storage/cloud-save-v51331.js?v=5.1.3.31-cloud-lock-shortcuts-longscene-20260830'
+    url: '../services/cloud-storage/cloud-save-v51333.js?v=5.1.3.33-cloud-api-redeploy-20260830'
   }
 ]);
 

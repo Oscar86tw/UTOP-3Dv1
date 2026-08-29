@@ -1,0 +1,8 @@
+V5.1.3.33 修改／新增檔案
+- core/boot.js
+- services/cloud-storage/cloud-save-v51333.js（新增）
+- index.html
+- config/app-config.js
+- VERSION.txt
+- README.md
+- 版本說明_V5.1.3.33.txt

@@ -1,6 +1,6 @@
 export const APP_CONFIG = Object.freeze({
   appName: '昱拓弱電有限公司 UTOP-3D',
-  version: '5.1.3.32',
+  version: '5.1.3.33',
   defaultQuality: 'ultra',
   revision: 'V51329_TIMERS_CLOUD_PERFORMANCE',
   baseUiVersion: '1.1.4 Professional UI',

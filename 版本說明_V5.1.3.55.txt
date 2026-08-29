@@ -1,0 +1,9 @@
+UTOP-3D V5.1.3.55
+
+修正：3D 與設備核心啟動失敗。
+原因：V5.1.3.54 的 sceneSettings 初始化時先使用 BASE_SCENE_LENGTH，但常數在後段才以 const 宣告，觸發 ReferenceError / TDZ。
+處理：
+1. BASE_SCENE_LENGTH / BASE_SCENE_HALF 移到 sceneSettings 與 roadMarkings 初始化之前。
+2. runtime 更名為 runtime-v51355-scene-surfaces-init-order-fix.js。
+3. index、boot、app-config、VERSION 與快取參數同步為 V5.1.3.55。
+4. 保留 V5.1.3.54 的 77.22m 場景道路／人行道全長設定。

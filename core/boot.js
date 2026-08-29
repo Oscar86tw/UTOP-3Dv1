@@ -1,4 +1,4 @@
-import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.36-drive-index-rebuild-20260830';
+import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.37-drive-index-rebuild-20260830';
 
 const STAGES = Object.freeze([
   {
@@ -15,7 +15,7 @@ const STAGES = Object.freeze([
   },
   {
     name: 'Google雲端橋接',
-    url: '../services/cloud-storage/cloud-save-v51336.js?v=5.1.3.36-drive-index-rebuild-20260830'
+    url: '../services/cloud-storage/cloud-save-v51337.js?v=5.1.3.37-cloud-save-folder-20260830'
   }
 ]);
 
@@ -36,7 +36,7 @@ async function importStage(stage) {
 
 async function startShowcase() {
   document.documentElement.dataset.utopBoot = 'loading';
-  updateStatus('V5.1.3.36 Drive實體存檔與Sheet索引整合 啟動中…');
+  updateStatus('V5.1.3.37 Drive實體存檔與Sheet索引整合 啟動中…');
 
   for (const stage of STAGES) {
     await importStage(stage);
@@ -53,7 +53,7 @@ async function startShowcase() {
 
   document.title = `${APP_CONFIG.appName} V${APP_CONFIG.version}`;
   document.documentElement.dataset.utopBoot = 'ready';
-  updateStatus('V5.1.3.36 Drive實體存檔與Sheet索引整合 系統準備就緒');
+  updateStatus('V5.1.3.37 Drive實體存檔與Sheet索引整合 系統準備就緒');
 
   window.UTOP_APP = Object.freeze({
     config: APP_CONFIG,
@@ -66,7 +66,7 @@ startShowcase().catch((error) => {
   if (window.__UTOP_IS_IGNORABLE_ERROR__?.(error)) {
     window.__UTOP_HIDE_BOOT_ERROR__?.();
     document.documentElement.dataset.utopBoot = 'ready';
-    updateStatus('V5.1.3.36 Drive實體存檔與Sheet索引整合 系統準備就緒');
+    updateStatus('V5.1.3.37 Drive實體存檔與Sheet索引整合 系統準備就緒');
     return;
   }
 

@@ -1,4 +1,4 @@
-## V5.1.3.36
+## V5.1.3.37
 
 - 雲端專案改為 Google Drive 實體 JSON 檔。
 - Google Sheet `Projects` 僅保存索引、Drive File ID、URL、鎖定、刪除狀態與統計。
@@ -32,7 +32,7 @@
 - World Sync 控制移至左下角。
 
 
-## V5.1.3.36
+## V5.1.3.37
 - 雲端開啟前強制讀取「工作表1!A2」最新 /exec，不再優先使用寫死舊網址。
 - Google Drive 遞迴掃描 .json，缺少 Projects 索引時自動重建。
 - Drive 子資料夾缺少 CloudFolders 索引時自動建立對應。

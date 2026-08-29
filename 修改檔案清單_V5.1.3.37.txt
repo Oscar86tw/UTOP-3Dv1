@@ -1,0 +1,12 @@
+V5.1.3.37 修改／新增檔案
+- index.html
+- css/style.css
+- core/boot.js
+- config/app-config.js
+- services/cloud-storage/cloud-save-v51337.js
+- VERSION.txt
+- README.md
+- 版本說明_V5.1.3.37.txt
+
+刪除舊檔：
+- services/cloud-storage/cloud-save-v51336.js

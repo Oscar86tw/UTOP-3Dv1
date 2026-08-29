@@ -9051,3 +9051,11 @@ body.sidebar-manager-collapsed > .sidebar-edge-toggle{
 @media(max-width:720px){
   body > .sidebar-edge-toggle{top:72px!important;z-index:5000!important}
 }
+
+.cloud-folder-save-select-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center}
+.cloud-folder-save-select-row select{width:100%;min-width:0}
+.cloud-folder-save-select-row button,.cloud-folder-save-create button{min-height:42px;border:1px solid var(--line);border-radius:7px;background:#173245;color:inherit;padding:8px 12px;cursor:pointer}
+.cloud-folder-save-create{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;margin-top:-2px;padding:0 0 6px}
+.cloud-folder-save-create[hidden]{display:none!important}
+.cloud-folder-save-create input{min-height:42px;border:1px solid var(--line);border-radius:7px;background:#0d1a24;color:inherit;padding:8px 10px}
+@media(max-width:700px){.cloud-folder-save-select-row,.cloud-folder-save-create{grid-template-columns:1fr}.cloud-folder-save-select-row button,.cloud-folder-save-create button{width:100%}}

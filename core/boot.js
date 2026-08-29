@@ -1,4 +1,4 @@
-import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.43-shortcut-message-view-left-20260830';
+import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.53-vehicle-bounds-controls-layout-20260830';
 
 const STAGES = Object.freeze([
   {
@@ -7,7 +7,7 @@ const STAGES = Object.freeze([
   },
   {
     name: '3D與設備核心',
-    url: '../runtime/showcase/runtime-v51352-module-collision-support-longscene.js?v=5.1.3.52-module-collision-support-longscene-20260830'
+    url: '../runtime/showcase/runtime-v51353-vehicle-bounds-controls-layout.js?v=5.1.3.53-vehicle-bounds-controls-layout-20260830'
   },
   {
     name: 'Foundation健康檢查',
@@ -36,7 +36,7 @@ async function importStage(stage) {
 
 async function startShowcase() {
   document.documentElement.dataset.utopBoot = 'loading';
-  updateStatus('V5.1.3.52 模組碰撞／支架／長型場景 啟動中…');
+  updateStatus('V5.1.3.53 車輛邊界／左下控制排列 啟動中…');
 
   for (const stage of STAGES) {
     await importStage(stage);

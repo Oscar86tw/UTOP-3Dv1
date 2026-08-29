@@ -1,0 +1,189 @@
+{
+  "version": "V5.1.3.27",
+  "title": "UTOP-3D 模組分工與隔離藍圖",
+  "principles": [
+    "單一責任：一個模組只管理一類工作",
+    "公開介面：模組之間只透過 facade、contract 或 event bus 溝通",
+    "禁止跨層直改：UI 不直接改 3D 物件，設備不直接碰 DOM，存檔不直接碰 renderer",
+    "單向依賴：頁面與功能依賴核心服務，核心服務不反向依賴頁面",
+    "讀寫分離：針球、報表、診斷等視圖優先使用 read-model/snapshot，不直接改工程場景",
+    "相容橋接：舊 runtime 先透過 compatibility facade 接入，再逐步搬移，避免一次重寫造成回歸"
+  ],
+  "zones": [
+    {
+      "id": "app",
+      "name": "App Shell / 啟動層",
+      "folder": "app/",
+      "responsibility": "系統啟動、服務註冊、版本、相容橋接",
+      "mayUse": ["core", "services", "pages"],
+      "mustNot": ["直接處理設備動畫", "直接建立接線", "直接操作 3D mesh"],
+      "split": ["bootstrap.js", "app-state.js", "compatibility-bridge.js"]
+    },
+    {
+      "id": "scene",
+      "name": "3D Scene / 場景引擎",
+      "folder": "scene/",
+      "responsibility": "Scene、Renderer、Camera、Light、Grid、Resize",
+      "mayUse": ["core", "rendering"],
+      "mustNot": ["設備業務邏輯", "DI/DO 判斷", "Google Drive 存檔"],
+      "split": ["scene-manager.js", "renderer-manager.js", "camera-manager.js", "lighting-manager.js", "viewport-manager.js"]
+    },
+    {
+      "id": "device-domain",
+      "name": "Device Domain / 設備資料與行為",
+      "folder": "devices/",
+      "responsibility": "設備型別、端子、參數、狀態機與設備行為",
+      "mayUse": ["core/contracts", "simulation/signal-bus"],
+      "mustNot": ["querySelector", "localStorage", "直接操作其他設備 mesh"],
+      "split": ["model.js", "ports.js", "behavior.js", "config.js", "manifest.js"]
+    },
+    {
+      "id": "device-view",
+      "name": "Device View / 3D模型呈現",
+      "folder": "rendering/devices/",
+      "responsibility": "把設備狀態轉成 3D 模型與動畫",
+      "mayUse": ["device read-model", "scene"],
+      "mustNot": ["改接線資料", "執行 timer 規則", "直接存檔"],
+      "split": ["device-renderer.js", "animation-adapter.js", "material-library.js"]
+    },
+    {
+      "id": "transform",
+      "name": "Transform / 移動旋轉尺寸",
+      "folder": "workspace/transform/",
+      "responsibility": "選取、拖曳、旋轉、縮放、吸附、固定",
+      "mayUse": ["world-model", "event-bus"],
+      "mustNot": ["自行改 2D 畫面", "自行改 wiring", "設備特定邏輯"],
+      "split": ["selection.js", "drag-controller.js", "rotation-controller.js", "scale-controller.js", "snap-engine.js"]
+    },
+    {
+      "id": "wiring",
+      "name": "Wiring / 接線引擎",
+      "folder": "simulation/wiring/",
+      "responsibility": "端子連接、線路驗證、線型與拓撲",
+      "mayUse": ["device contracts", "signal-bus"],
+      "mustNot": ["直接開關柵欄機", "直接修改 UI", "直接建立 3D 線材質"],
+      "split": ["wiring-store.js", "wiring-validator.js", "topology.js", "wire-types.js"]
+    },
+    {
+      "id": "signal",
+      "name": "Signal Bus / 訊號匯流排",
+      "folder": "simulation/signals/",
+      "responsibility": "DI/DO、NO/NC、事件傳遞、訊號狀態",
+      "mayUse": ["core/event-bus", "simulation-clock"],
+      "mustNot": ["DOM", "Camera", "Storage"],
+      "split": ["signal-bus.js", "signal-state.js", "signal-types.js", "signal-trace.js"]
+    },
+    {
+      "id": "simulation",
+      "name": "Simulation Engine / 模擬引擎",
+      "folder": "simulation/engine/",
+      "responsibility": "Timer、Relay、流程、事件排程、設備狀態推進",
+      "mayUse": ["signal", "device behavior", "simulation-clock"],
+      "mustNot": ["直接畫 Three.js", "直接顯示 Dialog", "直接存 Google Drive"],
+      "split": ["simulation-engine.js", "simulation-clock.js", "timer-engine.js", "logic-engine.js", "action-queue.js"]
+    },
+    {
+      "id": "world",
+      "name": "World Model / 世界座標",
+      "folder": "world/",
+      "responsibility": "唯一設備位置、尺寸、方向、樓層與比例資料",
+      "mayUse": ["core/contracts"],
+      "mustNot": ["保存 2D 專用座標副本", "保存 renderer object"],
+      "split": ["world-store.js", "coordinate-system.js", "unit-converter.js", "bounds.js"]
+    },
+    {
+      "id": "view2d",
+      "name": "2D View / 2D視圖",
+      "folder": "views/2d/",
+      "responsibility": "由 World Model 投影成2D，處理2D視圖互動",
+      "mayUse": ["world read-model", "selection service"],
+      "mustNot": ["直接改3D mesh座標", "保存另一份設備真實位置"],
+      "split": ["plan-renderer.js", "projection.js", "2d-interaction.js", "2d-labels.js"]
+    },
+    {
+      "id": "view3d",
+      "name": "3D View / 工程3D視圖",
+      "folder": "views/3d/",
+      "responsibility": "由 World Model 呈現工程場景",
+      "mayUse": ["scene", "world read-model", "device-view"],
+      "mustNot": ["自行存一份位置", "直接執行設備邏輯"],
+      "split": ["workspace-view.js", "device-layer.js", "wire-layer.js", "overlay-layer.js"]
+    },
+    {
+      "id": "sync",
+      "name": "2D/3D Sync / 視圖同步",
+      "folder": "sync/",
+      "responsibility": "把 World Model 的變更同步通知2D與3D，不保存第二份真實資料",
+      "mayUse": ["event-bus", "world"],
+      "mustNot": ["內建設備功能", "存檔", "UI Dialog"],
+      "split": ["view-sync.js", "viewport-sync.js", "orientation-sync.js"]
+    },
+    {
+      "id": "ui",
+      "name": "UI / 模組庫與設備設定",
+      "folder": "ui/",
+      "responsibility": "側欄、Dialog、Toolbar、手機平板版面、表單",
+      "mayUse": ["public services", "read-models"],
+      "mustNot": ["直接改 mesh", "直接 emit 低階 Three.js 動畫", "把業務規則寫在按鈕事件裡"],
+      "split": ["module-library/", "device-settings/", "dialogs/", "toolbar/", "responsive/"]
+    },
+    {
+      "id": "storage",
+      "name": "Storage / 專案存取",
+      "folder": "storage/",
+      "responsibility": "專案格式、本機、雲端、自動存檔、版本遷移",
+      "mayUse": ["project snapshot contract"],
+      "mustNot": ["Three.js object 序列化", "直接控制設備", "直接操作頁面"],
+      "split": ["project-schema.js", "local-store.js", "cloud-store.js", "autosave.js", "migration.js"]
+    },
+    {
+      "id": "features",
+      "name": "Features / 獨立功能",
+      "folder": "features/",
+      "responsibility": "影片輸出、簡報、環境特效、針球視圖、全螢幕",
+      "mayUse": ["facades", "snapshots", "event-bus"],
+      "mustNot": ["import 主 runtime 內部私有函式", "修改其他 feature 內部狀態"],
+      "split": ["video-export/", "presentation/", "environment/", "needle-ball/", "fullscreen/"]
+    },
+    {
+      "id": "diagnostics",
+      "name": "Diagnostics / 診斷中心",
+      "folder": "diagnostics/",
+      "responsibility": "健康檢查、錯誤收集、效能、架構診斷",
+      "mayUse": ["read-only metrics", "public health APIs"],
+      "mustNot": ["修正設備狀態", "改 wiring", "自動搬移 runtime"],
+      "split": ["health/", "errors/", "performance/", "architecture/"]
+    },
+    {
+      "id": "pages",
+      "name": "Pages / 分頁入口",
+      "folder": "pages/",
+      "responsibility": "頁面組裝與路由，只組合功能，不放核心邏輯",
+      "mayUse": ["app shell", "feature facades", "view facades"],
+      "mustNot": ["設備行為", "timer規則", "storage實作"],
+      "split": ["workspace/", "needle-ball/", "diagnostic/", "presentation/"]
+    }
+  ],
+  "facades": [
+    {"name":"SceneFacade","owns":"場景/相機/renderer 公開操作","examples":["focusDevice","resetView","captureFrame","resize"]},
+    {"name":"DeviceFacade","owns":"設備建立、查詢、狀態更新","examples":["create","remove","getById","setProperty"]},
+    {"name":"WiringFacade","owns":"接線建立、移除、查詢、拓撲","examples":["connect","disconnect","listConnections","tracePath"]},
+    {"name":"SimulationFacade","owns":"模擬開始/停止/重設/時鐘","examples":["start","pause","reset","setSpeed"]},
+    {"name":"ProjectFacade","owns":"專案快照與讀寫","examples":["snapshot","loadSnapshot","saveLocal","saveCloud"]},
+    {"name":"ViewSyncFacade","owns":"2D/3D同步與轉向重算","examples":["refreshAll","project2D","onOrientationChange"]}
+  ],
+  "events": [
+    "device:created", "device:removed", "device:changed", "device:selected",
+    "transform:changed", "wire:created", "wire:removed", "signal:changed",
+    "simulation:started", "simulation:paused", "simulation:reset", "timer:tick",
+    "project:loaded", "project:saved", "viewport:resized", "viewport:orientation-changed"
+  ],
+  "migration": [
+    {"phase":1,"title":"先建立邊界，不搬舊核心","detail":"新增 contracts、facades、service container；新功能一律走新介面。"},
+    {"phase":2,"title":"抽 Signal / Wiring / Timer / Relay","detail":"先搬最容易互相牽動的連動邏輯，舊 runtime 用 compatibility bridge 呼叫。"},
+    {"phase":3,"title":"逐台抽設備","detail":"柵欄機、鐵捲門、紅綠燈、計時器、繼電器優先，每次只搬一種設備並做回歸測試。"},
+    {"phase":4,"title":"統一 World Model","detail":"2D與3D都只讀同一份位置/尺寸/方向資料，移除雙份座標。"},
+    {"phase":5,"title":"拆 UI 與 Responsive","detail":"把桌面、手機、平板、側欄、Dialog、Workspace CSS/JS分區。"},
+    {"phase":6,"title":"主 Runtime 最後瘦身","detail":"等功能都已有公開介面後，主 runtime 只保留啟動與相容層。"}
+  ]
+}

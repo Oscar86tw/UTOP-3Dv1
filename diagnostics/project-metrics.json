@@ -1,0 +1,2348 @@
+{
+  "summary": {
+    "version": "V5.1.3.27",
+    "generated": "2026-08-08",
+    "totalFiles": 253,
+    "totalLines": 567579,
+    "critical": 23,
+    "high": 45,
+    "medium": 29,
+    "runtimeShowcaseCount": 85
+  },
+  "files": [
+    {
+      "path": "runtime/showcase/runtime-v5100-workspace-final.js",
+      "type": "JS",
+      "lines": 11098,
+      "bytes": 370228,
+      "kb": 361.6,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4390-restore-v402-2d-icons.js",
+      "type": "JS",
+      "lines": 11055,
+      "bytes": 367829,
+      "kb": 359.2,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v5004-alpha4-environment-engine.js",
+      "type": "JS",
+      "lines": 11053,
+      "bytes": 367937,
+      "kb": 359.3,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v5110-montecarlo-lane-scene.js",
+      "type": "JS",
+      "lines": 11051,
+      "bytes": 367712,
+      "kb": 359.1,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v5003-alpha3-workspace-control-fix.js",
+      "type": "JS",
+      "lines": 10563,
+      "bytes": 353076,
+      "kb": 344.8,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v5002-alpha2-environment-worlds.js",
+      "type": "JS",
+      "lines": 10561,
+      "bytes": 353021,
+      "kb": 344.7,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v5001-alpha1-workspace-hotfix.js",
+      "type": "JS",
+      "lines": 9919,
+      "bytes": 334418,
+      "kb": 326.6,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v5000-alpha-workspace.js",
+      "type": "JS",
+      "lines": 9917,
+      "bytes": 334331,
+      "kb": 326.5,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4600-partial-update-core.js",
+      "type": "JS",
+      "lines": 9915,
+      "bytes": 334175,
+      "kb": 326.3,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4526-complete-transform-action-fix.js",
+      "type": "JS",
+      "lines": 9678,
+      "bytes": 329788,
+      "kb": 322.1,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4510-world-scene-sync.js",
+      "type": "JS",
+      "lines": 9618,
+      "bytes": 332597,
+      "kb": 324.8,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4500-world-engine-foundation.js",
+      "type": "JS",
+      "lines": 9457,
+      "bytes": 329246,
+      "kb": 321.5,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4525-true-syntax-fix.js",
+      "type": "JS",
+      "lines": 9422,
+      "bytes": 324811,
+      "kb": 317.2,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4524-plan-sync-shutter-control.js",
+      "type": "JS",
+      "lines": 9378,
+      "bytes": 324888,
+      "kb": 317.3,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4521-3d-transform-commit-hotfix.js",
+      "type": "JS",
+      "lines": 9271,
+      "bytes": 322459,
+      "kb": 314.9,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4523-boot-safe-light-theme.js",
+      "type": "JS",
+      "lines": 9271,
+      "bytes": 322459,
+      "kb": 314.9,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4410-action-engine.js",
+      "type": "JS",
+      "lines": 9117,
+      "bytes": 323416,
+      "kb": 315.8,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4520-remove-operation-rehearsal.js",
+      "type": "JS",
+      "lines": 9087,
+      "bytes": 319097,
+      "kb": 311.6,
+      "risk": "critical"
+    },
+    {
+      "path": "css/style.css",
+      "type": "CSS",
+      "lines": 8989,
+      "bytes": 261694,
+      "kb": 255.6,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4401-scene-bounds-hotfix.js",
+      "type": "JS",
+      "lines": 8959,
+      "bytes": 317414,
+      "kb": 310.0,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4400-operation-rehearsal-core.js",
+      "type": "JS",
+      "lines": 8866,
+      "bytes": 315277,
+      "kb": 307.9,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4398-2d-scene-barrier-sync.js",
+      "type": "JS",
+      "lines": 8326,
+      "bytes": 302434,
+      "kb": 295.3,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4397-2d-module-drag-hotfix.js",
+      "type": "JS",
+      "lines": 8101,
+      "bytes": 297369,
+      "kb": 290.4,
+      "risk": "critical"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4396-gta-minimap-mode.js",
+      "type": "JS",
+      "lines": 7946,
+      "bytes": 294250,
+      "kb": 287.4,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4395-2d-plan-reconcile.js",
+      "type": "JS",
+      "lines": 7846,
+      "bytes": 291695,
+      "kb": 284.9,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4394-2d-outer-root-mount-hotfix.js",
+      "type": "JS",
+      "lines": 7729,
+      "bytes": 288894,
+      "kb": 282.1,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4393-2d-module-mount-hotfix.js",
+      "type": "JS",
+      "lines": 7722,
+      "bytes": 288697,
+      "kb": 281.9,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4392-force-refresh-hotfix.js",
+      "type": "JS",
+      "lines": 7662,
+      "bytes": 286883,
+      "kb": 280.2,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4391-insertbefore-hotfix.js",
+      "type": "JS",
+      "lines": 7662,
+      "bytes": 286883,
+      "kb": 280.2,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4380-true-2d-top-view.js",
+      "type": "JS",
+      "lines": 7620,
+      "bytes": 285694,
+      "kb": 279.0,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4370-precise-module-dimensions.js",
+      "type": "JS",
+      "lines": 7451,
+      "bytes": 280774,
+      "kb": 274.2,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4360-module-dimension-autofix.js",
+      "type": "JS",
+      "lines": 7212,
+      "bytes": 273997,
+      "kb": 267.6,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4350-module-dimension-audit.js",
+      "type": "JS",
+      "lines": 7030,
+      "bytes": 269176,
+      "kb": 262.9,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4340-2d-zoom-real-dimensions.js",
+      "type": "JS",
+      "lines": 6965,
+      "bytes": 267264,
+      "kb": 261.0,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4330-2d-3d-world-scale-sync.js",
+      "type": "JS",
+      "lines": 6809,
+      "bytes": 261382,
+      "kb": 255.3,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4320-boot-hotfix.js",
+      "type": "JS",
+      "lines": 6753,
+      "bytes": 260102,
+      "kb": 254.0,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4310-plan-aspect-fix-barrier-height.js",
+      "type": "JS",
+      "lines": 6729,
+      "bytes": 259505,
+      "kb": 253.4,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4300-environmental-effects-engine.js",
+      "type": "JS",
+      "lines": 6697,
+      "bytes": 258103,
+      "kb": 252.1,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4130-empty-scene-no-default-modules.js",
+      "type": "JS",
+      "lines": 6065,
+      "bytes": 236975,
+      "kb": 231.4,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4120-plan-3d-module-scale-sync.js",
+      "type": "JS",
+      "lines": 6062,
+      "bytes": 236684,
+      "kb": 231.1,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4110-ground-snap-slope-drag.js",
+      "type": "JS",
+      "lines": 5960,
+      "bytes": 233841,
+      "kb": 228.4,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4100-dynamic-scene-height-range.js",
+      "type": "JS",
+      "lines": 5830,
+      "bytes": 230491,
+      "kb": 225.1,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4090-snow-road-racing-terrain.js",
+      "type": "JS",
+      "lines": 5699,
+      "bytes": 227022,
+      "kb": 221.7,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4080-snow-road-timer-signal.js",
+      "type": "JS",
+      "lines": 5630,
+      "bytes": 225079,
+      "kb": 219.8,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4070-real-scene-3d-wiring.js",
+      "type": "JS",
+      "lines": 5341,
+      "bytes": 215728,
+      "kb": 210.7,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4060-long-single-lane-test-area.js",
+      "type": "JS",
+      "lines": 5207,
+      "bytes": 218129,
+      "kb": 213.0,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4050-3d-wiring-view.js",
+      "type": "JS",
+      "lines": 5184,
+      "bytes": 217277,
+      "kb": 212.2,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v4040-single-lane-scene.js",
+      "type": "JS",
+      "lines": 4988,
+      "bytes": 207046,
+      "kb": 202.2,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3350-montecarlo-stable-skeleton.js",
+      "type": "JS",
+      "lines": 4948,
+      "bytes": 206384,
+      "kb": 201.5,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3340-stable-scene-library-max-quality.js",
+      "type": "JS",
+      "lines": 4822,
+      "bytes": 195381,
+      "kb": 190.8,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3330-stable-layout-scene-plugin-host.js",
+      "type": "JS",
+      "lines": 4798,
+      "bytes": 193980,
+      "kb": 189.4,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3210-startup-structure-fix.js",
+      "type": "JS",
+      "lines": 4754,
+      "bytes": 192706,
+      "kb": 188.2,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3200-categorized-lane-module-foundation.js",
+      "type": "JS",
+      "lines": 4754,
+      "bytes": 192658,
+      "kb": 188.1,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3140-mobile-compact-sidebar-shutter-safety.js",
+      "type": "JS",
+      "lines": 4634,
+      "bytes": 176925,
+      "kb": 172.8,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3130-control-sync-selection-outline-shutter-timing.js",
+      "type": "JS",
+      "lines": 4548,
+      "bytes": 174774,
+      "kb": 170.7,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3120-transparent-hitbox-fix.js",
+      "type": "JS",
+      "lines": 4331,
+      "bytes": 164871,
+      "kb": 161.0,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3110-mobile-layout-shutter-fix.js",
+      "type": "JS",
+      "lines": 4294,
+      "bytes": 163663,
+      "kb": 159.8,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3100-professional-selection-foundation.js",
+      "type": "JS",
+      "lines": 4156,
+      "bytes": 157453,
+      "kb": 153.8,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3090-mobile-workspace-layout.js",
+      "type": "JS",
+      "lines": 3727,
+      "bytes": 146864,
+      "kb": 143.4,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3080-complete-2d-module-library.js",
+      "type": "JS",
+      "lines": 3706,
+      "bytes": 146319,
+      "kb": 142.9,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3050-control-module-reliability-fix.js",
+      "type": "JS",
+      "lines": 3644,
+      "bytes": 130875,
+      "kb": 127.8,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3060-brightness-inside-graphics.js",
+      "type": "JS",
+      "lines": 3644,
+      "bytes": 130875,
+      "kb": 127.8,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3070-industrial-module-visual-upgrade.js",
+      "type": "JS",
+      "lines": 3637,
+      "bytes": 135957,
+      "kb": 132.8,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3040-adjustable-scene-brightness.js",
+      "type": "JS",
+      "lines": 3345,
+      "bytes": 122209,
+      "kb": 119.3,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3030-plan-barrier-module-layout-fix.js",
+      "type": "JS",
+      "lines": 3277,
+      "bytes": 120486,
+      "kb": 117.7,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3020-realistic-barrier-narrow-inspector.js",
+      "type": "JS",
+      "lines": 3209,
+      "bytes": 118302,
+      "kb": 115.5,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3000-realistic-rendering-foundation.js",
+      "type": "JS",
+      "lines": 3011,
+      "bytes": 113380,
+      "kb": 110.7,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v3010-single-column-inspector.js",
+      "type": "JS",
+      "lines": 3011,
+      "bytes": 113380,
+      "kb": 110.7,
+      "risk": "high"
+    },
+    {
+      "path": "runtime/showcase/runtime-v2780-unlimited-loop-dimensions.js",
+      "type": "JS",
+      "lines": 2977,
+      "bytes": 112154,
+      "kb": 109.5,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/showcase/runtime-v2730-inspector-card-drawer.js",
+      "type": "JS",
+      "lines": 2910,
+      "bytes": 110543,
+      "kb": 108.0,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/showcase/runtime-v2720-collapsible-sidebar.js",
+      "type": "JS",
+      "lines": 2910,
+      "bytes": 110543,
+      "kb": 108.0,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/showcase/runtime-v2740-module-card-grid.js",
+      "type": "JS",
+      "lines": 2910,
+      "bytes": 110543,
+      "kb": 108.0,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/showcase/runtime-v2770-compact-inspector-drawer.js",
+      "type": "JS",
+      "lines": 2910,
+      "bytes": 110543,
+      "kb": 108.0,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/showcase/runtime-v2750-drawer-visibility-fix.js",
+      "type": "JS",
+      "lines": 2910,
+      "bytes": 110543,
+      "kb": 108.0,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/showcase/runtime-v2760-advanced-quality-presets.js",
+      "type": "JS",
+      "lines": 2910,
+      "bytes": 110543,
+      "kb": 108.0,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/showcase/runtime-v2710-sidebar-panel-fix.js",
+      "type": "JS",
+      "lines": 2909,
+      "bytes": 110629,
+      "kb": 108.0,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/showcase/runtime-v2700-professional-inspector.js",
+      "type": "JS",
+      "lines": 2881,
+      "bytes": 109882,
+      "kb": 107.3,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/showcase/runtime-v2600-professional-ui.js",
+      "type": "JS",
+      "lines": 2859,
+      "bytes": 109247,
+      "kb": 106.7,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/showcase/runtime-v2570-bottom-control-layout.js",
+      "type": "JS",
+      "lines": 2838,
+      "bytes": 108564,
+      "kb": 106.0,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/showcase/runtime-v2560-control-infrared-fix.js",
+      "type": "JS",
+      "lines": 2816,
+      "bytes": 107945,
+      "kb": 105.4,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/showcase/runtime-v2550-quick-control.js",
+      "type": "JS",
+      "lines": 2755,
+      "bytes": 106298,
+      "kb": 103.8,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/showcase/runtime-v2540-barrier-plan-sync.js",
+      "type": "JS",
+      "lines": 2741,
+      "bytes": 106022,
+      "kb": 103.5,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/showcase/runtime-v2530-connection-editor.js",
+      "type": "JS",
+      "lines": 2689,
+      "bytes": 104004,
+      "kb": 101.6,
+      "risk": "medium"
+    },
+    {
+      "path": "index.html",
+      "type": "HTML",
+      "lines": 2658,
+      "bytes": 110759,
+      "kb": 108.2,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/showcase/runtime-v2520-full-view.js",
+      "type": "JS",
+      "lines": 2635,
+      "bytes": 102598,
+      "kb": 100.2,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/showcase/runtime-v2510-compact-panel.js",
+      "type": "JS",
+      "lines": 2635,
+      "bytes": 102591,
+      "kb": 100.2,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/showcase/runtime-v2500-showcase001.js",
+      "type": "JS",
+      "lines": 2592,
+      "bytes": 101385,
+      "kb": 99.0,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/foundation/runtime-v2400-stable.js",
+      "type": "JS",
+      "lines": 2165,
+      "bytes": 90714,
+      "kb": 88.6,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/legacy-v114/runtime-v2310.js",
+      "type": "JS",
+      "lines": 2159,
+      "bytes": 90555,
+      "kb": 88.4,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/legacy-v114/runtime-v2300.js",
+      "type": "JS",
+      "lines": 1861,
+      "bytes": 83093,
+      "kb": 81.1,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/legacy-v114/runtime-v2210.js",
+      "type": "JS",
+      "lines": 1606,
+      "bytes": 73998,
+      "kb": 72.3,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/legacy-v114/runtime-v2200.js",
+      "type": "JS",
+      "lines": 1455,
+      "bytes": 70950,
+      "kb": 69.3,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/legacy-v114/runtime-v2120.js",
+      "type": "JS",
+      "lines": 1287,
+      "bytes": 66617,
+      "kb": 65.1,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/legacy-v114/runtime-v2110.js",
+      "type": "JS",
+      "lines": 1250,
+      "bytes": 65858,
+      "kb": 64.3,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/legacy-v114/runtime-v2100.js",
+      "type": "JS",
+      "lines": 1117,
+      "bytes": 64062,
+      "kb": 62.6,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/legacy-v114/runtime-v2031.js",
+      "type": "JS",
+      "lines": 1048,
+      "bytes": 48655,
+      "kb": 47.5,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/legacy-v114/runtime-v2030.js",
+      "type": "JS",
+      "lines": 1026,
+      "bytes": 47865,
+      "kb": 46.7,
+      "risk": "medium"
+    },
+    {
+      "path": "runtime/legacy-v114/runtime-v2029.js",
+      "type": "JS",
+      "lines": 931,
+      "bytes": 44747,
+      "kb": 43.7,
+      "risk": "normal"
+    },
+    {
+      "path": "runtime/legacy-v114/runtime-v2028.js",
+      "type": "JS",
+      "lines": 870,
+      "bytes": 42924,
+      "kb": 41.9,
+      "risk": "normal"
+    },
+    {
+      "path": "runtime/legacy-v114/runtime-v2027.js",
+      "type": "JS",
+      "lines": 854,
+      "bytes": 42703,
+      "kb": 41.7,
+      "risk": "normal"
+    },
+    {
+      "path": "runtime/legacy-v114/runtime-v2026.js",
+      "type": "JS",
+      "lines": 812,
+      "bytes": 41508,
+      "kb": 40.5,
+      "risk": "normal"
+    },
+    {
+      "path": "runtime/legacy-v114/runtime-v2025.js",
+      "type": "JS",
+      "lines": 812,
+      "bytes": 41717,
+      "kb": 40.7,
+      "risk": "normal"
+    },
+    {
+      "path": "runtime/legacy-v114/runtime-v2024.js",
+      "type": "JS",
+      "lines": 812,
+      "bytes": 41717,
+      "kb": 40.7,
+      "risk": "normal"
+    },
+    {
+      "path": "runtime/legacy-v114/runtime.js",
+      "type": "JS",
+      "lines": 812,
+      "bytes": 41717,
+      "kb": 40.7,
+      "risk": "normal"
+    },
+    {
+      "path": "scenes/montecarlo/scene-plugin.js",
+      "type": "JS",
+      "lines": 603,
+      "bytes": 13085,
+      "kb": 12.8,
+      "risk": "normal"
+    },
+    {
+      "path": "scenes/snow-road/scene-plugin.js",
+      "type": "JS",
+      "lines": 544,
+      "bytes": 14500,
+      "kb": 14.2,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4330.js",
+      "type": "JS",
+      "lines": 412,
+      "bytes": 14056,
+      "kb": 13.7,
+      "risk": "normal"
+    },
+    {
+      "path": "services/workspace-v5/workspace-v5.css",
+      "type": "CSS",
+      "lines": 348,
+      "bytes": 7057,
+      "kb": 6.9,
+      "risk": "normal"
+    },
+    {
+      "path": "services/workspace-v5/workspace-v5.js",
+      "type": "JS",
+      "lines": 335,
+      "bytes": 6978,
+      "kb": 6.8,
+      "risk": "normal"
+    },
+    {
+      "path": "scenes/single-lane/scene-plugin.js",
+      "type": "JS",
+      "lines": 307,
+      "bytes": 7734,
+      "kb": 7.6,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2024.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3110.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3200.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2026.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2570.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4120.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4100.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4360.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3100.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2027.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v5110.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2030.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4380.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4340.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2700.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2028.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4050.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3050.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4350.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2100.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3090.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3030.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2310.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4130.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4370.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4300.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4390.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2510.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2760.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2029.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4391.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2720.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2210.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3040.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2710.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3060.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2200.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2110.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2560.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2120.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3210.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2500.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4090.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3330.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4320.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2740.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3120.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4070.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2025.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2770.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4040.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3070.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2520.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3080.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4310.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2600.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3140.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3020.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3350.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2300.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2750.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3010.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2540.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2780.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3340.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2400.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2550.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2530.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4110.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2031.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v2730.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3130.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4060.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v4080.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/cloud-storage/cloud-save-v3000.js",
+      "type": "JS",
+      "lines": 266,
+      "bytes": 7258,
+      "kb": 7.1,
+      "risk": "normal"
+    },
+    {
+      "path": "services/debug-center/debug-center-v4010.js",
+      "type": "JS",
+      "lines": 107,
+      "bytes": 15369,
+      "kb": 15.0,
+      "risk": "normal"
+    },
+    {
+      "path": "services/scene-height/index.js",
+      "type": "JS",
+      "lines": 94,
+      "bytes": 2359,
+      "kb": 2.3,
+      "risk": "normal"
+    },
+    {
+      "path": "js/needle-ball-3d.js",
+      "type": "JS",
+      "lines": 88,
+      "bytes": 21416,
+      "kb": 20.9,
+      "risk": "normal"
+    },
+    {
+      "path": "architecture-diagnostic.html",
+      "type": "HTML",
+      "lines": 86,
+      "bytes": 3693,
+      "kb": 3.6,
+      "risk": "normal"
+    },
+    {
+      "path": "core/boot.js",
+      "type": "JS",
+      "lines": 84,
+      "bytes": 2723,
+      "kb": 2.7,
+      "risk": "normal"
+    },
+    {
+      "path": "services/theme/theme-switcher-v4020.js",
+      "type": "JS",
+      "lines": 65,
+      "bytes": 1936,
+      "kb": 1.9,
+      "risk": "normal"
+    },
+    {
+      "path": "services/theme/theme-switcher-v4030.js",
+      "type": "JS",
+      "lines": 65,
+      "bytes": 1936,
+      "kb": 1.9,
+      "risk": "normal"
+    },
+    {
+      "path": "architecture-blueprint.html",
+      "type": "HTML",
+      "lines": 59,
+      "bytes": 2359,
+      "kb": 2.3,
+      "risk": "normal"
+    },
+    {
+      "path": "js/module-image-registry.js",
+      "type": "JS",
+      "lines": 56,
+      "bytes": 3274,
+      "kb": 3.2,
+      "risk": "normal"
+    },
+    {
+      "path": "boot-check.html",
+      "type": "HTML",
+      "lines": 50,
+      "bytes": 1653,
+      "kb": 1.6,
+      "risk": "normal"
+    },
+    {
+      "path": "js/needle-ball-3d-engine.js",
+      "type": "JS",
+      "lines": 50,
+      "bytes": 8114,
+      "kb": 7.9,
+      "risk": "normal"
+    },
+    {
+      "path": "services/debug-center/debug-center-v4000.js",
+      "type": "JS",
+      "lines": 49,
+      "bytes": 10503,
+      "kb": 10.3,
+      "risk": "normal"
+    },
+    {
+      "path": "runtime/rendering/pbr-material-engine-v3000.js",
+      "type": "JS",
+      "lines": 45,
+      "bytes": 2251,
+      "kb": 2.2,
+      "risk": "normal"
+    },
+    {
+      "path": "foundation-diagnostic.html",
+      "type": "HTML",
+      "lines": 41,
+      "bytes": 1583,
+      "kb": 1.5,
+      "risk": "normal"
+    },
+    {
+      "path": "module-check.html",
+      "type": "HTML",
+      "lines": 40,
+      "bytes": 1418,
+      "kb": 1.4,
+      "risk": "normal"
+    },
+    {
+      "path": "js/architecture-blueprint.js",
+      "type": "JS",
+      "lines": 39,
+      "bytes": 2424,
+      "kb": 2.4,
+      "risk": "normal"
+    },
+    {
+      "path": "deployment-check.html",
+      "type": "HTML",
+      "lines": 32,
+      "bytes": 1160,
+      "kb": 1.1,
+      "risk": "normal"
+    },
+    {
+      "path": "js/architecture-diagnostic.js",
+      "type": "JS",
+      "lines": 32,
+      "bytes": 2990,
+      "kb": 2.9,
+      "risk": "normal"
+    },
+    {
+      "path": "core/service-container.js",
+      "type": "JS",
+      "lines": 32,
+      "bytes": 769,
+      "kb": 0.8,
+      "risk": "normal"
+    },
+    {
+      "path": "css/needle-ball-suite.css",
+      "type": "CSS",
+      "lines": 32,
+      "bytes": 8113,
+      "kb": 7.9,
+      "risk": "normal"
+    },
+    {
+      "path": "runtime/foundation/foundation-health-v2400.js",
+      "type": "JS",
+      "lines": 32,
+      "bytes": 1024,
+      "kb": 1.0,
+      "risk": "normal"
+    },
+    {
+      "path": "core/contracts/device-contract.js",
+      "type": "JS",
+      "lines": 31,
+      "bytes": 1068,
+      "kb": 1.0,
+      "risk": "normal"
+    },
+    {
+      "path": "file-check.html",
+      "type": "HTML",
+      "lines": 28,
+      "bytes": 1028,
+      "kb": 1.0,
+      "risk": "normal"
+    },
+    {
+      "path": "modules/parking/barrier-gate/standard-barrier-01/manifest.js",
+      "type": "JS",
+      "lines": 28,
+      "bytes": 447,
+      "kb": 0.4,
+      "risk": "normal"
+    },
+    {
+      "path": "core/page-registry.js",
+      "type": "JS",
+      "lines": 25,
+      "bytes": 419,
+      "kb": 0.4,
+      "risk": "normal"
+    },
+    {
+      "path": "css/needle-ball-3d.css",
+      "type": "CSS",
+      "lines": 25,
+      "bytes": 5023,
+      "kb": 4.9,
+      "risk": "normal"
+    },
+    {
+      "path": "core/event-bus.js",
+      "type": "JS",
+      "lines": 23,
+      "bytes": 584,
+      "kb": 0.6,
+      "risk": "normal"
+    },
+    {
+      "path": "modules/parking/countdown-timer/standard-timer-01/manifest.js",
+      "type": "JS",
+      "lines": 23,
+      "bytes": 371,
+      "kb": 0.4,
+      "risk": "normal"
+    },
+    {
+      "path": "modules/parking/traffic-light/standard-traffic-light-01/manifest.js",
+      "type": "JS",
+      "lines": 22,
+      "bytes": 348,
+      "kb": 0.3,
+      "risk": "normal"
+    },
+    {
+      "path": "modules/control/relay/standard-relay-01/manifest.js",
+      "type": "JS",
+      "lines": 21,
+      "bytes": 316,
+      "kb": 0.3,
+      "risk": "normal"
+    },
+    {
+      "path": "core/module-registry.js",
+      "type": "JS",
+      "lines": 20,
+      "bytes": 499,
+      "kb": 0.5,
+      "risk": "normal"
+    },
+    {
+      "path": "services/road-marking/index.js",
+      "type": "JS",
+      "lines": 20,
+      "bytes": 351,
+      "kb": 0.3,
+      "risk": "normal"
+    },
+    {
+      "path": "js/needle-ball-suite-core.js",
+      "type": "JS",
+      "lines": 19,
+      "bytes": 5082,
+      "kb": 5.0,
+      "risk": "normal"
+    },
+    {
+      "path": "core/contracts/event-names.js",
+      "type": "JS",
+      "lines": 19,
+      "bytes": 662,
+      "kb": 0.6,
+      "risk": "normal"
+    },
+    {
+      "path": "core/contracts/project-snapshot.js",
+      "type": "JS",
+      "lines": 18,
+      "bytes": 676,
+      "kb": 0.7,
+      "risk": "normal"
+    },
+    {
+      "path": "services/parts-visibility/index.js",
+      "type": "JS",
+      "lines": 17,
+      "bytes": 483,
+      "kb": 0.5,
+      "risk": "normal"
+    },
+    {
+      "path": "services/local-storage/index.js",
+      "type": "JS",
+      "lines": 15,
+      "bytes": 349,
+      "kb": 0.3,
+      "risk": "normal"
+    },
+    {
+      "path": "services/label-service/index.js",
+      "type": "JS",
+      "lines": 15,
+      "bytes": 390,
+      "kb": 0.4,
+      "risk": "normal"
+    },
+    {
+      "path": "pages/module-library/index.js",
+      "type": "JS",
+      "lines": 14,
+      "bytes": 322,
+      "kb": 0.3,
+      "risk": "normal"
+    },
+    {
+      "path": "pages/plan-2d/index.js",
+      "type": "JS",
+      "lines": 14,
+      "bytes": 311,
+      "kb": 0.3,
+      "risk": "normal"
+    },
+    {
+      "path": "pages/scene-3d/index.js",
+      "type": "JS",
+      "lines": 14,
+      "bytes": 314,
+      "kb": 0.3,
+      "risk": "normal"
+    },
+    {
+      "path": "pages/function-link/index.js",
+      "type": "JS",
+      "lines": 14,
+      "bytes": 329,
+      "kb": 0.3,
+      "risk": "normal"
+    },
+    {
+      "path": "pages/inspector/index.js",
+      "type": "JS",
+      "lines": 14,
+      "bytes": 335,
+      "kb": 0.3,
+      "risk": "normal"
+    },
+    {
+      "path": "pages/project-storage/index.js",
+      "type": "JS",
+      "lines": 14,
+      "bytes": 338,
+      "kb": 0.3,
+      "risk": "normal"
+    },
+    {
+      "path": "runtime/rendering/environment-engine-v3000.js",
+      "type": "JS",
+      "lines": 13,
+      "bytes": 523,
+      "kb": 0.5,
+      "risk": "normal"
+    },
+    {
+      "path": "services/project-serializer/index.js",
+      "type": "JS",
+      "lines": 13,
+      "bytes": 461,
+      "kb": 0.5,
+      "risk": "normal"
+    },
+    {
+      "path": "config/app-config.js",
+      "type": "JS",
+      "lines": 12,
+      "bytes": 420,
+      "kb": 0.4,
+      "risk": "normal"
+    },
+    {
+      "path": "core/app-context.js",
+      "type": "JS",
+      "lines": 12,
+      "bytes": 317,
+      "kb": 0.3,
+      "risk": "normal"
+    },
+    {
+      "path": "core/contracts/service-tokens.js",
+      "type": "JS",
+      "lines": 12,
+      "bytes": 251,
+      "kb": 0.2,
+      "risk": "normal"
+    },
+    {
+      "path": "js/needle-ball-grouped.js",
+      "type": "JS",
+      "lines": 10,
+      "bytes": 3153,
+      "kb": 3.1,
+      "risk": "normal"
+    },
+    {
+      "path": "js/needle-ball-dual.js",
+      "type": "JS",
+      "lines": 8,
+      "bytes": 3952,
+      "kb": 3.9,
+      "risk": "normal"
+    },
+    {
+      "path": "js/needle-ball-trace.js",
+      "type": "JS",
+      "lines": 8,
+      "bytes": 2821,
+      "kb": 2.8,
+      "risk": "normal"
+    },
+    {
+      "path": "core/contracts/view-adapter.js",
+      "type": "JS",
+      "lines": 8,
+      "bytes": 265,
+      "kb": 0.3,
+      "risk": "normal"
+    },
+    {
+      "path": "core/contracts/feature-contract.js",
+      "type": "JS",
+      "lines": 6,
+      "bytes": 232,
+      "kb": 0.2,
+      "risk": "normal"
+    },
+    {
+      "path": "tests/architecture-check.html",
+      "type": "HTML",
+      "lines": 5,
+      "bytes": 179,
+      "kb": 0.2,
+      "risk": "normal"
+    },
+    {
+      "path": "css/architecture-diagnostic.css",
+      "type": "CSS",
+      "lines": 5,
+      "bytes": 4525,
+      "kb": 4.4,
+      "risk": "normal"
+    },
+    {
+      "path": "modules/control/relay/standard-relay-01/index.js",
+      "type": "JS",
+      "lines": 4,
+      "bytes": 88,
+      "kb": 0.1,
+      "risk": "normal"
+    },
+    {
+      "path": "modules/parking/traffic-light/standard-traffic-light-01/index.js",
+      "type": "JS",
+      "lines": 4,
+      "bytes": 88,
+      "kb": 0.1,
+      "risk": "normal"
+    },
+    {
+      "path": "modules/parking/countdown-timer/standard-timer-01/index.js",
+      "type": "JS",
+      "lines": 4,
+      "bytes": 88,
+      "kb": 0.1,
+      "risk": "normal"
+    },
+    {
+      "path": "modules/parking/barrier-gate/standard-barrier-01/index.js",
+      "type": "JS",
+      "lines": 4,
+      "bytes": 88,
+      "kb": 0.1,
+      "risk": "normal"
+    },
+    {
+      "path": "js/app.js",
+      "type": "JS",
+      "lines": 3,
+      "bytes": 111,
+      "kb": 0.1,
+      "risk": "normal"
+    },
+    {
+      "path": "css/architecture-blueprint.css",
+      "type": "CSS",
+      "lines": 3,
+      "bytes": 4754,
+      "kb": 4.6,
+      "risk": "normal"
+    },
+    {
+      "path": "js/cloud-save.js",
+      "type": "JS",
+      "lines": 2,
+      "bytes": 91,
+      "kb": 0.1,
+      "risk": "normal"
+    },
+    {
+      "path": "needle-ball-trace.html",
+      "type": "HTML",
+      "lines": 1,
+      "bytes": 2388,
+      "kb": 2.3,
+      "risk": "normal"
+    },
+    {
+      "path": "needle-ball-3d.html",
+      "type": "HTML",
+      "lines": 1,
+      "bytes": 260,
+      "kb": 0.3,
+      "risk": "normal"
+    },
+    {
+      "path": "needle-ball-dual.html",
+      "type": "HTML",
+      "lines": 1,
+      "bytes": 2955,
+      "kb": 2.9,
+      "risk": "normal"
+    },
+    {
+      "path": "needle-ball-grouped.html",
+      "type": "HTML",
+      "lines": 1,
+      "bytes": 2657,
+      "kb": 2.6,
+      "risk": "normal"
+    }
+  ],
+  "families": {
+    "runtime/showcase 歷史版本": {
+      "count": 85,
+      "lines": 510519,
+      "top": [
+        {
+          "path": "runtime/showcase/runtime-v5100-workspace-final.js",
+          "type": "JS",
+          "lines": 11098,
+          "bytes": 370228,
+          "kb": 361.6,
+          "risk": "critical"
+        },
+        {
+          "path": "runtime/showcase/runtime-v4390-restore-v402-2d-icons.js",
+          "type": "JS",
+          "lines": 11055,
+          "bytes": 367829,
+          "kb": 359.2,
+          "risk": "critical"
+        },
+        {
+          "path": "runtime/showcase/runtime-v5004-alpha4-environment-engine.js",
+          "type": "JS",
+          "lines": 11053,
+          "bytes": 367937,
+          "kb": 359.3,
+          "risk": "critical"
+        },
+        {
+          "path": "runtime/showcase/runtime-v5110-montecarlo-lane-scene.js",
+          "type": "JS",
+          "lines": 11051,
+          "bytes": 367712,
+          "kb": 359.1,
+          "risk": "critical"
+        },
+        {
+          "path": "runtime/showcase/runtime-v5003-alpha3-workspace-control-fix.js",
+          "type": "JS",
+          "lines": 10563,
+          "bytes": 353076,
+          "kb": 344.8,
+          "risk": "critical"
+        }
+      ]
+    },
+    "runtime/foundation": {
+      "count": 2,
+      "lines": 2197,
+      "top": [
+        {
+          "path": "runtime/foundation/runtime-v2400-stable.js",
+          "type": "JS",
+          "lines": 2165,
+          "bytes": 90714,
+          "kb": 88.6,
+          "risk": "medium"
+        },
+        {
+          "path": "runtime/foundation/foundation-health-v2400.js",
+          "type": "JS",
+          "lines": 32,
+          "bytes": 1024,
+          "kb": 1.0,
+          "risk": "normal"
+        }
+      ]
+    },
+    "services/cloud-storage": {
+      "count": 77,
+      "lines": 20628,
+      "top": [
+        {
+          "path": "services/cloud-storage/cloud-save-v4330.js",
+          "type": "JS",
+          "lines": 412,
+          "bytes": 14056,
+          "kb": 13.7,
+          "risk": "normal"
+        },
+        {
+          "path": "services/cloud-storage/cloud-save-v2024.js",
+          "type": "JS",
+          "lines": 266,
+          "bytes": 7258,
+          "kb": 7.1,
+          "risk": "normal"
+        },
+        {
+          "path": "services/cloud-storage/cloud-save-v3110.js",
+          "type": "JS",
+          "lines": 266,
+          "bytes": 7258,
+          "kb": 7.1,
+          "risk": "normal"
+        },
+        {
+          "path": "services/cloud-storage/cloud-save-v3200.js",
+          "type": "JS",
+          "lines": 266,
+          "bytes": 7258,
+          "kb": 7.1,
+          "risk": "normal"
+        },
+        {
+          "path": "services/cloud-storage/cloud-save-v2026.js",
+          "type": "JS",
+          "lines": 266,
+          "bytes": 7258,
+          "kb": 7.1,
+          "risk": "normal"
+        }
+      ]
+    },
+    "services/workspace-v5": {
+      "count": 2,
+      "lines": 683,
+      "top": [
+        {
+          "path": "services/workspace-v5/workspace-v5.css",
+          "type": "CSS",
+          "lines": 348,
+          "bytes": 7057,
+          "kb": 6.9,
+          "risk": "normal"
+        },
+        {
+          "path": "services/workspace-v5/workspace-v5.js",
+          "type": "JS",
+          "lines": 335,
+          "bytes": 6978,
+          "kb": 6.8,
+          "risk": "normal"
+        }
+      ]
+    },
+    "services/debug-center": {
+      "count": 2,
+      "lines": 156,
+      "top": [
+        {
+          "path": "services/debug-center/debug-center-v4010.js",
+          "type": "JS",
+          "lines": 107,
+          "bytes": 15369,
+          "kb": 15.0,
+          "risk": "normal"
+        },
+        {
+          "path": "services/debug-center/debug-center-v4000.js",
+          "type": "JS",
+          "lines": 49,
+          "bytes": 10503,
+          "kb": 10.3,
+          "risk": "normal"
+        }
+      ]
+    },
+    "services/scene-height": {
+      "count": 1,
+      "lines": 94,
+      "top": [
+        {
+          "path": "services/scene-height/index.js",
+          "type": "JS",
+          "lines": 94,
+          "bytes": 2359,
+          "kb": 2.3,
+          "risk": "normal"
+        }
+      ]
+    },
+    "services/theme": {
+      "count": 2,
+      "lines": 130,
+      "top": [
+        {
+          "path": "services/theme/theme-switcher-v4020.js",
+          "type": "JS",
+          "lines": 65,
+          "bytes": 1936,
+          "kb": 1.9,
+          "risk": "normal"
+        },
+        {
+          "path": "services/theme/theme-switcher-v4030.js",
+          "type": "JS",
+          "lines": 65,
+          "bytes": 1936,
+          "kb": 1.9,
+          "risk": "normal"
+        }
+      ]
+    },
+    "services/road-marking": {
+      "count": 1,
+      "lines": 20,
+      "top": [
+        {
+          "path": "services/road-marking/index.js",
+          "type": "JS",
+          "lines": 20,
+          "bytes": 351,
+          "kb": 0.3,
+          "risk": "normal"
+        }
+      ]
+    },
+    "services/parts-visibility": {
+      "count": 1,
+      "lines": 17,
+      "top": [
+        {
+          "path": "services/parts-visibility/index.js",
+          "type": "JS",
+          "lines": 17,
+          "bytes": 483,
+          "kb": 0.5,
+          "risk": "normal"
+        }
+      ]
+    },
+    "services/local-storage": {
+      "count": 1,
+      "lines": 15,
+      "top": [
+        {
+          "path": "services/local-storage/index.js",
+          "type": "JS",
+          "lines": 15,
+          "bytes": 349,
+          "kb": 0.3,
+          "risk": "normal"
+        }
+      ]
+    },
+    "services/label-service": {
+      "count": 1,
+      "lines": 15,
+      "top": [
+        {
+          "path": "services/label-service/index.js",
+          "type": "JS",
+          "lines": 15,
+          "bytes": 390,
+          "kb": 0.4,
+          "risk": "normal"
+        }
+      ]
+    },
+    "services/project-serializer": {
+      "count": 1,
+      "lines": 13,
+      "top": [
+        {
+          "path": "services/project-serializer/index.js",
+          "type": "JS",
+          "lines": 13,
+          "bytes": 461,
+          "kb": 0.5,
+          "risk": "normal"
+        }
+      ]
+    }
+  },
+  "recommendations": [
+    {
+      "priority": 1,
+      "area": "runtime/showcase",
+      "title": "3D 主 Runtime 拆分",
+      "reason": "單檔超過 11,000 行，且同目錄保留大量歷史 runtime 版本。",
+      "target": "scene / device / interaction / wiring / simulation / overlay"
+    },
+    {
+      "priority": 2,
+      "area": "simulation",
+      "title": "接線與連動引擎獨立",
+      "reason": "DI/DO、Relay、Timer、設備動作互相耦合時最容易造成回歸。",
+      "target": "signal-bus / wiring-engine / timer-engine / simulation-clock"
+    },
+    {
+      "priority": 3,
+      "area": "devices",
+      "title": "設備行為逐台模組化",
+      "reason": "設備模型、端子、設定、行為拆開後，修單一設備不需要碰主 Runtime。",
+      "target": "model / ports / behavior / config"
+    },
+    {
+      "priority": 4,
+      "area": "2D/3D sync",
+      "title": "統一座標資料模型",
+      "reason": "2D、3D各自計算會造成位置、比例及平板旋轉後錯位。",
+      "target": "world-coordinate / projection / viewport-sync"
+    },
+    {
+      "priority": 5,
+      "area": "css/style.css",
+      "title": "UI CSS 分區",
+      "reason": "主樣式檔接近 9,000 行，平板、手機、桌面規則容易互相覆蓋。",
+      "target": "layout / sidebar / responsive / dialogs / workspace / devices"
+    },
+    {
+      "priority": 6,
+      "area": "features",
+      "title": "新功能禁止再塞主核心",
+      "reason": "影片輸出、簡報、環境特效、針球3D都適合獨立 feature。",
+      "target": "features/video-export / presentation / environment / needle-ball"
+    }
+  ]
+}

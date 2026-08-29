@@ -1,0 +1,26 @@
+{
+  "assetId": "PARKING-BARRIER-001",
+  "version": "3.0.2",
+  "name": "柵欄機",
+  "revision": "REALISTIC_BARRIER_NARROW_INSPECTOR",
+  "realDimensions": {
+    "heightMeters": 1.03,
+    "widthMeters": 0.34,
+    "depthMeters": 0.28,
+    "defaultArmLengthMeters": 2.5,
+    "armLengthAdjustable": true
+  },
+  "visualQuality": {
+    "model": "high-detail procedural PBR",
+    "paint": "orange powder-coated metal",
+    "arm": "white aluminum with red reflective panels",
+    "details": [
+      "front service door",
+      "lock cylinder",
+      "camera lens",
+      "ventilation slots",
+      "screws",
+      "rubber end cap"
+    ]
+  }
+}

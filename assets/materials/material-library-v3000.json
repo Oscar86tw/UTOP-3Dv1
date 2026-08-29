@@ -1,0 +1,135 @@
+{
+  "version": "3.0.0",
+  "defaultProfile": "workstation",
+  "materials": {
+    "asphalt": {
+      "baseColor": "#222629",
+      "roughness": 0.88,
+      "metalness": 0.02,
+      "normalStrength": 0.65,
+      "microVariation": 0.22
+    },
+    "concrete": {
+      "baseColor": "#a6a8a5",
+      "roughness": 0.82,
+      "metalness": 0.0,
+      "normalStrength": 0.52,
+      "microVariation": 0.18
+    },
+    "paintedMetalYellow": {
+      "baseColor": "#d99510",
+      "roughness": 0.34,
+      "metalness": 0.62,
+      "clearcoat": 0.35,
+      "clearcoatRoughness": 0.24
+    },
+    "paintedMetalWhite": {
+      "baseColor": "#f0f2f2",
+      "roughness": 0.3,
+      "metalness": 0.56,
+      "clearcoat": 0.42,
+      "clearcoatRoughness": 0.2
+    },
+    "rubberBlack": {
+      "baseColor": "#141719",
+      "roughness": 0.92,
+      "metalness": 0.0,
+      "normalStrength": 0.4
+    },
+    "darkPlastic": {
+      "baseColor": "#151d22",
+      "roughness": 0.48,
+      "metalness": 0.02,
+      "clearcoat": 0.18
+    },
+    "glass": {
+      "baseColor": "#b7e4ef",
+      "roughness": 0.06,
+      "metalness": 0.0,
+      "transmission": 0.92,
+      "ior": 1.5,
+      "thickness": 0.08
+    },
+    "ledRed": {
+      "baseColor": "#410000",
+      "emissive": "#ff1e1e",
+      "emissiveIntensity": 5.5,
+      "roughness": 0.2
+    },
+    "ledGreen": {
+      "baseColor": "#003a16",
+      "emissive": "#16ff66",
+      "emissiveIntensity": 4.8,
+      "roughness": 0.2
+    },
+    "roadMarkingWhite": {
+      "baseColor": "#f4f3df",
+      "roughness": 0.72,
+      "metalness": 0.0,
+      "decal": true
+    },
+    "roadMarkingYellow": {
+      "baseColor": "#f4dd3f",
+      "roughness": 0.68,
+      "metalness": 0.0,
+      "decal": true
+    }
+  },
+  "deviceMaterialMap": {
+    "parking-barrier": [
+      "paintedMetalYellow",
+      "paintedMetalWhite",
+      "rubberBlack"
+    ],
+    "parking-light": [
+      "darkPlastic",
+      "glass",
+      "ledRed",
+      "ledGreen"
+    ],
+    "countdown-timer": [
+      "darkPlastic",
+      "glass",
+      "ledRed"
+    ],
+    "lane-loop": [
+      "rubberBlack",
+      "asphalt"
+    ],
+    "infrared": [
+      "darkPlastic",
+      "glass"
+    ],
+    "uhf": [
+      "darkPlastic",
+      "paintedMetalWhite"
+    ],
+    "card-reader": [
+      "darkPlastic",
+      "glass"
+    ]
+  },
+  "environmentProfiles": {
+    "day-clear": {
+      "skyTop": "#7ab7e8",
+      "skyBottom": "#d8edf8",
+      "sunIntensity": 3.2,
+      "ambientIntensity": 0.72,
+      "fogDensity": 0.002
+    },
+    "overcast": {
+      "skyTop": "#8095a3",
+      "skyBottom": "#d8dde0",
+      "sunIntensity": 1.3,
+      "ambientIntensity": 0.9,
+      "fogDensity": 0.004
+    },
+    "underground": {
+      "skyTop": "#141b20",
+      "skyBottom": "#252c30",
+      "sunIntensity": 0,
+      "ambientIntensity": 0.42,
+      "fogDensity": 0.001
+    }
+  }
+}

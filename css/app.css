@@ -1,0 +1,484 @@
+
+:root{
+  --bg:#f4f0e8;
+  --paper:#fffdf7;
+  --ink:#21252d;
+  --muted:#7d7a76;
+  --line:#d9d2c8;
+  --accent:#d95e87;
+  --dark:#25303b;
+  --soft:#f3eee6;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif;
+  background:var(--bg);color:var(--ink);overflow:hidden
+}
+button,input,select{font:inherit}
+.app{height:100%;display:flex;flex-direction:column}
+.topbar{
+  height:56px;display:grid;grid-template-columns:44px 1fr 70px 44px 44px;gap:8px;
+  align-items:center;padding:0 10px;background:#fff;border-bottom:1px solid var(--line);z-index:20
+}
+.icon{
+  border:0;background:#efebe4;border-radius:12px;width:38px;height:38px;
+  font-size:18px;color:#333
+}
+.title{text-align:center;min-width:0}
+.title b{
+  display:block;font-family:Georgia,"Times New Roman",serif;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+}
+.title small{display:block;color:var(--muted);font-size:11px}
+.version{
+  font-size:11px;text-align:center;background:#fffaf2;border:1px solid #e1d8cb;border-radius:999px;padding:6px 4px
+}
+.practice{flex:1;display:flex;flex-direction:column;min-height:0}
+
+.score-wrap{
+  flex:1;min-height:340px;position:relative;background:var(--paper);
+  overflow:hidden;border-bottom:1px solid var(--line)
+}
+.score-track{position:absolute;left:0;top:0;height:100%;will-change:transform}
+.score-svg{height:100%;display:block}
+.playhead{
+  position:absolute;left:36%;top:14px;bottom:14px;width:3px;background:var(--accent);z-index:6
+}
+.playhead:before{
+  content:"拍點";position:absolute;top:0;left:50%;transform:translate(-50%,-115%);
+  background:var(--accent);color:#fff;border-radius:7px;padding:2px 6px;font-size:10px;line-height:1.2
+}
+.ready-overlay{
+  position:absolute;inset:0;display:none;place-items:center;background:#fffdf7db;z-index:9
+}
+.ready-overlay.show{display:grid}
+.ready-box{text-align:center}
+.ready-num{font-size:72px;font-weight:800;color:var(--accent);line-height:1}
+.ready-box small{color:var(--muted)}
+
+.controls{
+  height:54px;display:flex;align-items:center;justify-content:center;gap:10px;
+  background:#fff;border-top:1px solid #f0ece5;border-bottom:1px solid var(--line)
+}
+.pill{
+  padding:6px 10px;border-radius:999px;background:#f2f3f4;font-size:12px
+}
+.mainbtn{
+  border:0;background:var(--dark);color:#fff;border-radius:14px;min-width:48px;height:38px;padding:0 16px;font-weight:700
+}
+
+.keyboard{
+  height:190px;position:relative;display:flex;padding:0 4px 6px;background:#e7e7e7;border-top:3px solid #7b2e2e
+}
+.white{
+  flex:1;background:linear-gradient(#fff,#f4f4f4);border:1px solid #c8c8c8;border-top:0;border-radius:0 0 5px 5px;position:relative
+}
+.white.on{background:linear-gradient(#f8c2d3,#eb7c9f)}
+.black{
+  position:absolute;top:0;height:61%;background:linear-gradient(#343842,#08090d);border-radius:0 0 4px 4px;z-index:3;box-shadow:0 4px 7px rgba(0,0,0,.35)
+}
+.black.on{background:linear-gradient(#99c1e0,#587d9a)}
+.key-label{
+  position:absolute;left:0;right:0;bottom:7px;text-align:center;font-size:10px;color:#808080
+}
+
+.drawer-mask{position:fixed;inset:0;background:rgba(0,0,0,.28);z-index:30;display:none}
+.drawer-mask.on{display:block}
+.drawer{
+  position:fixed;top:0;left:0;bottom:0;width:min(390px,88vw);
+  background:#fff;box-shadow:10px 0 30px rgba(0,0,0,.18);z-index:31;
+  transform:translateX(-104%);transition:.24s ease;display:flex;flex-direction:column
+}
+.drawer.on{transform:none}
+.drawer-head{
+  height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;border-bottom:1px solid #ececec
+}
+.drawer-head b{font-size:17px}
+.drawer-head button{border:0;background:#f2f2f2;border-radius:10px;width:36px;height:36px}
+.drawer-menu{
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px;border-bottom:1px solid #ececec
+}
+.drawer-menu button{
+  border:1px solid #e0e0e0;background:#fafafa;border-radius:12px;padding:10px 6px;font-weight:700
+}
+.drawer-menu button.on{background:#26313b;color:#fff;border-color:#26313b}
+.drawer-page{display:none;overflow:auto;padding:12px;flex:1}
+.drawer-page.on{display:block}
+.section{
+  border:1px solid #e5e5e5;border-radius:14px;padding:12px;margin-bottom:10px
+}
+.section h3{margin:0 0 10px;font-size:15px}
+.muted{font-size:12px;line-height:1.55;color:#7a7a7a}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:10px 0}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{
+  border:1px solid #dddddd;background:#fff;border-radius:999px;padding:7px 10px
+}
+.chip.on{background:#26313b;color:#fff;border-color:#26313b}
+.song-item{
+  border:1px solid #e1e1e1;border-radius:12px;padding:10px;margin:7px 0;background:#fff
+}
+.song-item.active{border-color:var(--accent);background:#fff7fa}
+.song-item b{display:block}
+.song-item small{color:#777}
+.upload{
+  border:2px dashed #d7d1c8;border-radius:14px;padding:14px;text-align:center;background:#fffcf7
+}
+.upload img{
+  margin-top:8px;display:none;max-width:100%;max-height:190px;border-radius:10px
+}
+.field{margin:9px 0}
+.field label{display:block;font-size:12px;color:#666;margin-bottom:4px}
+.field input,.field select{
+  width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;background:#fff
+}
+.range{width:100%}
+.action{
+  width:100%;border:0;background:#26313b;color:#fff;border-radius:10px;padding:11px 10px;font-weight:700
+}
+.notice{
+  margin-top:8px;padding:10px;border-radius:10px;background:#fff7df;font-size:12px;line-height:1.5
+}
+.practice-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:8px
+}
+.practice-grid button{
+  border:1px solid #dddddd;background:#fafafa;border-radius:12px;padding:12px
+}
+.practice-grid .primary{background:#26313b;color:#fff}
+
+@media (max-width: 700px){
+  .topbar{height:52px;grid-template-columns:42px 1fr 60px 38px 42px;padding:0 8px}
+  .title b{font-size:17px}
+  .score-wrap{min-height:300px}
+  .controls{height:48px;gap:8px}
+  .pill{padding:5px 8px;font-size:11px}
+  .keyboard{height:160px}
+  .playhead{left:35%}
+}
+@media (orientation:landscape) and (max-height: 700px){
+  .score-wrap{min-height:360px}
+}
+
+.error-badge{font-size:12px;font-weight:800;background:#edf8f1;color:#287452}
+.error-badge.has-error{background:#fff0e8;color:#b24a19}
+.diag-menu{grid-column:1/-1}
+.diag-item{border:1px solid #e5e5e5;border-radius:12px;padding:10px;margin:8px 0;background:#fff}
+.diag-item .diag-head{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.diag-item .diag-title{font-weight:800;font-size:13px}
+.diag-item .diag-time{font-size:10px;color:#888;white-space:nowrap}
+.diag-item code{display:block;margin-top:6px;padding:7px;background:#f6f6f6;border-radius:8px;font-size:11px;white-space:pre-wrap;word-break:break-word}
+.diag-advice{font-size:11px;color:#6d6d6d;margin-top:6px;line-height:1.45}
+
+
+/* =========================================================
+   V6.1.3 FINAL OVERRIDES
+   1) no invisible layer may block controls
+   2) staff/note visual size increased again
+   3) error popup is always above the app
+   ========================================================= */
+
+html,body,.app{pointer-events:auto!important}
+
+.score-wrap{
+  flex:1 1 auto!important;
+  min-height:520px!important;
+  overflow:hidden!important;
+}
+
+.score-track,
+.score-svg,
+.playhead{
+  pointer-events:none!important;
+}
+
+.controls,
+.topbar,
+.keyboard,
+.drawer{
+  pointer-events:auto!important;
+}
+
+.drawer-mask{
+  display:block!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  pointer-events:none!important;
+  transition:opacity .15s ease, visibility 0s linear .15s;
+}
+.drawer-mask.on{
+  visibility:visible!important;
+  opacity:1!important;
+  pointer-events:auto!important;
+  transition:opacity .15s ease;
+}
+
+.ready-overlay{
+  display:grid!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  pointer-events:none!important;
+}
+.ready-overlay.show{
+  visibility:visible!important;
+  opacity:1!important;
+  pointer-events:none!important;
+}
+
+/* Ensure controls always remain clickable over any score element. */
+.topbar{position:relative!important;z-index:500!important}
+.controls{position:relative!important;z-index:400!important}
+.keyboard{position:relative!important;z-index:350!important}
+.drawer{z-index:1200!important}
+.drawer-mask{z-index:1100!important}
+
+.error-popup{
+  z-index:20000!important;
+  pointer-events:none!important;
+}
+.error-popup.on{
+  pointer-events:auto!important;
+}
+
+/* Larger keyboard is kept secondary to the much larger staff. */
+.keyboard{
+  height:165px!important;
+  min-height:145px!important;
+}
+
+@media(max-width:700px){
+  .score-wrap{min-height:460px!important}
+  .keyboard{height:150px!important;min-height:135px!important}
+}
+
+/* =========================================================
+   V6.2.0 Practice Engine Refactor
+   ========================================================= */
+.score-wrap{
+  min-height:500px!important;
+  background:#fffdf7!important;
+}
+.score-svg{
+  height:100%!important;
+  min-height:100%!important;
+}
+.playhead{
+  top:8px!important;
+  bottom:8px!important;
+  width:3px!important;
+  transition:left .04s linear;
+}
+.playhead[data-phase="ready"]::before{content:"預備"!important}
+.playhead[data-phase="countin"]::before{content:"預備"!important}
+.playhead[data-phase="playing"]::before{content:"拍點"!important}
+
+.controls{
+  height:54px!important;
+}
+.keyboard{
+  height:160px!important;
+}
+@media(max-width:700px){
+  .score-wrap{min-height:440px!important}
+  .keyboard{height:145px!important}
+}
+
+/* =========================================================
+   V6.2.1 notation / synchronization adjustments
+   ========================================================= */
+.score-wrap{
+  min-height:470px!important;
+}
+.score-svg{
+  shape-rendering:geometricPrecision;
+  text-rendering:geometricPrecision;
+}
+.score-track{
+  will-change:transform;
+  backface-visibility:hidden;
+}
+.playhead{
+  transition:none!important;
+}
+@media(max-width:700px){
+  .score-wrap{min-height:420px!important}
+}
+
+/* =========================================================
+   V6.2.2 split-hand practice view
+   ========================================================= */
+.score-wrap{
+  min-height:610px!important;
+}
+.playhead{
+  width:9px!important; /* 3x V6.2.1 */
+  border-radius:5px;
+  background:#d95e87!important;
+}
+.playhead::before{
+  font-size:12px!important;
+  padding:4px 7px!important;
+}
+.score-svg{
+  height:100%!important;
+  min-height:100%!important;
+}
+@media(max-width:700px){
+  .score-wrap{min-height:540px!important}
+}
+
+/* =========================================================
+   V6.2.4 visual tuning
+   ========================================================= */
+.playhead{
+  width:18px!important; /* V6.2.3 9px -> 18px, 2x wider */
+  border-radius:8px!important;
+}
+
+.transport-btn{
+  min-width:42px;
+  height:38px;
+  padding:0 12px;
+  border:1px solid #d8d8d8;
+  border-radius:12px;
+  background:#fff;
+  color:#26313b;
+  font-weight:800;
+  cursor:pointer;
+}
+.transport-btn:hover{
+  background:#f4f4f4;
+}
+.transport-btn:active{
+  transform:translateY(1px);
+}
+.mainbtn.transport-btn{
+  background:#26313b;
+  color:#fff;
+  border-color:#26313b;
+}
+
+/* =========================================================
+   V6.2.6 reference-practice visual alignment
+   ========================================================= */
+.playhead{
+  opacity:.5!important;
+}
+.score-wrap{
+  min-height:540px!important;
+}
+.score-svg{
+  height:100%!important;
+}
+
+/* =========================================================
+   V6.2.7 fixed score + moving playhead
+   ========================================================= */
+.score-track{
+  transform:none!important;
+  left:0!important;
+  transition:none!important;
+}
+.playhead{
+  transition:left .025s linear!important;
+}
+.score-wrap{
+  overflow:hidden!important;
+}
+
+/* =========================================================
+   V6.2.8 whole-score fixed view
+   ========================================================= */
+.score-track{
+  width:100%!important;
+  height:100%!important;
+  transform:none!important;
+}
+.score-svg{
+  width:100%!important;
+  height:100%!important;
+}
+.playhead{
+  transition:none!important; /* beat position is already updated every animation frame */
+  will-change:left;
+}
+
+/* =========================================================
+   V6.2.9 verified whole-sheet display
+   ========================================================= */
+.full-sheet-layer{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#fff;
+  pointer-events:none;
+}
+.full-sheet-layer[hidden]{
+  display:none!important;
+}
+.full-sheet-layer img{
+  width:auto;
+  height:100%;
+  max-width:100%;
+  object-fit:contain;
+  display:block;
+}
+.sheet-source-badge{
+  position:absolute;
+  right:12px;
+  top:10px;
+  padding:5px 9px;
+  border-radius:999px;
+  background:rgba(255,255,255,.86);
+  border:1px solid rgba(0,0,0,.12);
+  font-size:11px;
+  color:#555;
+  backdrop-filter:blur(4px);
+}
+.score-track{
+  z-index:2;
+}
+.playhead{
+  z-index:6!important;
+}
+
+/* =========================================================
+   V6.3.0 full-sheet row tracking
+   ========================================================= */
+.playhead{
+  bottom:auto!important;
+  transition:none!important;
+}
+.full-sheet-layer img{
+  position:relative;
+}
+
+/* =========================================================
+   V6.3.1 electronic score import
+   ========================================================= */
+.import-electronic-score{
+  border:1px solid #d9dce4;
+  border-radius:14px;
+  padding:14px;
+  margin-bottom:14px;
+  background:#fafbfe;
+}
+.import-electronic-score h4{margin:0 0 6px}
+.import-electronic-score .actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+.import-electronic-score button{
+  min-height:38px;
+  border-radius:10px;
+  border:1px solid #d4d7dd;
+  background:#fff;
+  padding:0 12px;
+}
+.import-electronic-score button:disabled{opacity:.45}

@@ -1,2728 +1,314 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="zh-Hant">
 <head>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>PIANO LEARNING 6.3.1｜經典教材型練習</title>
+  <link rel="stylesheet" href="css/app.css">
 
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport"/>
-<meta content="#07111b" id="browserThemeColor" name="theme-color"/>
-<title>昱拓弱電有限公司 UTOP-3D V5.1.3.58 自動控制方向辨識器</title>
-<link href="./css/style.css?v=5.1.3.43-shortcut-message-view-left-20260830" rel="stylesheet"/>
-<link rel="stylesheet" href="services/workspace-v5/workspace-v5.css?v=5.1.3.43-shortcut-message-view-left-20260830">
-<style id="v51342-scene-physics-object-style">
-.object-thumb{font-size:30px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#f4f0e8,#d9d1c4);color:#332d28}
+<style id="criticalBootStyle">
+#bootErrorModal{position:fixed;z-index:999999;top:16px;left:50%;transform:translateX(-50%);width:min(760px,calc(100vw - 24px));background:#fff;border:3px solid #d85f32;border-radius:14px;box-shadow:0 18px 60px #0005;padding:14px;display:none;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif;color:#222}
+#bootErrorModal.on{display:block}
+#bootErrorModal strong{display:block;color:#a43c18;font-size:16px;margin-bottom:6px}
+#bootErrorModal pre{white-space:pre-wrap;word-break:break-word;background:#f7f7f7;padding:8px;border-radius:8px;max-height:210px;overflow:auto;font-size:11px}
+#bootErrorModal .boot-actions{display:flex;gap:8px;margin-top:8px}
+#bootErrorModal button{border:1px solid #ddd;border-radius:8px;background:#fafafa;padding:7px 10px}
+#bootErrorModal .primary{background:#26313b;color:#fff}
 </style>
 
-<style id="v51347-corner-fov">
-#presentationCornerControls.presentation-corner-controls{left:max(8px,env(safe-area-inset-left))!important;right:auto!important;bottom:max(8px,env(safe-area-inset-bottom))!important;width:max-content!important;max-width:calc(100% - 16px)!important;}
-#presentationFovWidth.presentation-corner-btn{width:4.2em!important;min-width:4.2em!important;max-width:4.2em!important;padding-left:.45em!important;padding-right:.45em!important;white-space:nowrap!important;text-align:center!important;}
-</style>
-
-<style id="v51351-camera-toggle-fix">
-#sceneWrap > #cameraMenuToggle.camera-menu-toggle{
-  position:absolute!important;
-  left:max(10px,env(safe-area-inset-left))!important;
-  right:auto!important;
-  bottom:max(10px,env(safe-area-inset-bottom))!important;
-  width:3.2em!important;
-  min-width:3.2em!important;
-  max-width:3.2em!important;
-  height:36px!important;
-  min-height:36px!important;
-  padding:0!important;
-  margin:0!important;
-  display:inline-flex!important;
-  flex:0 0 3.2em!important;
-  align-items:center!important;
-  justify-content:center!important;
-  white-space:nowrap!important;
-  box-sizing:border-box!important;
-  z-index:96!important;
-  font-size:14px!important;
-  line-height:1!important;
-}
-.views .scene-card:fullscreen #cameraMenuToggle.camera-menu-toggle,
-.views .scene-card:-webkit-full-screen #cameraMenuToggle.camera-menu-toggle,
-.views .scene-card.is-3d-fullscreen #cameraMenuToggle.camera-menu-toggle{
-  left:max(10px,env(safe-area-inset-left))!important;
-  right:auto!important;
-  bottom:max(10px,env(safe-area-inset-bottom))!important;
-  width:3.2em!important;
-  min-width:3.2em!important;
-  max-width:3.2em!important;
-}
-@media(max-width:720px){
-  #sceneWrap > #cameraMenuToggle.camera-menu-toggle{
-    left:max(8px,env(safe-area-inset-left))!important;
-    bottom:max(8px,env(safe-area-inset-bottom))!important;
-    width:3.2em!important;min-width:3.2em!important;max-width:3.2em!important;
-  }
-}
-</style>
 </head>
 <body>
-<header class="app-header">
-<div class="brand">
-<h1><span>昱拓弱電有限公司</span> UTOP-3D</h1>
-<b>V5.1.3.58 自動控制方向辨識器｜Base UI V1.1.4</b>
-</div>
-<div class="header-actions">
-<button class="scene-library-btn" id="sceneLibraryBtn" title="切換場景" type="button">🌆 場景</button><button class="graphics-settings-btn" id="graphicsSettingsBtn" title="顯示與效能設定" type="button">🎮 畫質設定</button><button class="global-lock-toggle inactive" id="globalLockToggle" title="固定或解除全部設備的位置" type="button">🔓 全固定：關閉</button><button class="global-label-toggle active" id="globalLabelToggle" title="顯示或隱藏全部設備名稱" type="button">🏷 全名稱：開啟</button><button aria-pressed="false" class="theme-toggle-button" id="themeToggleBtn" title="切換深色／白色介面" type="button">
-<span aria-hidden="true" class="theme-toggle-icon">☀</span>
-<span class="theme-toggle-label">白色介面</span>
-</button>
-<button id="architectureBtn" title="開啟程式架構診斷與模組分工藍圖" type="button">🧩 程式架構</button>
-<button aria-controls="debugCenterDrawer" aria-expanded="false" class="debug-status-button is-ok" id="debugStatusBtn" title="工程診斷中心" type="button">
-<span class="debug-status-dot" aria-hidden="true"></span>
-<span class="debug-status-label">系統正常</span>
-<span class="debug-status-count" id="debugStatusCount" hidden>0</span>
-</button>
-<button id="saveBtn">💾 儲存</button>
-<button id="loadBtn">📂 開啟</button>
-<input accept=".json,application/json" hidden="" id="loadFile" type="file"/>
-<button id="wiringBtn">⛓ 接線模擬</button>
-<button id="shortcutBtn" title="設定鍵盤按鍵快速觸發場景設備 DI 或 DO" type="button">⌨ 快捷鍵設定</button>
 
-<button id="resetBtn">↻ 重設</button>
-<span class="save-state" id="saveState">● 專案未儲存</span>
-<button class="environment-fx-btn" id="environmentFxBtn" title="動態環境特效" type="button">🌦 環境特效</button></div>
-</header>
-<div aria-label="2D選取工具" class="selection-tools" id="selectionTools">
-<button class="active" id="selectModeBtn" title="點選設備圖案即可選取" type="button">☝ 選取</button>
-<button id="multiSelectModeBtn" title="連續選擇多個設備" type="button">▣ 多選</button>
-<button id="snapGridBtn" title="拖曳設備時吸附格線" type="button">⌗ 吸附：關</button>
-<button id="clearSelectionBtn" title="取消目前選取" type="button">取消選取</button>
-<span class="selection-status" id="selectionStatus">未選取設備</span>
-</div>
-<main class="app-grid">
-<aside class="module-sidebar professional-sidebar">
-<button aria-label="收起左側欄" class="mobile-sidebar-toggle sidebar-edge-toggle" id="mobileSidebarToggle" title="收起左側欄" type="button">‹</button>
-<nav class="sidebar-mode-tabs" aria-label="左側欄功能切換">
-<button class="sidebar-mode-tab is-active" id="sidebarModuleTab" data-sidebar-mode="modules" type="button" aria-selected="true">
-<span>▦</span><strong>模組庫</strong>
-</button>
-<button class="sidebar-mode-tab" id="sidebarSettingsTab" data-sidebar-mode="settings" type="button" aria-selected="false">
-<span>⚙</span><strong>設備設定</strong><small id="sidebarSelectedDevice">未選取</small>
-</button>
-</nav>
-<section class="sidebar-pane module-library-pane is-open" id="moduleLibraryPane">
-<button aria-controls="moduleLibraryContent" aria-expanded="true" class="sidebar-pane-header" id="moduleLibraryToggle" type="button">
-<span class="pane-title-group sidebar-visible-title">
-<strong>模組庫</strong>
-<small>點分類查看模組</small>
-</span>
-<span aria-hidden="true" class="sidebar-collapse-icon module-collapse-icon">▾</span>
-</button>
-<div class="sidebar-pane-content module-library-content" id="moduleLibraryContent">
-<label class="module-search">
-<input id="moduleSearch" placeholder="搜尋模組…" type="search"/>
-</label>
-<div class="module-scroll-area">
-<div class="module-list" id="moduleList">
-<details class="module-category" data-category="lane" open=""><summary>🚗 車道設備 <span>18</span></summary>
-<article class="module-card" data-search="柵欄機 barrier gate 車道"><div class="thumb barrier-thumb"><i></i><em></em></div><div><h3>柵欄機</h3><small>PARKING-BARRIER-001</small><p><span class="ready">已完成</span> 開／停／關／防砸</p><button data-add="barrier">加入場景</button></div></article><article class="module-card" data-search="車道紅綠燈 traffic light"><div class="thumb traffic-thumb industrial-thumb"><span class="traffic-housing"><i class="lamp red"></i><i class="lamp green"></i></span><span class="traffic-pole"></span><span class="traffic-base"></span></div><div><h3>車道紅綠燈</h3><small>PARKING-LIGHT-001</small><p><span class="ready">已完成</span> 紅燈／綠燈</p><button data-add="traffic">加入場景</button></div></article><article class="module-card" data-search="地感線圈 loop 車道">
-<div class="thumb loop-thumb industrial-thumb"></div><div><h3>地感線圈</h3><small>LANE-LOOP-001</small>
-<p><span class="ready">已完成</span> 車輛感應線圈</p><button data-add="loop">加入場景</button></div></article><article class="module-card" data-search="地感檢知器 loop detector 車道">
-<div class="thumb v320-thumb loopdetector-thumb"></div><div><h3>地感檢知器</h3><small>LANE-LOOP-DETECTOR-001</small>
-<p><span class="ready">已完成</span> Presence／Pulse／故障</p><button data-add="loopdetector">加入場景</button></div></article><article class="module-card" data-search="紅外線 對射 infrared 車道">
-<div class="thumb infrared-thumb industrial-thumb"></div><div><h3>紅外線對射</h3><small>LANE-INFRARED-001</small>
-<p><span class="ready">已完成</span> 遮斷／恢復</p><button data-add="infrared">加入場景</button></div></article><article class="module-card" data-search="車道雷達 radar 車輛 人員">
-<div class="thumb v320-thumb radar-thumb"></div><div><h3>車道雷達感應器</h3><small>LANE-RADAR-001</small>
-<p><span class="ready">已完成</span> 車輛／人員／方向</p><button data-add="radar">加入場景</button></div></article>
-<article class="module-card" data-search="UHF eTag 長距離讀頭 車道">
-<div class="thumb uhf-thumb industrial-thumb"></div><div><h3>UHF／eTag讀頭</h3><small>LANE-UHF-001</small>
-<p><span class="ready">已完成</span> 標籤讀取</p><button data-add="uhf">加入場景</button></div></article><article class="module-card" data-search="車牌辨識 LPR 攝影機">
-<div class="thumb lpr-thumb industrial-thumb"></div><div><h3>車牌辨識攝影機</h3><small>LANE-LPR-001</small>
-<p><span class="ready">已完成</span> 車牌辨識</p><button data-add="lpr">加入場景</button></div></article><article class="module-card" data-search="車道卡機 讀卡機 門禁">
-<div class="thumb cardreader-thumb industrial-thumb"></div><div><h3>車道卡機</h3><small>LANE-CARD-001</small>
-<p><span class="ready">已完成</span> 有效卡／無效卡</p><button data-add="cardreader">加入場景</button></div></article><article class="module-card" data-search="車道對講機 intercom">
-<div class="thumb extra-thumb intercom-thumb"></div><div><h3>車道對講機</h3><small>ACCESS-INTERCOM-001</small>
-<p><span class="ready">已完成</span> 呼叫／接聽</p><button data-add="intercom">加入場景</button></div></article><article class="module-card" data-search="警示燈 beacon 車道">
-<div class="thumb extra-thumb beacon-thumb"></div><div><h3>警示燈</h3><small>WARNING-BEACON-001</small>
-<p><span class="ready">已完成</span> 常亮／閃爍</p><button data-add="beacon">加入場景</button></div></article>
-<article class="module-card" data-search="緊急停止 E-STOP 安全">
-<div class="thumb v320-thumb estop-thumb"></div><div><h3>緊急停止按鈕</h3><small>SAFETY-ESTOP-001</small>
-<p><span class="ready">已完成</span> 按下保持／旋轉解除</p><button data-add="estop">加入場景</button></div></article><article class="module-card" data-search="LED方向箭頭 lane control">
-<div class="thumb v320-thumb arrow-thumb"></div><div><h3>LED方向箭頭</h3><small>DISPLAY-LANE-ARROW-001</small>
-<p><span class="ready">已完成</span> 左／右／直行／紅叉</p><button data-add="laneindicator">加入場景</button></div></article><article class="module-card" data-search="滿位 車位 數量 顯示器">
-<div class="thumb v320-thumb parkingdisplay-thumb"></div><div><h3>滿位／車位顯示器</h3><small>DISPLAY-PARKING-COUNT-001</small>
-<p><span class="ready">已完成</span> 滿位／剩餘數量</p><button data-add="parkingdisplay">加入場景</button></div></article><article class="module-card" data-search="防撞柱 bollard 車道">
-<div class="thumb extra-thumb bollard-thumb"></div><div><h3>防撞柱</h3><small>LANE-BOLLARD-001</small>
-<p><span class="ready">已完成</span> 升起／下降</p><button data-add="bollard">加入場景</button></div></article><article class="module-card" data-search="限高架 限高 超高 車道">
-<div class="thumb v320-thumb heightbar-thumb"></div><div><h3>限高架</h3><small>BUILDING-HEIGHT-BAR-001</small>
-<p><span class="ready">已完成</span> 高度／超高警報</p><button data-add="heightbar">加入場景</button></div></article>
-</details>
-<details class="module-category" data-category="access"><summary>🚪 門禁設備 <span>2</span></summary>
-<article class="module-card" data-search="車道卡機 讀卡機 門禁">
-<div class="thumb cardreader-thumb industrial-thumb"></div><div><h3>車道卡機</h3><small>LANE-CARD-001</small>
-<p><span class="ready">已完成</span> 有效卡／無效卡</p><button data-add="cardreader">加入場景</button></div></article><article class="module-card" data-search="門禁控制器 access controller">
-<div class="thumb extra-thumb controller-thumb"></div><div><h3>門禁控制器</h3><small>ACCESS-CTRL-001</small>
-<p><span class="ready">已完成</span> 門鎖／警報／蜂鳴</p><button data-add="controller">加入場景</button></div></article>
-</details>
-<details class="module-category" data-category="cctv"><summary>📹 監視設備 <span>2</span></summary>
-<article class="module-card" data-search="網路攝影機 CCTV">
-<div class="thumb extra-thumb ipcamera-thumb"></div><div><h3>網路攝影機</h3><small>CCTV-IPCAM-001</small>
-<p><span class="ready">已完成</span> 影像／警報</p><button data-add="ipcamera">加入場景</button></div></article><article class="module-card" data-search="車牌辨識 LPR 攝影機">
-<div class="thumb lpr-thumb industrial-thumb"></div><div><h3>車牌辨識攝影機</h3><small>LANE-LPR-001</small>
-<p><span class="ready">已完成</span> 車牌辨識</p><button data-add="lpr">加入場景</button></div></article>
-</details>
-<details class="module-category" data-category="network"><summary>🌐 網路設備 <span>1</span></summary>
-<article class="module-card" data-search="PoE交換器 network">
-<div class="thumb extra-thumb switch-thumb"></div><div><h3>PoE交換器</h3><small>NETWORK-POE-001</small>
-<p><span class="ready">已完成</span> 8埠PoE</p><button data-add="poeswitch">加入場景</button></div></article>
-</details>
-<details class="module-category" data-category="automation"><summary>🧠 自動控制 <span>1</span></summary>
-<article class="module-card" data-search="自動控制 方向辨識器 LK-121 direction recognizer 龍光"><div class="thumb control-box-thumb direction-recognizer-thumb"><b>DIR</b><i></i></div><div><h3>方向辨識器</h3><small>LK-121</small><p><span class="ready">已完成</span> A→B／B→A 方向辨識</p><button data-add="directionrecognizer">加入場景</button></div></article>
-</details>
-<details class="module-category" data-category="power"><summary>⚡ 電力與控制 <span>7</span></summary>
-<article class="module-card" data-search="繼電器 relay 電力 控制"><div class="thumb relay-thumb">R</div><div><h3>繼電器</h3><small>CONTROL-RELAY-001</small><p><span class="ready">已完成</span> NO／NC</p><button data-add="relay">加入場景</button></div></article>
-<article class="module-card" data-search="電源供應器 power"><div class="thumb extra-thumb power-thumb"></div><div><h3>電源供應器</h3><small>POWER-SUPPLY-001</small><p><span class="ready">已完成</span> DC輸出／故障</p><button data-add="powersupply">加入場景</button></div></article>
-<article class="module-card" data-search="延遲計時器 delay timer 控制"><div class="thumb control-box-thumb delay-timer-thumb"><b>DT</b><i></i></div><div><h3>延遲計時器</h3><small>CONTROL-DELAY-TIMER-001</small><p><span class="ready">已完成</span> 啟動／停止／復歸</p><button data-add="delaytimer">加入場景</button></div></article>
-<article class="module-card" data-search="斷電延時繼電器 off delay relay 控制"><div class="thumb control-box-thumb off-delay-thumb"><b>OFF</b><i></i></div><div><h3>斷電延時繼電器</h3><small>CONTROL-OFF-DELAY-001</small><p><span class="ready">已完成</span> 斷電後延遲釋放</p><button data-add="poweroffdelay">加入場景</button></div></article>
-<article class="module-card" data-search="通電延遲計時器 on delay timer 控制"><div class="thumb control-box-thumb on-delay-thumb"><b>ON</b><i></i></div><div><h3>通電延遲計時器</h3><small>CONTROL-ON-DELAY-001</small><p><span class="ready">已完成</span> 通電後延遲輸出</p><button data-add="powerondelay">加入場景</button></div></article>
-<article class="module-card" data-search="雙向號誌主機 LK-103 parking signal controller"><div class="thumb signal-host-thumb two-way-thumb"><b>2W</b><span></span></div><div><h3>雙向號誌主機</h3><small>LK-103／SIGNAL-2WAY-001</small><p><span class="ready">已完成</span> A／B車道交換</p><button data-add="signal2way">加入場景</button></div></article>
-<article class="module-card" data-search="三向號誌主機 LK-103A parking signal controller"><div class="thumb signal-host-thumb three-way-thumb"><b>3W</b><span></span></div><div><h3>三向號誌主機</h3><small>LK-103A／SIGNAL-3WAY-001</small><p><span class="ready">已完成</span> A／B／C車道交換</p><button data-add="signal3way">加入場景</button></div></article>
-</details>
-<details class="module-category" data-category="display"><summary>📺 顯示設備 <span>4</span></summary>
-<article class="module-card" data-search="倒數計時器 timer countdown 顯示"><div class="thumb timer-thumb industrial-thumb"><span class="timer-hood"></span><span class="timer-screen">30</span><span class="timer-bracket"></span></div><div><h3>倒數計時器</h3><small>COUNTDOWN-TIMER-001</small><p><span class="ready">已完成</span> 開始／暫停／重設</p><button data-add="timer">加入場景</button></div></article><article class="module-card" data-search="紅綠燈 倒數 LED 顯示">
-<div class="thumb ledpanel-thumb industrial-thumb"></div><div><h3>紅綠燈倒數顯示器</h3><small>LANE-LED-001</small>
-<p><span class="ready">已完成</span> 紅綠燈＋倒數</p><button data-add="ledpanel">加入場景</button></div></article><article class="module-card" data-search="LED方向箭頭 lane control">
-<div class="thumb v320-thumb arrow-thumb"></div><div><h3>LED方向箭頭</h3><small>DISPLAY-LANE-ARROW-001</small>
-<p><span class="ready">已完成</span> 左／右／直行／紅叉</p><button data-add="laneindicator">加入場景</button></div></article><article class="module-card" data-search="滿位 車位 數量 顯示器">
-<div class="thumb v320-thumb parkingdisplay-thumb"></div><div><h3>滿位／車位顯示器</h3><small>DISPLAY-PARKING-COUNT-001</small>
-<p><span class="ready">已完成</span> 滿位／剩餘數量</p><button data-add="parkingdisplay">加入場景</button></div></article>
-</details>
-<details class="module-category" data-category="objects"><summary>🧱 物件 <span>10</span></summary>
-<article class="module-card" data-search="物件 建築 外牆 wall"><div class="thumb object-thumb">🧱</div><div><h3>建築物外牆</h3><small>OBJECT-WALL-001</small><p><span class="ready">物件</span> 可調尺寸／位置</p><button data-add="object_wall">加入場景</button></div></article>
-<article class="module-card" data-search="物件 門 door"><div class="thumb object-thumb">🚪</div><div><h3>門</h3><small>OBJECT-DOOR-001</small><p><span class="ready">物件</span> 建築入口</p><button data-add="object_door">加入場景</button></div></article>
-<article class="module-card" data-search="物件 柱子 column"><div class="thumb object-thumb">▥</div><div><h3>柱子</h3><small>OBJECT-COLUMN-001</small><p><span class="ready">物件</span> 結構柱</p><button data-add="object_column">加入場景</button></div></article>
-<article class="module-card" data-search="物件 屋簷 eave"><div class="thumb object-thumb">▰</div><div><h3>屋簷</h3><small>OBJECT-EAVE-001</small><p><span class="ready">物件</span> 可調高度</p><button data-add="object_eave">加入場景</button></div></article>
-<article class="module-card" data-search="物件 柏油路 asphalt"><div class="thumb object-thumb">⬛</div><div><h3>柏油路</h3><small>OBJECT-ASPHALT-001</small><p><span class="ready">物件</span> 路面</p><button data-add="object_asphalt">加入場景</button></div></article>
-<article class="module-card" data-search="物件 馬路 road"><div class="thumb object-thumb">🛣️</div><div><h3>馬路</h3><small>OBJECT-ROAD-001</small><p><span class="ready">物件</span> 含中央線</p><button data-add="object_road">加入場景</button></div></article>
-<article class="module-card" data-search="物件 汽車 car"><div class="thumb object-thumb">🚗</div><div><h3>汽車</h3><small>OBJECT-CAR-001</small><p><span class="ready">物件</span> 車道展示</p><button data-add="object_car">加入場景</button></div></article>
-<article class="module-card" data-search="物件 摩托車 motorcycle"><div class="thumb object-thumb">🏍️</div><div><h3>摩托車</h3><small>OBJECT-MOTORCYCLE-001</small><p><span class="ready">物件</span> 車道展示</p><button data-add="object_motorcycle">加入場景</button></div></article>
-<article class="module-card" data-search="物件 人 person"><div class="thumb object-thumb">🧍</div><div><h3>人</h3><small>OBJECT-PERSON-001</small><p><span class="ready">物件</span> 比例展示</p><button data-add="object_person">加入場景</button></div></article>
-<article class="module-card" data-search="物件 自訂 custom"><div class="thumb object-thumb">➕</div><div><h3>自訂物件</h3><small>OBJECT-CUSTOM-001</small><p><span class="ready">物件</span> 加入後可改名稱／尺寸</p><button data-add="object_custom">加入場景</button></div></article>
-</details>
-<details class="module-category" data-category="building"><summary>🏢 建築設備 <span>3</span></summary>
-<article class="module-card" data-search="鐵捲門 rolling shutter 建築">
-<div class="thumb extra-thumb shutter-thumb"></div><div><h3>鐵捲門</h3><small>ACCESS-SHUTTER-001</small>
-<p><span class="ready">已完成</span> 開／停／關／防壓</p><button data-add="shutter">加入場景</button></div></article><article class="module-card" data-search="防撞柱 bollard 車道">
-<div class="thumb extra-thumb bollard-thumb"></div><div><h3>防撞柱</h3><small>LANE-BOLLARD-001</small>
-<p><span class="ready">已完成</span> 升起／下降</p><button data-add="bollard">加入場景</button></div></article><article class="module-card" data-search="限高架 限高 超高 車道">
-<div class="thumb v320-thumb heightbar-thumb"></div><div><h3>限高架</h3><small>BUILDING-HEIGHT-BAR-001</small>
-<p><span class="ready">已完成</span> 高度／超高警報</p><button data-add="heightbar">加入場景</button></div></article>
-</details>
-</div>
-</div>
-</div>
-</section>
-<section class="sidebar-pane settings-pane" id="settingsPane">
-<button aria-controls="deviceInspectorPanel" aria-expanded="true" class="sidebar-pane-header settings-pane-header" id="deviceInspectorToggle" type="button">
-<span class="device-inspector-summary sidebar-visible-title">
-<strong>設備設定</strong>
-<small id="deviceInspectorTitle">尚未選取設備</small>
-<span hidden="" id="deviceInspectorHint">點選設備後展開設定</span>
-</span>
-<span hidden="" id="deviceInspectorToggleText">設備設定</span>
-<span aria-hidden="true" class="sidebar-collapse-icon device-inspector-chevron">▾</span>
-</button>
-<div class="settings-scroll-area">
-<section class="device-inspector-shell is-open" id="deviceInspectorShell">
-<div class="device-inspector-backdrop" hidden="" id="deviceInspectorBackdrop"></div>
-<section class="device-inspector-panel inspector-sidebar-panel" id="deviceInspectorPanel">
-<div class="inspector">
-<div class="inspector-accordion" id="inspectorAccordion">
-<button aria-expanded="false" class="tab inspector-folder-row" data-tab="properties" type="button">
-<span class="folder-arrow">▸</span>
-<span class="folder-copy"><strong>屬性</strong><small>名稱、位置與方向</small></span>
-</button>
-<button aria-expanded="false" class="tab inspector-folder-row" data-tab="specs" type="button">
-<span class="folder-arrow">▸</span>
-<span class="folder-copy"><strong>規格參數</strong><small>尺寸與設備參數</small></span>
-</button>
-<button aria-expanded="false" class="tab inspector-folder-row" data-tab="dimensions" type="button">
-<span class="folder-arrow">▸</span>
-<span class="folder-copy"><strong>實體尺寸</strong><small>寬、深、高與3D量測</small></span>
-</button>
-<button aria-expanded="false" class="tab inspector-folder-row" data-tab="controls" type="button">
-<span class="folder-arrow">▸</span>
-<span class="folder-copy"><strong>控制</strong><small>設備動作測試</small></span>
-</button>
-<button aria-expanded="false" class="tab inspector-folder-row" data-tab="io" type="button">
-<span class="folder-arrow">▸</span>
-<span class="folder-copy"><strong>DI／DO狀態</strong><small>輸入與輸出訊號</small></span>
-</button>
-<section aria-hidden="true" class="inspector-card-drawer" hidden="" id="inspectorCardArea">
-<header class="inspector-drawer-header">
-<div>
-<strong id="inspectorDrawerTitle">設備設定</strong>
-<small id="inspectorDrawerSubtitle">請選擇設定分類</small>
-</div>
-<button aria-label="關閉設定卡片" id="closeInspectorDrawer" type="button">×</button>
-</header>
-<div class="inspector-content" id="inspectorContent">
-<div class="empty-inspector">請先選取設備。</div>
-</div>
-</section>
-</div>
-</div>
-<div class="quick-control">
-<h2>半自動面板</h2>
-<div class="quick-content" id="quickContent">
-<p>尚未選取設備</p>
-</div>
-</div>
-</section>
-</section>
-</div>
-</section>
-</aside>
-<div class="inspector-drawer-backdrop" hidden="" id="inspectorDrawerBackdrop"></div>
-<section class="workspace">
-<div class="toolbar">
-<div class="tool-group">
-<button class="active">➤ 選取</button>
-<button id="deleteBtn">♲ 刪除</button>
-</div>
-<div class="selected-badge" id="selectedBadge">尚未選取設備</div>
-<div class="v5-workspace-controls" aria-label="工作區顯示比例">
-  
-  <button id="v5BalancedView" type="button" title="3D與2D接近均分">兩區</button>
-  <button id="v5Only3D" type="button" title="只顯示3D">看3D</button>
-  <button id="v5Only2D" type="button" title="只顯示2D">看2D</button>
-</div>
-
-<div class="tool-group">
-<button id="topViewBtn">2D俯視</button>
-<button id="resetViewBtn">重設視角</button><button class="home-view-btn" id="homeViewBtn" title="恢復完整頁面" type="button">首頁</button>
-</div>
-</div>
-<div class="views" id="mainViews">
-<button class="restore-view-btn restore-3d" hidden="" id="restore3DView" type="button">顯示3D</button>
-<button class="restore-view-btn restore-2d" hidden="" id="restore2DView" type="button">顯示2D</button>
-<section class="view-card scene-card">
-<div class="view-title">
-<b>3D 模擬</b>
-<div class="view-title-actions">
-<span>按住設備拖移｜拖空白旋轉｜滾輪縮放</span>
-<button class="view-fullscreen-btn" id="fullscreen3DView" title="3D全畫面顯示" type="button">⛶ 全畫面</button>
-<button class="view-collapse-btn" id="collapse3DView" title="收起3D視窗" type="button">收起</button>
-</div>
-</div>
-<div id="sceneWrap">
-<canvas id="sceneCanvas"></canvas>
-<div id="sceneCanvasDockPlaceholder" class="scene-canvas-dock-placeholder" hidden>
-  <strong>3D場景目前顯示在「接線與連動模擬」視窗</strong>
-  <span>關閉接線視窗或切回2D後，場景會自動回到這裡。</span>
-</div>
-<button aria-controls="cameraViewMenu" aria-expanded="false" class="camera-menu-toggle" id="cameraMenuToggle" type="button" title="開啟視角控制">視角</button>
-
-<div class="presentation-corner-controls" id="presentationCornerControls" hidden aria-label="3D簡報左下角控制">
-  <button id="presentationToolbarCollapse" class="presentation-corner-btn presentation-toolbar-collapse" type="button" aria-expanded="false">▴ 控制</button>
-</div>
-<div class="presentation-toolbar is-collapsed" id="presentationToolbar" hidden aria-label="3D簡報控制">
-  <div class="presentation-toolbar-main">
-    <button id="presentationPointerToggle" type="button" aria-pressed="false">🔴 指揮棒</button>
-    <button id="presentationResetView" type="button">⟳ 重設視角</button>
-    <button id="presentationLabelsToggle" type="button">🏷 名稱</button>
-    <button id="presentationEnvironmentFx" type="button">🌦 特效</button>
-    <button id="presentationExitFullscreen" class="danger" type="button">✕ 退出</button>
+<div id="bootErrorModal" role="alertdialog" aria-live="assertive">
+  <strong>PIANO LEARNING 發生錯誤</strong>
+  <div id="bootErrorSummary">系統偵測到程式未正常執行。</div>
+  <pre id="bootErrorDetail"></pre>
+  <div class="boot-actions">
+    <button class="primary" id="bootOpenDiagnostics">查看錯誤診斷</button>
+    <button id="bootCopyError">複製錯誤</button>
+    <button id="bootCloseError">關閉</button>
   </div>
-  <div class="presentation-device-control">
-    <strong id="presentationDeviceName">尚未選取設備</strong>
-    <div id="presentationDeviceButtons" class="presentation-device-buttons">
-      <span>點選3D設備後顯示控制</span>
+</div>
+
+<div class="app">
+  <header class="topbar">
+    <button class="icon" id="menuBtn" aria-label="打開抽屜">☰</button>
+    <div class="title">
+      <b id="songTitle">Lesson Practice 01</b>
+      <small id="micTitle">正規左右手橫向練習</small>
     </div>
-  </div>
-</div>
-<div class="presentation-laser-pointer" id="presentationLaserPointer" hidden aria-hidden="true"></div>
-<div class="axis-controls is-hidden" id="cameraViewMenu">
-<button id="viewFront">正視</button>
-<button id="viewBack">後視</button>
-<button id="viewLeft">左視</button>
-<button id="viewRight">右視</button>
-<button id="viewTop">俯視</button>
-<button id="viewFrontLeft">左前斜視</button>
-<button id="viewFrontRight">右前斜視</button>
-<button id="viewBackLeft">左後斜視</button>
-<button id="viewBackRight">右後斜視</button>
-<button id="viewDriver">車道視角</button>
-<div class="camera-fov-options" role="group" aria-label="視角寬度">
-  <button type="button" class="camera-fov-btn" data-camera-fov="38">窄</button>
-  <button type="button" class="camera-fov-btn" data-camera-fov="46">標準</button>
-  <button type="button" class="camera-fov-btn" data-camera-fov="58">寬</button>
-  <button type="button" class="camera-fov-btn" data-camera-fov="70">超寬</button>
-</div>
-</div>
-</div>
-</section>
-<div
-  id="v5ViewSplitter"
-  class="v5-view-splitter"
-  role="separator"
-  aria-label="拖曳調整3D與2D高度"
-  aria-orientation="horizontal"
-  tabindex="0"
->
-  <span></span>
-</div>
-<section class="view-card plan-card">
-<div class="view-title">
-<b>2D 平面</b>
-<div class="view-title-actions">
-<span>單位：m｜與3D同步</span>
-<button class="view-collapse-btn" id="collapse2DView" title="收起2D視窗" type="button">收起</button>
-</div>
-</div>
-
-<div class="plan-zoom-controls" id="planZoomControls" aria-label="2D平面圖縮放">
-  <button id="planZoomOut" type="button" title="縮小">−</button>
-  <button id="planZoomReset" type="button" title="恢復100%">100%</button>
-  <button id="planZoomIn" type="button" title="放大">＋</button>
-  <button id="planZoomFit" type="button" title="顯示全部">Fit</button>
-  <button id="planDimensionAudit" type="button" title="檢查2D與3D尺寸">檢查比例</button>
-  <button id="planDimensionAutoFix" type="button" title="自動補上缺少的真實尺寸">自動修正</button>
-  <button id="planRepairDisplay" type="button" title="重新掛載2D模組">修復顯示</button>
-  <button id="planMapModeToggle" type="button" title="切換工程比例／GTA小地圖">GTA小地圖</button>
-  <span id="planSceneSyncBadge" class="plan-scene-sync-badge">場景同步</span>
-</div>
-<svg id="planSvg" viewbox="0 0 760 650">
-<defs>
-<pattern height="25" id="grid" patternunits="userSpaceOnUse" width="25">
-<path d="M25 0H0V25" fill="none" stroke="#415263" stroke-width="1"></path>
-</pattern>
-</defs>
-<rect fill="#111c26" height="650" width="760"></rect>
-<rect fill="url(#grid)" height="650" width="760"></rect>
-<rect fill="#565e64" height="580" rx="6" width="450" x="155" y="35"></rect>
-<line stroke="#f4d31e" stroke-dasharray="25 18" stroke-width="5" x1="380" x2="380" y1="50" y2="600"></line>
-<g id="planSceneBackground"></g>
-<g id="planItems"></g>
-</svg>
-</section>
-</div>
-<section class="device-control-footer professional-control-footer" id="deviceControlFooter">
-<div aria-label="設備快速控制" class="device-quick-actions" id="deviceQuickActions">
-<div class="device-quick-heading">
-<strong>控制</strong>
-<span id="deviceQuickDeviceName">尚未選取設備</span>
-</div>
-<div class="device-quick-buttons" id="deviceQuickButtons">
-<span class="device-quick-empty">尚未選取設備</span>
-</div>
-</div>
-</section>
-</section>
-</main>
-<footer class="statusbar">
-<span id="statusText">V5.1.3.10 鐵捲門尺寸同步版 系統準備就緒</span>
-<span id="deviceCount">0 個設備｜0 條接線</span>
-</footer>
-<dialog id="wiringDialog">
-<div class="wiring-window">
-<header>
-<div>
-<h2>接線與連動模擬</h2>
-<p>先點來源DO，再點目標DI；觸發來源時，目標會依接線運作。</p>
-</div>
-<button id="closeWiring">×</button>
-</header>
-<div class="wiring-toolbar">
-<button id="cancelWire">取消選取</button>
-<div class="wiring-view-switch" role="group" aria-label="接線顯示模式">
-<button id="wireView2D" class="active" type="button">▦ 2D</button>
-<button id="wireView3D" type="button">⬡ 3D</button>
-</div>
-<button id="autoArrangeWires">自動排列</button>
-<button id="openConnectionEditor">連結清單</button>
-<button id="clearWires">清除接線</button>
-<span id="wireHint">步驟1：請選擇來源 DO</span>
-</div>
-<div class="wiring-workspace" id="wiringWorkspace">
-<div id="wiringCanvas" class="active-wire-view">
-<svg id="wireSvg"></svg>
-<div id="deviceNodes"></div>
-<div id="wiring3DCanvas" class="wiring-3d-canvas" hidden>
-  <div class="wiring-3d-overlay">
-    <div>
-      <strong>3D 場景接線</strong>
-      <span>與主3D模擬共用同一場景｜拖曳旋轉｜滾輪縮放｜右鍵平移｜點設備選取</span>
-    </div>
-    <div class="wiring-3d-actions">
-  <button id="toggleIdleWiresBtn" type="button">🙈 待機隱藏線：開啟</button>
-  <button id="triggerNextSignalBtn" type="button">⚾ 觸發下一步</button>
-  <button id="triggerSequenceBtn" type="button">▶ 自動跑流程</button>
-  <label class="signal-duration-field">
-    <span>一般傳輸</span>
-    <input id="signalDurationInput" type="number" min="0.1" max="30" step="0.1" value="0.5">
-    <span>秒</span>
-  </label>
-  <button id="resetWiring3DView" type="button">重設視角</button>
-</div>
-  </div>
-  <div id="wiring3DMount" class="wiring-3d-mount"></div>
-  <div id="signalFlowStatus" class="signal-flow-status">
-  <strong>訊號待機</strong>
-  <span>沒有觸發時，線路與球體隱藏。</span>
-</div>
-<div class="wiring-3d-legend">
-    <span><i class="legend-source"></i>來源設備／DO</span>
-    <span><i class="legend-target"></i>目標設備／DI</span>
-    <span><i class="legend-wire"></i>場景立體接線</span>
-  </div>
-</div>
-<aside class="wire-info-drawer open" id="wireInfoDrawer">
-<header>
-<div>
-<h3>連線清單與分析</h3>
-<small id="wireInfoStatus">點選連線可查看詳細資料</small>
-</div>
-<button id="closeWireInfo" title="收起抽屜">×</button>
-</header>
-<div class="wire-drawer-section">
-<div class="wire-drawer-title">
-<b>已建立連線</b>
-<span id="wireListCount">0 條</span>
-</div>
-<div id="wireList"></div>
-</div>
-<div class="wire-drawer-section wire-analysis-section">
-<div class="wire-drawer-title"><b>連線分析</b></div>
-<div class="wire-info-content" id="wireInfoContent">
-<p>點選右側清單中的一筆連線，或直接點選畫面上的線路。</p>
-</div>
-</div>
-</aside>
-</div>
-</div>
-</div>
-</dialog>
-
-<dialog class="cloud-dialog storage-choice-dialog" id="storageSaveChoiceDialog">
-  <div class="cloud-dialog-body">
-    <header class="cloud-dialog-head">
-      <div><h2>選擇儲存位置</h2><p>本機速度快；雲端可跨裝置使用。</p></div>
-      <button aria-label="關閉" data-close-dialog="storageSaveChoiceDialog" type="button">×</button>
-    </header>
-    <div class="storage-choice-grid">
-      <button class="storage-choice-card local" id="chooseLocalSave" type="button">
-        <strong>💻 本機儲存</strong><span>立即儲存在這台裝置，速度最快，也可離線使用。</span>
-      </button>
-      <button class="storage-choice-card cloud" id="chooseCloudSave" type="button">
-        <strong>☁️ 雲端儲存</strong><span>儲存到 Google Drive，可在其他裝置開啟。</span>
-      </button>
-    </div>
-  </div>
-</dialog>
-<dialog class="cloud-dialog storage-choice-dialog" id="storageOpenChoiceDialog">
-  <div class="cloud-dialog-body">
-    <header class="cloud-dialog-head">
-      <div><h2>選擇開啟位置</h2><p>從本機快速讀取，或讀取 Google Drive 專案。</p></div>
-      <button aria-label="關閉" data-close-dialog="storageOpenChoiceDialog" type="button">×</button>
-    </header>
-    <div class="storage-choice-grid">
-      <button class="storage-choice-card local" id="chooseLocalOpen" type="button">
-        <strong>💻 本機開啟</strong><span>開啟這台裝置曾儲存的專案。</span>
-      </button>
-      <button class="storage-choice-card cloud" id="chooseCloudOpen" type="button">
-        <strong>☁️ 雲端開啟</strong><span>讀取 Google Drive 裡的專案。</span>
-      </button>
-    </div>
-  </div>
-</dialog>
-<dialog class="cloud-dialog" id="localSaveDialog">
-  <form class="cloud-dialog-body" method="dialog">
-    <header class="cloud-dialog-head">
-      <div><h2>本機儲存專案</h2><p>資料會保存在目前瀏覽器，不需等待網路。</p></div>
-      <button aria-label="關閉" value="cancel">×</button>
-    </header>
-    <label class="cloud-field"><span>專案名稱</span><input autocomplete="off" id="localFileName" placeholder="例如：幸福社區_入口車道"/></label>
-    <div class="cloud-destination"><b>儲存位置</b><span>此裝置瀏覽器的 IndexedDB 本機資料庫</span></div>
-    <div class="cloud-dialog-actions"><button value="cancel">取消</button><button class="cloud-primary" id="confirmLocalSave" type="button">本機儲存</button></div>
-  </form>
-</dialog>
-<dialog class="cloud-dialog cloud-open-dialog" id="localOpenDialog">
-  <div class="cloud-dialog-body cloud-open-body">
-    <header class="cloud-dialog-head">
-      <div><h2>開啟本機專案</h2><p>只顯示儲存在目前裝置與瀏覽器的專案。</p></div>
-      <button aria-label="關閉" id="closeLocalOpen" type="button">×</button>
-    </header>
-    <div class="cloud-open-toolbar"><input id="localProjectSearch" placeholder="搜尋專案名稱" type="search"/><button id="refreshLocalProjects" type="button">重新整理</button></div>
-    <div class="cloud-project-list" id="localProjectList"><div class="cloud-empty">尚未讀取本機專案。</div></div>
-  </div>
-</dialog>
-
-<dialog class="cloud-dialog" id="googleSaveDialog">
-<form class="cloud-dialog-body" method="dialog">
-<header class="cloud-dialog-head">
-<div>
-<h2>儲存專案</h2>
-<p>輸入檔名後，直接儲存到指定的 Google Drive 資料夾。</p>
-</div>
-<button aria-label="關閉" value="cancel">×</button>
-</header>
-<label class="cloud-field">
-<span>檔案名稱</span>
-<input autocomplete="off" id="googleFileName" placeholder="例如：幸福社區_入口車道"/>
-</label>
-<label class="cloud-field">
-<span>分類資料夾</span>
-<div class="cloud-folder-save-select-row">
-<select id="googleFolderSelect"><option value="">根目錄</option></select>
-<button id="toggleGoogleSaveFolderCreate" type="button">＋ 新增資料夾</button>
-</div>
-</label>
-<div class="cloud-folder-save-create" id="googleSaveFolderCreateBox" hidden>
-<input id="googleSaveNewFolderName" placeholder="輸入新資料夾名稱，例如：麗寶社區"/>
-<button id="createGoogleSaveFolder" type="button">建立並選取</button>
-<button id="cancelGoogleSaveFolderCreate" type="button">取消</button>
-</div>
-<div class="cloud-destination">
-<b>固定儲存位置</b>
-<span>1tk-xe-G7_25yioCY1cTfrq_GuR7ajOmJ</span>
-</div>
-<div class="cloud-dialog-actions">
-<button value="cancel">取消</button>
-<button class="cloud-primary" id="confirmGoogleSave" type="button">儲存</button>
-</div>
-</form>
-</dialog>
-<dialog class="cloud-dialog cloud-open-dialog" id="googleOpenDialog">
-<div class="cloud-dialog-body cloud-open-body">
-<header class="cloud-dialog-head">
-<div>
-<h2>開啟雲端專案</h2>
-<p>點選檔名即可載入設備、位置與接線資料。</p>
-</div>
-<button aria-label="關閉" id="closeGoogleOpen">×</button>
-</header>
-<div class="cloud-folder-create"><input id="googleNewFolderName" placeholder="新增資料夾，例如：幸福社區"/><button id="createGoogleFolder" type="button">＋ 新增資料夾</button></div>
-<div class="cloud-open-toolbar">
-<select id="googleOpenFolderFilter"><option value="">全部資料夾</option></select>
-<input id="googleProjectSearch" placeholder="搜尋檔案名稱" type="search"/>
-<button id="refreshGoogleProjects" title="只重新讀取 Projects 索引，不掃描整個 Drive">重新整理</button>
-<button id="syncGoogleDriveIndex" title="完整掃描 Google Drive 並重建 Projects 索引；只有需要時才使用">🔄 重新同步 Drive</button>
-</div>
-<div class="cloud-project-list" id="googleProjectList">
-<div class="cloud-empty">尚未讀取專案。</div>
-</div>
-</div>
-</dialog>
-
-<dialog class="cloud-dialog shortcut-dialog" id="shortcutDialog">
-  <div class="cloud-dialog-body shortcut-dialog-body">
-    <header class="cloud-dialog-head">
-      <div><h2>⌨ 3D展示快捷鍵設定</h2><p>指定鍵盤按鍵，直接觸發目前場景內某一台設備的 DI，或模擬該設備 DO 訊號輸出。</p></div>
-      <button aria-label="關閉" id="closeShortcutDialog" type="button">×</button>
-    </header>
-    <div class="shortcut-builder">
-      <label><span>鍵盤按鍵</span><input id="shortcutKey" maxlength="20" placeholder="例如：1、A、Ctrl+A、Shift+Space" readonly></label>
-      <label><span>項目名稱</span><input id="shortcutTitle" maxlength="40" placeholder="例如：入口車輛進入"></label>
-      <label><span>訊息顯示秒數</span><input id="shortcutDelaySeconds" type="number" min="0" max="60" step="1" value="5" inputmode="numeric" title="快捷鍵會立即觸發 DI／DO；此秒數只控制提示訊息顯示多久，0 秒代表不顯示訊息"></label>
-      <label><span>指定設備</span><select id="shortcutDevice"></select></label>
-      <label><span>功能類型</span><select id="shortcutIoType"><option value="di">DI 輸入動作</option><option value="do">DO 輸出訊號</option></select></label>
-      <label><span>DI／DO 功能</span><select id="shortcutPort"></select></label>
-      <button class="cloud-primary" id="shortcutAdd" type="button">＋ 加入快捷鍵</button>
-      <button id="shortcutCancelEdit" type="button" hidden>取消修改</button>
-    </div>
-    <div class="shortcut-capture-help">點「鍵盤按鍵」欄位後，直接按下單鍵或組合鍵，例如 A、1、Ctrl+A、Shift+Space、Ctrl+Shift+1。Esc、F5、F11、Tab 與純修飾鍵不綁定。</div>
-    <div class="shortcut-list" id="shortcutList"><div class="cloud-empty">尚未設定快捷鍵。</div></div>
-    <div class="shortcut-hover-card" id="shortcutHoverCard" hidden></div>
-  </div>
-</dialog>
-<div class="google-toast" hidden="" id="googleToast"></div>
-<script src="./js/module-image-registry.js?v=5.1.3.43-shortcut-message-view-left-20260830" defer></script>
-<script type="importmap">
-{
-  "imports": {
-    "three": "https://unpkg.com/three@0.180.0/build/three.module.js",
-    "three/addons/": "https://unpkg.com/three@0.180.0/examples/jsm/"
-  }
-}
-</script>
-<div class="boot-error-panel" hidden="" id="bootErrorPanel">
-<strong>UTOP-3D 啟動失敗</strong>
-<div id="bootErrorMessage"></div>
-<small>請截圖此訊息，系統會直接顯示真正錯誤位置。</small>
-</div>
-<script>
-(function () {
-  function isIgnorableBrowserWarning(value) {
-    const text = String(value?.message || value || '');
-    return (
-      text.includes('ResizeObserver loop completed with undelivered notifications') ||
-      text.includes('ResizeObserver loop limit exceeded')
-    );
-  }
-
-  function hideBootError() {
-    const panel = document.getElementById('bootErrorPanel');
-    if (panel) panel.hidden = true;
-  }
-
-  function showBootError(message) {
-    if (isIgnorableBrowserWarning(message)) {
-      hideBootError();
-      console.debug('[UTOP-3D] ResizeObserver版面警告已忽略');
-      return false;
-    }
-
-    const panel = document.getElementById('bootErrorPanel');
-    const text = document.getElementById('bootErrorMessage');
-
-    if (panel && text) {
-      text.textContent = String(message || '未知錯誤');
-      panel.hidden = false;
-    }
-
-    const status = document.getElementById('statusText');
-    if (status) {
-      status.textContent = '系統啟動失敗：' + String(message || '未知錯誤');
-    }
-
-    return true;
-  }
-
-  window.addEventListener('error', function (event) {
-    const target = event.target;
-
-    // 圖片、影片、字型等一般資源讀取失敗，不屬於JavaScript啟動錯誤。
-    // 以前這些事件沒有 event.message，會被錯誤顯示成「JavaScript載入錯誤」。
-    if (target && target !== window && target.tagName) {
-      const tagName = String(target.tagName).toUpperCase();
-      const source = target.src || target.href || '';
-
-      if (tagName !== 'SCRIPT') {
-        console.warn('[UTOP-3D] 非程式資源載入失敗，已略過啟動錯誤提示：', tagName, source);
-        return;
-      }
-
-      const scriptMessage = source
-        ? 'JavaScript檔案載入失敗：' + source
-        : 'JavaScript檔案載入失敗（無法取得檔案網址）';
-
-      if (document.documentElement.dataset.utopBoot === 'ready') {
-        console.error('[UTOP-3D] 執行期腳本載入失敗', scriptMessage);
-        return;
-      }
-
-      showBootError(scriptMessage);
-      return;
-    }
-
-    const message =
-      event.error?.message ||
-      event.message ||
-      'JavaScript執行錯誤（瀏覽器未提供詳細訊息）';
-
-    if (isIgnorableBrowserWarning(event.error) ||
-        isIgnorableBrowserWarning(message)) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      hideBootError();
-      return false;
-    }
-
-    // 此面板只負責「啟動階段」。
-    // 系統已完成啟動後，不把一般執行期警告誤標成啟動失敗。
-    if (document.documentElement.dataset.utopBoot === 'ready') {
-      console.error('[UTOP-3D] 執行期錯誤', event.error || message);
-      return;
-    }
-
-    const location = event.filename
-      ? '（' + event.filename + ':' + (event.lineno || '?') + ':' + (event.colno || '?') + '）'
-      : '';
-    showBootError(message + location);
-  }, true);
-
-  window.addEventListener('unhandledrejection', function (event) {
-    const reason = event.reason?.message || event.reason || '模組載入失敗';
-
-    if (isIgnorableBrowserWarning(event.reason) ||
-        isIgnorableBrowserWarning(reason)) {
-      event.preventDefault();
-      hideBootError();
-      return;
-    }
-
-    if (document.documentElement.dataset.utopBoot === 'ready') {
-      console.error('[UTOP-3D] 未處理的Promise錯誤', event.reason);
-      return;
-    }
-
-    showBootError(reason);
-  }, true);
-
-  window.__UTOP_IS_IGNORABLE_ERROR__ = isIgnorableBrowserWarning;
-  window.__UTOP_HIDE_BOOT_ERROR__ = hideBootError;
-  window.__UTOP_SHOW_BOOT_ERROR__ = showBootError;
-})();
-</script>
-<script>
-(function(){
-  const views=document.getElementById('mainViews');
-  const sceneCard=document.querySelector('.view-card.scene-card');
-  const planCard=document.querySelector('.view-card.plan-card');
-  const collapse3D=document.getElementById('collapse3DView');
-  const collapse2D=document.getElementById('collapse2DView');
-  const restore3D=document.getElementById('restore3DView');
-  const restore2D=document.getElementById('restore2DView');
-  const cameraToggle=document.getElementById('cameraMenuToggle');
-  const cameraMenu=document.getElementById('cameraViewMenu');
-
-  function resizeViews(){
-    requestAnimationFrame(()=>{
-      window.dispatchEvent(new Event('resize'));
-    });
-  }
-
-  function set3DVisible(visible){
-    if(!visible && planCard?.hidden){
-      set2DVisible(true);
-    }
-    if(sceneCard)sceneCard.hidden=!visible;
-    if(restore3D)restore3D.hidden=visible;
-    views?.classList.toggle('only-2d',!visible);
-    if(visible)views?.classList.remove('only-2d');
-    resizeViews();
-  }
-
-  function set2DVisible(visible){
-    if(!visible && sceneCard?.hidden){
-      set3DVisible(true);
-    }
-    if(planCard)planCard.hidden=!visible;
-    if(restore2D)restore2D.hidden=visible;
-    views?.classList.toggle('only-3d',!visible);
-    if(visible)views?.classList.remove('only-3d');
-    resizeViews();
-  }
-
-  collapse3D?.addEventListener('click',()=>set3DVisible(false));
-  collapse2D?.addEventListener('click',()=>set2DVisible(false));
-  restore3D?.addEventListener('click',()=>set3DVisible(true));
-  restore2D?.addEventListener('click',()=>set2DVisible(true));
-
-  function setCameraMenu(open){
-    if(!cameraMenu||!cameraToggle)return;
-    cameraMenu.classList.toggle('is-hidden',!open);
-    cameraToggle.setAttribute('aria-expanded',String(open));
-    cameraToggle.classList.toggle('active',open);
-  }
-
-  cameraToggle?.addEventListener('click',(event)=>{
-    event.stopPropagation();
-    setCameraMenu(cameraMenu?.classList.contains('is-hidden'));
-  });
-
-  cameraMenu?.addEventListener('click',(event)=>{
-    if(event.target.closest('button'))setCameraMenu(false);
-  });
-
-  document.addEventListener('pointerdown',(event)=>{
-    if(!cameraMenu||cameraMenu.classList.contains('is-hidden'))return;
-    if(event.target.closest('#cameraViewMenu,#cameraMenuToggle'))return;
-    setCameraMenu(false);
-  });
-
-  function syncCameraFovButtons(){
-    const current=Number(window.UTOP_CAMERA_VIEW?.getFov?.()||46);
-    cameraMenu?.querySelectorAll('[data-camera-fov]').forEach((button)=>{
-      const value=Number(button.dataset.cameraFov||0);
-      button.classList.toggle('active',Math.abs(value-current)<1);
-      button.setAttribute('aria-pressed',String(Math.abs(value-current)<1));
-    });
-  }
-  cameraMenu?.addEventListener('click',(event)=>{
-    const button=event.target.closest('[data-camera-fov]');
-    if(!button)return;
-    const value=Number(button.dataset.cameraFov||46);
-    window.UTOP_CAMERA_VIEW?.setFov?.(value);
-    syncCameraFovButtons();
-  });
-  window.addEventListener('utop-camera-fov-changed',syncCameraFovButtons);
-  syncCameraFovButtons();
-
-  window.UTOP_VIEW_LAYOUT=Object.freeze({
-    show3D:()=>set3DVisible(true),
-    hide3D:()=>set3DVisible(false),
-    show2D:()=>set2DVisible(true),
-    hide2D:()=>set2DVisible(false),
-    showBoth(){
-      set3DVisible(true);
-      set2DVisible(true);
-    }
-  });
-
-  setCameraMenu(false);
-})();
-</script>
-<script>
-(function(){
-  function initConnectionList(){
-    const dialog=document.getElementById('connectionEditorDialog');
-    const list=document.getElementById('connectionEditorList');
-    const detail=document.getElementById('connectionEditorDetail');
-    const count=document.getElementById('connectionEditorCount');
-    if(!dialog||!list||!detail||!count)return;
-
-    function getConnections(){
-      try{
-        return window.UTOP_CONNECTIONS?.getAll?.()||[];
-      }catch(error){
-        console.error('[UTOP-3D] 讀取連結失敗',error);
-        return [];
-      }
-    }
-
-    function renderDetail(connection){
-      if(!connection){
-        detail.innerHTML='<p>請從左側選擇一條連結。</p>';
-        return;
-      }
-
-      detail.innerHTML=`
-        <div class="connection-editor-card">
-          <div>
-            <strong>來源</strong>
-            <span>${connection.sourceName||'來源設備'}</span>
-            <b>${connection.sourcePort||'DO'}</b>
-          </div>
-          <div class="connection-editor-arrow">→</div>
-          <div>
-            <strong>目標</strong>
-            <span>${connection.targetName||'目標設備'}</span>
-            <b>${connection.targetPort||'DI'}</b>
-          </div>
-        </div>
-        <div class="connection-editor-actions">
-          <button type="button" data-connection-delete="${connection.id}">刪除</button>
-        </div>
-      `;
-    }
-
-    function render(){
-      const connections=getConnections();
-      count.textContent=`${connections.length} 條連結`;
-      list.innerHTML='';
-
-      if(!connections.length){
-        list.innerHTML='<p class="connection-editor-empty">尚未建立連結</p>';
-        renderDetail(null);
-        return;
-      }
-
-      connections.forEach((connection,index)=>{
-        const button=document.createElement('button');
-        button.type='button';
-        button.className='connection-editor-list-item';
-        button.innerHTML=`
-          <span>${connection.sourceName||'來源設備'}／${connection.sourcePort||'DO'}</span>
-          <b>→</b>
-          <span>${connection.targetName||'目標設備'}／${connection.targetPort||'DI'}</span>
-        `;
-        button.addEventListener('click',()=>{
-          list.querySelectorAll('.connection-editor-list-item')
-            .forEach(item=>item.classList.remove('active'));
-          button.classList.add('active');
-          renderDetail(connection);
-        });
-        list.appendChild(button);
-        if(index===0)requestAnimationFrame(()=>button.click());
-      });
-    }
-
-    function open(){
-      render();
-      if(typeof dialog.showModal==='function'){
-        if(!dialog.open)dialog.showModal();
-      }else{
-        dialog.setAttribute('open','');
-      }
-    }
-
-    function close(){
-      if(typeof dialog.close==='function'&&dialog.open){
-        dialog.close();
-      }else{
-        dialog.removeAttribute('open');
-      }
-    }
-
-    document.addEventListener('click',(event)=>{
-      if(event.target.closest('#openConnectionEditor')){
-        event.preventDefault();
-        event.stopPropagation();
-        open();
-        return;
-      }
-
-      if(event.target.closest('#closeConnectionEditor,#connectionEditorDone')){
-        event.preventDefault();
-        close();
-        return;
-      }
-
-      const deleteButton=event.target.closest('[data-connection-delete]');
-      if(deleteButton){
-        window.UTOP_CONNECTIONS?.remove?.(deleteButton.dataset.connectionDelete);
-        render();
-      }
-    },true);
-
-    dialog.addEventListener('click',(event)=>{
-      if(event.target===dialog)close();
-    });
-
-    dialog.addEventListener('cancel',(event)=>{
-      event.preventDefault();
-      close();
-    });
-
-    document.getElementById('connectionEditorAdd')?.addEventListener('click',()=>{
-      close();
-      const wiring=document.getElementById('wiringDialog');
-      if(wiring&&!wiring.open)wiring.showModal();
-    });
-
-    document.getElementById('connectionEditorArrange')?.addEventListener('click',()=>{
-      window.UTOP_CONNECTIONS?.autoArrange?.();
-      render();
-    });
-
-    document.getElementById('connectionEditorClear')?.addEventListener('click',()=>{
-      if(!confirm('確定清除全部連結？'))return;
-      window.UTOP_CONNECTIONS?.clearAll?.();
-      render();
-    });
-
-    window.UTOP_CONNECTION_EDITOR=Object.freeze({open,close,refresh:render});
-  }
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',initConnectionList,{once:true});
-  }else{
-    initConnectionList();
-  }
-})();
-</script>
-<script>
-(function(){
-  function initQuickControl(){
-    const nameNode=document.getElementById('deviceQuickDeviceName');
-    const buttonArea=document.getElementById('deviceQuickButtons');
-    if(!nameNode||!buttonArea)return;
-
-    const labels={
-      barrier:[['open','開啟','is-open'],['stop','停止','is-stop'],['close','關閉','is-close'],['reset','復歸','']],
-      traffic:[['green','綠燈','is-open'],['off','全關','is-stop'],['red','紅燈','is-close']],
-      timer:[['start','開始','is-open'],['pause','暫停','is-stop'],['reset','重設','']],
-      loop:[['vehicle','車輛進入','is-open'],['clear','車輛離開','']],
-      infrared:[['blocked','遮斷','is-close'],['clear','恢復','is-open']],
-      uhf:[['read','讀取標籤','is-open'],['clear','清除','']],
-      cardreader:[['valid','有效卡','is-open'],['invalid','無效卡','is-close'],['clear','清除','']],
-      ledpanel:[['red','紅燈','is-close'],['green','綠燈','is-open'],['start','倒數',''],['reset','重設','']],
-      lpr:[['valid','有效車牌','is-open'],['invalid','無效車牌','is-close'],['clear','清除','']],
-      loopdetector:[['vehicle','車輛進入','is-open'],['clear','車輛離開',''],['pulse','脈衝測試',''],['fault','線圈故障','is-close'],['reset','重新校正','']],
-      radar:[['vehicle','車輛接近','is-open'],['person','人員進入',''],['depart','車輛離開',''],['disable','停用','is-close'],['reset','復歸','']],
-      estop:[['press','按下急停','is-close'],['release','旋轉解除','is-stop'],['reset','確認復歸','is-open'],['wireFault','模擬斷線','is-close']],
-      laneindicator:[['left','左轉',''],['right','右轉',''],['straight','直行','is-open'],['stop','紅叉禁止','is-close'],['flash','閃爍','is-stop'],['off','關閉','']],
-      parkingdisplay:[['vehicleIn','車輛進入','is-close'],['vehicleOut','車輛離開','is-open'],['full','滿位','is-close'],['available','尚有車位','is-open'],['reset','復歸','']],
-      heightbar:[['normal','正常車輛','is-open'],['overheight','超高車輛','is-close'],['clear','清除警報',''],['reset','復歸','']],
-      shutter:[['open','開門','is-open'],['stop','停止','is-stop'],['close','關門','is-close'],['safety','防壓測試',''],['clearSafety','解除防壓',''],['reset','復歸','']],
-      beacon:[['on','開啟','is-open'],['flash','閃爍','is-stop'],['off','關閉','is-close'],['reset','復歸','']],
-      bollard:[['raise','升起','is-open'],['stop','停止','is-stop'],['lower','下降','is-close']],
-      intercom:[['call','呼叫','is-open'],['answer','接聽',''],['hangup','掛斷','is-close']],
-      ipcamera:[['motion','移動觸發','is-open'],['alarm','警報輸入','is-close'],['reset','清除','']],
-      controller:[['lock','門鎖輸出','is-open'],['alarm','警報輸出','is-close'],['buzzer','蜂鳴器',''],['reset','復歸','']],
-      poeswitch:[['power','電源測試','is-open'],['uplink','上行連線',''],['portAlarm','埠異常','is-close'],['reset','重啟','']],
-      powersupply:[['remoteOn','啟動','is-open'],['fault','故障測試','is-close'],['reset','復歸','']],
-      relay:[['on','吸合','is-open'],['off','釋放','is-close']]
-    };
-
-    function render(){
-      const info=window.UTOP_DEVICE_CONTROL?.getSelected?.();
-      buttonArea.innerHTML='';
-
-      if(!info){
-        nameNode.textContent='尚未選取設備';
-        buttonArea.innerHTML='<span class="device-quick-empty">尚未選取設備</span>';
-        return;
-      }
-
-      nameNode.textContent=info.name||'已選設備';
-      const controls=labels[info.type]||labels.relay;
-
-      controls.forEach(([action,label,className])=>{
-        const button=document.createElement('button');
-        button.type='button';
-        button.className=`device-quick-btn ${className}`.trim();
-        button.textContent=label;
-        button.addEventListener('click',(event)=>{
-          event.preventDefault();
-          event.stopPropagation();
-          window.UTOP_DEVICE_CONTROL?.execute?.(action);
-          requestAnimationFrame(render);
-        });
-        buttonArea.appendChild(button);
-      });
-    }
-
-    document.addEventListener('click',()=>{
-      requestAnimationFrame(render);
-    },true);
-
-    window.addEventListener('utop-device-control-updated',render);
-    window.addEventListener('utop-selection-changed',()=>{
-      requestAnimationFrame(render);
-    });
-    window.addEventListener('utop-primary-selection-changed',()=>{
-      requestAnimationFrame(render);
-    });
-    window.UTOP_QUICK_CONTROL=Object.freeze({refresh:render});
-    render();
-  }
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',initQuickControl,{once:true});
-  }else{
-    initQuickControl();
-  }
-})();
-</script>
-<script>
-(function(){
-  function initInspectorDrawer(){
-    const sidebar=document.querySelector('.professional-sidebar');
-    const modulePane=document.getElementById('moduleLibraryPane');
-    const moduleToggle=document.getElementById('moduleLibraryToggle');
-    const moduleContent=document.getElementById('moduleLibraryContent');
-    const settingsToggle=document.getElementById('deviceInspectorToggle');
-    const settingsShell=document.getElementById('deviceInspectorShell');
-
-    const drawer=document.getElementById('inspectorCardArea');
-    const drawerTitle=document.getElementById('inspectorDrawerTitle');
-    const drawerSubtitle=document.getElementById('inspectorDrawerSubtitle');
-    const closeButton=document.getElementById('closeInspectorDrawer');
-    const backdrop=document.getElementById('inspectorDrawerBackdrop');
-    const rows=[...document.querySelectorAll('.inspector-folder-row')];
-
-    // Move floating layers outside the sidebar. The sidebar uses overflow/contain
-    // for its own scrolling, which would otherwise clip a fixed-position drawer.
-    if(drawer && drawer.parentElement!==document.body){
-      document.body.appendChild(drawer);
-    }
-    if(backdrop && backdrop.parentElement!==document.body){
-      document.body.appendChild(backdrop);
-    }
-
-    const names={
-      properties:['屬性','名稱、位置與方向'],
-      specs:['規格參數','尺寸與設備參數'],
-      controls:['控制','設備動作測試'],
-      io:['DI／DO狀態','輸入與輸出訊號']
-    };
-
-    function updateSidebarLayout(){
-      const moduleOpen=modulePane?.classList.contains('is-open');
-      const settingsOpen=settingsShell?.classList.contains('is-open');
-      sidebar?.classList.toggle('module-pane-collapsed',!moduleOpen);
-      sidebar?.classList.toggle('settings-pane-collapsed',!settingsOpen);
-    }
-
-    function setModuleOpen(open){
-      modulePane?.classList.toggle('is-open',open);
-      moduleToggle?.setAttribute('aria-expanded',String(open));
-      if(moduleContent)moduleContent.hidden=!open;
-      const arrow=moduleToggle?.querySelector(':scope > span:last-child');
-      if(arrow)arrow.textContent=open?'▾':'▸';
-      updateSidebarLayout();
-    }
-
-    function setSettingsOpen(open){
-      settingsShell?.classList.toggle('is-open',open);
-      settingsShell?.classList.toggle('is-collapsed',!open);
-      settingsToggle?.setAttribute('aria-expanded',String(open));
-      const arrow=settingsToggle?.querySelector('.device-inspector-chevron');
-      if(arrow)arrow.textContent=open?'▾':'▸';
-      if(!open)closeDrawer();
-      updateSidebarLayout();
-    }
-
-    // V5.1.3.4：側欄標題收合事件統一交由頁尾的 Sidebar Accordion Manager。
-    // 此處不再重複綁定，避免同一次點擊先收合、又立刻展開。
-
-    function clearRows(){
-      rows.forEach(row=>{
-        row.classList.remove('active');
-        row.setAttribute('aria-expanded','false');
-        const arrow=row.querySelector('.folder-arrow');
-        if(arrow)arrow.textContent='▸';
-      });
-    }
-
-    function closeDrawer(){
-      clearRows();
-      if(drawer){
-        drawer.hidden=true;
-        drawer.setAttribute('aria-hidden','true');
-        drawer.classList.remove('is-open');
-      }
-      if(backdrop)backdrop.hidden=true;
-      document.body.classList.remove('inspector-drawer-open');
-    }
-
-    function openDrawer(row){
-      const key=row.dataset.tab;
-      const alreadyOpen=row.classList.contains('active') && !drawer.hidden;
-      if(alreadyOpen){
-        closeDrawer();
-        return;
-      }
-
-      // Clicking another category switches immediately.
-      clearRows();
-      row.classList.add('active');
-      row.setAttribute('aria-expanded','true');
-      const arrow=row.querySelector('.folder-arrow');
-      if(arrow)arrow.textContent='▾';
-
-      if(drawerTitle)drawerTitle.textContent=names[key]?.[0]||'設備設定';
-      if(drawerSubtitle)drawerSubtitle.textContent=names[key]?.[1]||'參數設定';
-
-      document.body.classList.add('inspector-drawer-open');
-      drawer.hidden=false;
-      drawer.setAttribute('aria-hidden','false');
-      if(backdrop)backdrop.hidden=false;
-
-      // Force layout once before adding the transition class.
-      void drawer.offsetWidth;
-      requestAnimationFrame(()=>{
-        drawer.classList.add('is-open');
-        document.getElementById('inspectorContent')?.scrollTo({top:0});
-      });
-    }
-
-    rows.forEach(row=>{
-      row.addEventListener('click',()=>{
-        queueMicrotask(()=>openDrawer(row));
-      });
-    });
-
-    closeButton?.addEventListener('click',closeDrawer);
-    backdrop?.addEventListener('click',closeDrawer);
-    document.addEventListener('keydown',(event)=>{
-      if(event.key==='Escape')closeDrawer();
-    });
-
-const moduleList=document.getElementById('moduleList');
-    if(moduleList){
-      moduleList.hidden=false;
-      moduleList.style.display='block';
-      moduleList.querySelectorAll(':scope > details').forEach(details=>{
-        details.hidden=false;
-        details.open=false;
-      });
-    }
-
-    setModuleOpen(true);
-    setSettingsOpen(false);
-    closeDrawer();
-
-    window.UTOP_INSPECTOR_DRAWER=Object.freeze({
-      close:closeDrawer,
-      openModule:()=>setModuleOpen(true),
-      closeModule:()=>setModuleOpen(false),
-      openSettings:()=>setSettingsOpen(true),
-      closeSettings:()=>setSettingsOpen(false)
-    });
-  }
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',initInspectorDrawer,{once:true});
-  }else{
-    initInspectorDrawer();
-  }
-})();
-</script>
-<script>
-(function(){
-  const PRESETS={
-    extreme:{
-      name:'極致展示',
-      shadow:'high',
-      texture:'4k',
-      antialias:'msaa',
-      pixelRatio:2,
-      vegetation:'high',
-      materials:true,
-      realisticLighting:true,
-      sceneLibrary:true,
-      animation:true
-    },
-    cinematic:{
-      name:'電影級',
-      shadow:'ultra',
-      texture:'4k',
-      antialias:'taa',
-      pixelRatio:2.25,
-      vegetation:'ultra',
-      materials:true,
-      realisticLighting:true,
-      sceneLibrary:true,
-      animation:true,
-      cinematicTone:true
-    },
-    workstation:{
-      name:'工作站級',
-      shadow:'ultra',
-      texture:'8k',
-      antialias:'taa',
-      pixelRatio:2.5,
-      vegetation:'ultra',
-      materials:true,
-      realisticLighting:true,
-      sceneLibrary:true,
-      animation:true,
-      highDensity:true
-    },
-    '8k':{
-      name:'8K 展示',
-      shadow:'ultra',
-      texture:'8k',
-      antialias:'taa',
-      pixelRatio:3,
-      vegetation:'ultra',
-      materials:true,
-      realisticLighting:true,
-      sceneLibrary:true,
-      animation:true,
-      highDensity:true,
-      supersampling:true
-    },
-    'global-illumination':{
-      name:'全域光影實驗級',
-      shadow:'cinematic',
-      texture:'8k',
-      antialias:'taa',
-      pixelRatio:3.5,
-      vegetation:'maximum',
-      materials:true,
-      realisticLighting:true,
-      sceneLibrary:true,
-      animation:true,
-      highDensity:true,
-      supersampling:true,
-      globalIllumination:true,
-      reflections:true
-    }
-  };
-
-  function setFieldValue(selectors,value){
-    for(const selector of selectors){
-      const field=document.querySelector(selector);
-      if(!field)continue;
-      field.value=String(value);
-      field.dispatchEvent(new Event('change',{bubbles:true}));
-      field.dispatchEvent(new Event('input',{bubbles:true}));
-      return true;
-    }
-    return false;
-  }
-
-  function setCheckbox(selectors,checked){
-    for(const selector of selectors){
-      const field=document.querySelector(selector);
-      if(!field)continue;
-      field.checked=Boolean(checked);
-      field.dispatchEvent(new Event('change',{bubbles:true}));
-      return true;
-    }
-    return false;
-  }
-
-  function applyPreset(key){
-    const preset=PRESETS[key]||PRESETS.extreme;
-
-    document.querySelectorAll('[data-quality-preset]').forEach(button=>{
-      button.classList.toggle('active',button.dataset.qualityPreset===key);
-    });
-
-    setFieldValue(
-      ['#shadowQuality','[name="shadowQuality"]','[data-quality-field="shadow"]'],
-      preset.shadow
-    );
-    setFieldValue(
-      ['#textureQuality','[name="textureQuality"]','[data-quality-field="texture"]'],
-      preset.texture
-    );
-    setFieldValue(
-      ['#antialiasQuality','[name="antialiasQuality"]','[data-quality-field="antialias"]'],
-      preset.antialias
-    );
-    setFieldValue(
-      ['#devicePixelRatio','[name="devicePixelRatio"]','[data-quality-field="pixelRatio"]'],
-      preset.pixelRatio
-    );
-    setFieldValue(
-      ['#vegetationDensity','[name="vegetationDensity"]','[data-quality-field="vegetation"]'],
-      preset.vegetation
-    );
-
-    setCheckbox(['#enableSceneAssets','[name="sceneAssets"]'],preset.materials);
-    setCheckbox(['#enableRealisticLighting','[name="realisticLighting"]'],preset.realisticLighting);
-    setCheckbox(['#enableSceneLibrary','[name="sceneLibrary"]'],preset.sceneLibrary);
-    setCheckbox(['#enableEngineeringAnimation','[name="engineeringAnimation"]'],preset.animation);
-
-    localStorage.setItem('utop-quality-preset',key);
-    window.UTOP_QUALITY_PRESET={
-      key,
-      ...preset
-    };
-
-    window.dispatchEvent(new CustomEvent('utop-quality-preset-change',{
-      detail:{key,...preset}
-    }));
-  }
-
-  function init(){
-    document.querySelectorAll('[data-quality-preset]').forEach(button=>{
-      button.addEventListener('click',()=>{
-        applyPreset(button.dataset.qualityPreset);
-      });
-    });
-
-    // Always default to Extreme Display.
-    applyPreset('global-illumination');
-  }
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',init,{once:true});
-  }else{
-    init();
-  }
-
-  window.UTOP_ADVANCED_QUALITY=Object.freeze({
-    presets:PRESETS,
-    apply:applyPreset
-  });
-})();
-</script>
-<script>
-(function(){
-  const LOOP_TYPES=new Set([
-    '地感線圈',
-    'LANE-LOOP',
-    'LANE-LOOP-001',
-    'loop',
-    'ground-loop',
-    'lane-loop'
-  ]);
-
-  function isLoopDevice(device){
-    if(!device)return false;
-    const values=[
-      device.type,
-      device.deviceType,
-      device.kind,
-      device.model,
-      device.code,
-      device.moduleType,
-      device.name
-    ].filter(Boolean).map(value=>String(value).toLowerCase());
-
-    return values.some(value=>
-      value.includes('地感線圈') ||
-      value.includes('lane-loop') ||
-      value.includes('ground-loop') ||
-      value==='loop'
-    );
-  }
-
-  function isLoopDimensionField(input){
-    if(!(input instanceof HTMLInputElement))return false;
-    if(input.type!=='number')return false;
-
-    const key=[
-      input.id,
-      input.name,
-      input.dataset?.field,
-      input.dataset?.key,
-      input.getAttribute('aria-label'),
-      input.closest('label')?.textContent
-    ].filter(Boolean).join(' ').toLowerCase();
-
-    const isWidth=
-      key.includes('loopwidth') ||
-      key.includes('loop-width') ||
-      key.includes('線圈寬') ||
-      key.includes('寬度');
-
-    const isLength=
-      key.includes('looplength') ||
-      key.includes('loop-length') ||
-      key.includes('線圈長') ||
-      key.includes('長度');
-
-    return isWidth || isLength;
-  }
-
-  function unlockInput(input){
-    input.removeAttribute('min');
-    input.removeAttribute('max');
-    input.removeAttribute('step');
-    input.setAttribute('step','any');
-    input.dataset.unlimitedDimension='true';
-  }
-
-  function unlockLoopFields(root=document){
-    root.querySelectorAll('input[type="number"]').forEach(input=>{
-      if(isLoopDimensionField(input))unlockInput(input);
-    });
-  }
-
-  function sanitizePositiveNumber(value){
-    const number=Number(value);
-    return Number.isFinite(number) && number>0 ? number : null;
-  }
-
-  function interceptLoopInput(event){
-    const input=event.target;
-    if(!(input instanceof HTMLInputElement))return;
-    if(input.dataset.unlimitedDimension!=='true')return;
-
-    const value=sanitizePositiveNumber(input.value);
-    if(value===null){
-      input.setCustomValidity('請輸入大於 0 的數字');
-      return;
-    }
-
-    input.setCustomValidity('');
-    input.value=String(value);
-
-    window.dispatchEvent(new CustomEvent('utop-loop-dimension-change',{
-      detail:{
-        field:input.id||input.name||input.dataset.field||'dimension',
-        value
-      }
-    }));
-  }
-
-  function init(){
-    unlockLoopFields();
-
-    const observer=new MutationObserver(records=>{
-      for(const record of records){
-        for(const node of record.addedNodes){
-          if(!(node instanceof Element))continue;
-          if(node.matches?.('input[type="number"]') && isLoopDimensionField(node)){
-            unlockInput(node);
-          }
-          unlockLoopFields(node);
-        }
-      }
-    });
-
-    observer.observe(document.documentElement,{
-      childList:true,
-      subtree:true
-    });
-
-    document.addEventListener('change',interceptLoopInput,true);
-    document.addEventListener('blur',interceptLoopInput,true);
-
-    window.UTOP_LOOP_DIMENSIONS=Object.freeze({
-      unlock:unlockLoopFields,
-      validate:sanitizePositiveNumber
-    });
-  }
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',init,{once:true});
-  }else{
-    init();
-  }
-})();
-</script>
-<script>
-(function(){
-  const PROFILES={
-    extreme:{name:'極致展示',shadowMapSize:2048,shadowCascades:3,anisotropy:8,toneMapping:'aces',exposure:1.02,ambientOcclusion:'high',bloom:0.18,reflections:'medium',textureScale:1,pixelRatioCap:2,vegetationMultiplier:1,decalQuality:'high',materialQuality:'high'},
-    cinematic:{name:'電影級',shadowMapSize:4096,shadowCascades:4,anisotropy:12,toneMapping:'aces',exposure:1.05,ambientOcclusion:'ultra',bloom:0.24,reflections:'high',textureScale:1.5,pixelRatioCap:2.25,vegetationMultiplier:1.25,decalQuality:'ultra',materialQuality:'ultra'},
-    workstation:{name:'工作站級',shadowMapSize:4096,shadowCascades:4,anisotropy:16,toneMapping:'aces',exposure:1,ambientOcclusion:'high',bloom:0.16,reflections:'high',textureScale:1.25,pixelRatioCap:2.25,vegetationMultiplier:1.15,decalQuality:'high',materialQuality:'ultra'},
-    '8k':{name:'8K 展示',shadowMapSize:8192,shadowCascades:4,anisotropy:16,toneMapping:'aces',exposure:1,ambientOcclusion:'ultra',bloom:0.18,reflections:'ultra',textureScale:2,pixelRatioCap:3,vegetationMultiplier:1.5,decalQuality:'maximum',materialQuality:'maximum'},
-    'global-illumination':{name:'全域光影實驗級',shadowMapSize:8192,shadowCascades:5,anisotropy:16,toneMapping:'aces',exposure:.98,ambientOcclusion:'maximum',bloom:.2,reflections:'maximum',textureScale:2,pixelRatioCap:3.5,vegetationMultiplier:1.8,decalQuality:'maximum',materialQuality:'maximum',globalIllumination:true,screenSpaceReflections:true}
-  };
-
-  function apply(key){
-    const profile=PROFILES[key]||PROFILES.workstation;
-    document.documentElement.dataset.qualityProfile=key;
-    window.UTOP_RENDER_PROFILE={key,...profile};
-    document.querySelectorAll('[data-quality-preset]').forEach(button=>{
-      button.classList.toggle('active',button.dataset.qualityPreset===key);
-    });
-    try{localStorage.setItem('utop-realistic-quality-profile',key);}catch(_){}
-    window.dispatchEvent(new CustomEvent('utop-realistic-quality-change',{detail:{key,...profile}}));
-  }
-
-  document.addEventListener('click',event=>{
-    const button=event.target.closest?.('[data-quality-preset]');
-    if(button)apply(button.dataset.qualityPreset);
-  });
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',()=>apply('global-illumination'),{once:true});
-  }else{
-    apply('global-illumination');
-  }
-
-  window.UTOP_REALISTIC_QUALITY=Object.freeze({profiles:PROFILES,apply});
-})();
-</script>
-<script>
-(function(){
-  const STORAGE_KEY='utop-scene-brightness';
-  const DEFAULT_VALUE=120;
-  const MIN_VALUE=60;
-  const MAX_VALUE=180;
-  const STEP_VALUE=5;
-
-  function clamp(value){
-    const number=Number(value);
-    if(!Number.isFinite(number))return DEFAULT_VALUE;
-    return Math.min(MAX_VALUE,Math.max(MIN_VALUE,number));
-  }
-
-  function readStoredValue(){
-    try{
-      return clamp(localStorage.getItem(STORAGE_KEY) ?? DEFAULT_VALUE);
-    }catch(_){
-      return DEFAULT_VALUE;
-    }
-  }
-
-  function init(){
-    const slider=document.getElementById('sceneBrightnessSlider');
-    const output=document.getElementById('sceneBrightnessValue');
-    const minus=document.getElementById('sceneBrightnessMinus');
-    const plus=document.getElementById('sceneBrightnessPlus');
-    const reset=document.getElementById('resetSceneBrightness');
-    const presetButtons=[...document.querySelectorAll('[data-scene-brightness]')];
-
-    if(!slider)return;
-
-    let current=readStoredValue();
-
-    function updatePresetState(value){
-      presetButtons.forEach(preset=>{
-        preset.classList.toggle(
-          'active',
-          Number(preset.dataset.sceneBrightness)===Number(value)
-        );
-      });
-    }
-
-    function apply(value,{persist=true}={}){
-      current=clamp(value);
-      slider.value=String(current);
-      if(output)output.textContent=`${current}%`;
-      updatePresetState(current);
-
-      if(persist){
-        try{localStorage.setItem(STORAGE_KEY,String(current));}catch(_){}
-      }
-
-      window.UTOP_SCENE_BRIGHTNESS=current/100;
-
-      if(typeof window.UTOP_SET_SCENE_BRIGHTNESS==='function'){
-        window.UTOP_SET_SCENE_BRIGHTNESS(current/100);
-      }
-
-      window.dispatchEvent(new CustomEvent(
-        'utop-scene-brightness-change',
-        {detail:{percent:current,multiplier:current/100}}
-      ));
-    }
-
-    slider.addEventListener('input',()=>apply(slider.value));
-    slider.addEventListener('change',()=>apply(slider.value));
-    minus?.addEventListener('click',()=>apply(current-STEP_VALUE));
-    plus?.addEventListener('click',()=>apply(current+STEP_VALUE));
-    reset?.addEventListener('click',()=>apply(DEFAULT_VALUE));
-
-    presetButtons.forEach(preset=>{
-      preset.addEventListener('click',()=>{
-        apply(Number(preset.dataset.sceneBrightness));
-      });
-    });
-
-    apply(current,{persist:false});
-
-    window.UTOP_SCENE_BRIGHTNESS_CONTROL=Object.freeze({
-      get:()=>current,
-      set:value=>apply(value),
-      reset:()=>apply(DEFAULT_VALUE)
-    });
-  }
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',init,{once:true});
-  }else{
-    init();
-  }
-})();
-</script>
-<script>
-(function(){
-  const SIDEBAR_KEY='utop-mobile-sidebar-collapsed';
-
-  function setSidebarCollapsed(collapsed){
-    document.documentElement.classList.toggle(
-      'mobile-sidebar-collapsed',
-      Boolean(collapsed)
-    );
-
-    const button=document.getElementById('mobileSidebarToggle');
-    if(button){
-      button.textContent=collapsed?'›':'‹';
-      button.setAttribute(
-        'aria-label',
-        collapsed?'展開左側欄':'收起左側欄'
-      );
-      button.title=collapsed?'展開左側欄':'收起左側欄';
-    }
-
-    try{
-      localStorage.setItem(SIDEBAR_KEY,collapsed?'1':'0');
-    }catch(_){}
-
-    window.setTimeout(()=>{
-      window.dispatchEvent(new Event('resize'));
-    },80);
-  }
-
-  function restoreHomePage(){
-    document.documentElement.classList.remove(
-      'mobile-focus-3d',
-      'mobile-focus-2d'
-    );
-
-    window.scrollTo({
-      top:0,
-      left:0,
-      behavior:'smooth'
-    });
-
-    const main=document.querySelector(
-      'main,.workspace,.app-main,#appMain,.main-content'
-    );
-
-    if(main&&typeof main.scrollTo==='function'){
-      main.scrollTo({top:0,left:0,behavior:'smooth'});
-    }
-
-    window.setTimeout(()=>{
-      window.dispatchEvent(new Event('resize'));
-    },120);
-  }
-
-  function init(){
-    const sidebarButton=document.getElementById('mobileSidebarToggle');
-    const homeButton=document.getElementById('homeViewBtn');
-
-    let stored=false;
-    try{
-      stored=localStorage.getItem(SIDEBAR_KEY)==='1';
-    }catch(_){}
-
-    // V5.1.3.33：左側欄只允許 Unified Sidebar Manager 控制，避免同一按鈕被兩套事件互相抵消。
-    document.documentElement.classList.remove('mobile-sidebar-collapsed');
-    homeButton?.addEventListener('click',restoreHomePage);
-
-    window.UTOP_MOBILE_WORKSPACE=Object.freeze({
-      collapseSidebar:()=>{document.body.classList.add('sidebar-manager-collapsed');sidebarButton&&(sidebarButton.textContent='›');},
-      expandSidebar:()=>{document.body.classList.remove('sidebar-manager-collapsed');sidebarButton&&(sidebarButton.textContent='‹');},
-      home:restoreHomePage
-    });
-  }
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',init,{once:true});
-  }else{
-    init();
-  }
-})();
-</script>
-<script>
-(function(){
-  const SNAP_KEY='utop-v310-snap-grid';
-  let multiSelectMode=false;
-  let snapEnabled=false;
-
-  function $(id){return document.getElementById(id);}
-
-  function updateButtons(){
-    $('selectModeBtn')?.classList.toggle('active',!multiSelectMode);
-    $('multiSelectModeBtn')?.classList.toggle('active',multiSelectMode);
-
-    const snap=$('snapGridBtn');
-    if(snap){
-      snap.classList.toggle('active',snapEnabled);
-      snap.textContent=snapEnabled?'⌗ 吸附：開':'⌗ 吸附：關';
-    }
-  }
-
-  function setMultiSelect(enabled){
-    multiSelectMode=Boolean(enabled);
-    updateButtons();
-
-    window.dispatchEvent(new CustomEvent(
-      'utop-selection-mode-change',
-      {detail:{multi:multiSelectMode}}
-    ));
-  }
-
-  function setSnap(enabled){
-    snapEnabled=Boolean(enabled);
-    updateButtons();
-
-    try{
-      localStorage.setItem(SNAP_KEY,snapEnabled?'1':'0');
-    }catch(_){}
-
-    window.dispatchEvent(new CustomEvent(
-      'utop-snap-grid-change',
-      {detail:{enabled:snapEnabled,step:0.25}}
-    ));
-  }
-
-  function clearSelection(){
-    window.dispatchEvent(new CustomEvent('utop-clear-selection'));
-  }
-
-  function init(){
-    try{
-      snapEnabled=localStorage.getItem(SNAP_KEY)==='1';
-    }catch(_){}
-
-    $('selectModeBtn')?.addEventListener('click',()=>setMultiSelect(false));
-    $('multiSelectModeBtn')?.addEventListener('click',()=>setMultiSelect(true));
-    $('snapGridBtn')?.addEventListener('click',()=>setSnap(!snapEnabled));
-    $('clearSelectionBtn')?.addEventListener('click',clearSelection);
-
-    window.addEventListener('utop-selection-changed',event=>{
-      const count=Number(event.detail?.count)||0;
-      const names=Array.isArray(event.detail?.names)
-        ?event.detail.names
-        :[];
-
-      const status=$('selectionStatus');
-      if(!status)return;
-
-      if(count===0){
-        status.textContent='未選取設備';
-      }else if(count===1){
-        status.textContent=`已選：${names[0]||'設備'}`;
-      }else{
-        status.textContent=`已選 ${count} 台設備`;
-      }
-    });
-
-    setMultiSelect(false);
-    setSnap(snapEnabled);
-
-    window.UTOP_SELECTION_UI=Object.freeze({
-      setMultiSelect,
-      setSnap,
-      clearSelection
-    });
-  }
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',init,{once:true});
-  }else{
-    init();
-  }
-})();
-</script>
-<script>
-(function(){
-  function applyCompactMobileSidebar(){
-    const compact=(
-      window.matchMedia('(max-width:1100px)').matches ||
-      window.matchMedia('(pointer:coarse) and (max-width:1300px)').matches
-    );
-    if(!compact)return;
-
-    // Module library first row stays visible.
-    window.UTOP_INSPECTOR_DRAWER?.openModule?.();
-
-    // Device settings second row starts collapsed.
-    window.UTOP_INSPECTOR_DRAWER?.closeSettings?.();
-
-    requestAnimationFrame(()=>{
-      window.dispatchEvent(new Event('resize'));
-    });
-  }
-
-  if(document.readyState==='loading'){
-    document.addEventListener(
-      'DOMContentLoaded',
-      ()=>setTimeout(applyCompactMobileSidebar,0),
-      {once:true}
-    );
-  }else{
-    setTimeout(applyCompactMobileSidebar,0);
-  }
-})();
-</script>
-<script type="module">
-import('./core/boot.js?v=5.1.3.16-presentation-pointer-20260806')
-  .then(() => {
-    document.documentElement.dataset.utopBoot = 'ready';
-    const status = document.getElementById('statusText');
-    if (status && status.textContent.includes('準備就緒')) {
-      status.textContent = 'V5.1.3.10 鐵捲門尺寸同步版 系統準備就緒';
-    }
-  })
-  .catch((error) => {
-    if (window.__UTOP_IS_IGNORABLE_ERROR__?.(error)) {
-      window.__UTOP_HIDE_BOOT_ERROR__?.();
-      document.documentElement.dataset.utopBoot = 'ready';
-      const status = document.getElementById('statusText');
-      if (status) status.textContent = 'V5.1.3.10 鐵捲門尺寸同步版 系統準備就緒';
-      return;
-    }
-
-    console.error('[UTOP-3D] boot failed', error);
-    window.__UTOP_SHOW_BOOT_ERROR__?.(
-      error?.stack || error?.message || String(error)
-    );
-  });
-</script>
-<dialog class="graphics-settings-dialog" id="graphicsSettingsDialog">
-<div class="graphics-settings-window">
-<header class="graphics-settings-header">
-<div>
-<h2>顯示與效能設定</h2>
-<p>依裝置效能調整畫質、場景素材與工程動畫。</p>
-</div>
-<button aria-label="關閉" id="closeGraphicsSettings" type="button">×</button>
-</header>
-<section class="graphics-presets">
-<h3>畫質預設</h3>
-<div class="quality-preset-grid advanced-quality-grid" id="advancedQualityPresetGrid">
-<button class="quality-preset" data-quality-preset="extreme" type="button">
-<strong>極致展示</strong>
-<small>預設最高品質</small>
-</button>
-<button class="quality-preset" data-quality-preset="cinematic" type="button">
-<strong>電影級</strong>
-<small>高階光影與材質</small>
-</button>
-<button class="quality-preset" data-quality-preset="workstation" type="button">
-<strong>工作站級</strong>
-<small>高密度場景與陰影</small>
-</button>
-<button class="quality-preset" data-quality-preset="8k" type="button">
-<strong>8K 展示</strong>
-<small>超高解析展示</small>
-</button>
-<button class="quality-preset danger-preset active" data-quality-preset="global-illumination" type="button">
-<strong>全域光影實驗級</strong>
-<small>最高負載模式</small>
-</button>
-</div>
-<div class="preset-grid">
-</div>
-<div class="graphics-device-hint" id="graphicsDeviceHint"></div>
-</section>
-<section class="graphics-options-grid">
-<div class="graphics-option-card">
-<label><span>場景素材</span><input checked id="gfxSceneAssets" type="checkbox"/></label>
-<small>道路紋理、路緣、人行鋪面、草地與場景裝飾。</small>
-</div>
-<div class="graphics-option-card">
-<label><span>真實光影</span><input checked id="gfxLighting" type="checkbox"/></label>
-<small>柔和陰影、環境光、色調映射與景深霧化。</small>
-</div>
-<div class="graphics-option-card">
-<label><span>高品質設備</span><input checked id="gfxHighQualityModels" type="checkbox"/></label>
-<small>精細材質、金屬感、玻璃與設備外觀細節。</small>
-</div>
-<div class="graphics-option-card">
-<label><span>場景庫</span><input checked id="gfxSceneLibrary" type="checkbox"/></label>
-<small>啟用場景切換入口，後續可載入不同車道環境。</small>
-</div>
-<div class="graphics-option-card scene-physics-card">
-<label><span>地板接觸</span><input checked id="sceneFloorEnabled" type="checkbox"/></label>
-<small>預設開啟。所有模組與物件不可掉到地板以下，仍可手動調高安裝高度。</small>
-</div>
-<div class="graphics-option-card scene-physics-card">
-<label><span>模組實體防重疊</span><input checked id="sceneCollisionEnabled" type="checkbox"/></label>
-<small>預設開啟。移動模組或物件時避免與其他實體互相穿透；關閉後可自由重疊。</small>
-</div>
-<div class="graphics-option-card">
-<label><span>工程動畫</span><input checked id="gfxAnimations" type="checkbox"/></label>
-<small>柵欄升降、倒數、燈號閃爍與訊號流動動畫。</small>
-</div>
-</section>
-<section class="graphics-detail-settings">
-<label>陰影品質
-        <select id="gfxShadowQuality">
-<option value="off">關閉</option>
-<option value="low">低</option>
-<option value="medium">中</option>
-<option value="high">高</option>
-</select>
-</label>
-<label>貼圖品質
-        <select id="gfxTextureQuality">
-<option value="low">低</option>
-<option value="medium">中</option>
-<option value="high">高</option>
-<option value="4k">4K</option>
-</select>
-</label>
-<label>抗鋸齒
-        <select id="gfxAntialias">
-<option value="off">關閉</option>
-<option value="fxaa">FXAA</option>
-<option value="msaa">MSAA</option>
-</select>
-</label>
-<label>裝置像素比
-        <select id="gfxPixelRatio">
-<option value="0.75">0.75</option>
-<option value="1">1</option>
-<option value="1.5">1.5</option>
-<option value="2">2</option>
-</select>
-</label>
-<label>植栽密度
-        <select id="gfxVegetation">
-<option value="off">關閉</option>
-<option value="low">低</option>
-<option value="medium">中</option>
-<option value="high">高</option>
-</select>
-</label>
-</section>
-<footer class="graphics-settings-footer">
-<button id="resetGraphicsSettings" type="button">恢復建議值</button>
-<div class="graphics-footer-actions">
-<button id="cancelGraphicsSettings" type="button">取消</button>
-<button class="primary" id="applyGraphicsSettings" type="button">套用設定</button>
-</div>
-</footer>
-</div>
-<section class="graphics-section graphics-brightness-section" id="graphicsBrightnessSection">
-<div class="graphics-section-heading">
-<div>
-<h3>☀ 場景亮度</h3>
-<p>只調整3D場景曝光與光源，不影響2D平面圖與操作介面。</p>
-</div>
-<output id="sceneBrightnessValue">120%</output>
-</div>
-<div class="graphics-brightness-slider">
-<button aria-label="降低亮度" id="sceneBrightnessMinus" type="button">−</button>
-<input aria-label="3D場景亮度" id="sceneBrightnessSlider" max="180" min="60" step="5" type="range" value="120"/>
-<button aria-label="提高亮度" id="sceneBrightnessPlus" type="button">＋</button>
-</div>
-<div class="graphics-brightness-presets">
-<button data-scene-brightness="85" type="button">柔和 85%</button>
-<button data-scene-brightness="100" type="button">標準 100%</button>
-<button class="active" data-scene-brightness="120" type="button">明亮 120%</button>
-<button data-scene-brightness="145" type="button">展示 145%</button>
-</div>
-<div class="graphics-brightness-actions">
-<button id="resetSceneBrightness" type="button">恢復預設 120%</button>
-</div>
-</section>
-</dialog>
-<dialog class="scene-library-dialog" id="sceneLibraryDialog">
-<div class="scene-library-window">
-<header class="scene-library-header">
-<div>
-<h2>場景庫</h2>
-<p>切換場景前會先清空目前設備、接線與舊場景，再載入所選場景。</p>
-</div>
-<button id="closeSceneLibrary" type="button">×</button>
-</header>
-<div class="scene-card-grid">
-<button class="scene-card" data-scene-id="basic-lane" type="button">
-<span class="scene-preview basic-scene-preview"></span>
-<strong>空白工程</strong>
-<small>清空目前內容，從基本道路開始配置</small>
-</button>
-<button class="scene-card" data-scene-id="community-entry" type="button">
-<span class="scene-preview community-scene-preview"></span>
-<strong>社區入口</strong>
-<small>警衛亭、植栽、安全島及入口車道</small>
-</button>
-<button class="scene-card" data-scene-id="basement-entry" type="button">
-<span class="scene-preview basement-scene-preview"></span>
-<strong>地下室入口</strong>
-<small>斜坡、牆面、頂棚與室內照明</small>
-</button>
-<button class="scene-card showcase-card" data-scene-id="showcase-hualongchao" type="button">
-<span class="scene-preview hualongchao-scene-preview"></span>
-<strong>樺龍潮+</strong>
-<small>雙棟社區、下坡車道、左轉鐵捲門與B1停車場</small>
-</button>
-
-
-<button class="scene-card showcase-card" data-scene-id="snow-road" type="button">
-  <span class="scene-preview snow-road-preview">
-    <i class="snow-road-track"></i>
-    <i class="snow-road-slope"></i>
-    <i class="snow-road-tree tree-a"></i>
-    <i class="snow-road-tree tree-b"></i>
-    <i class="snow-road-flake flake-a">✦</i>
-    <i class="snow-road-flake flake-b">✧</i>
-  </span>
-  <strong>雪地道路</strong>
-  <small>S型道路、30°下坡、平面銜接與飄雪效果</small>
-</button>
-<button class="scene-card showcase-card" data-scene-id="single-lane" type="button">
-  <span class="scene-preview single-lane-scene-preview">
-    <i class="single-lane-road"></i>
-    <i class="single-lane-arrow">↑</i>
-    <i class="single-lane-barrier"></i>
-    <i class="single-lane-light"></i>
-  </span>
-  <strong>單車道</strong>
-  <small>單向通行、綠化道路、柵欄與號誌模擬</small>
-</button>
-<button class="scene-card showcase-card" data-scene-id="montecarlo" type="button">
-<span class="scene-preview montecarlo-scene-preview"></span>
-<strong>麗寶南法莊園－蒙地卡羅</strong>
-<small>1F入口立即下坡、戶外3m、屋簷內1m、右轉45°進入B1</small>
-</button>
-</div>
-
-<div id="monteCarloMiniControls" class="monte-mini-controls" hidden>
-  <strong>蒙地卡羅車道視角</strong>
-  <button type="button" data-monte-mini="ALL">全景</button>
-  <button type="button" data-monte-mini="1F">1F入口</button>
-  <button type="button" data-monte-mini="B1">右轉／B1</button>
-  <button type="button" data-monte-mini="SECTION">側面剖視</button>
-</div>
-
-<footer class="scene-library-footer">
-<span id="currentSceneLabel">目前場景：基礎車道</span>
-<button class="primary" id="applySelectedScene" type="button">套用場景</button>
-</footer>
-</div>
-</dialog>
-<dialog class="connection-editor-dialog" id="connectionEditorDialog">
-<div class="connection-editor-shell">
-<header class="connection-editor-header">
-<div>
-<h2>連結清單</h2>
-<p>管理所有 DO → DI 連線。</p>
-</div>
-<button class="connection-editor-close" id="closeConnectionEditor" type="button">×</button>
-</header>
-<div class="connection-editor-toolbar">
-<button id="connectionEditorAdd" type="button">＋ 新增連線</button>
-<button id="connectionEditorArrange" type="button">自動排列</button>
-<button id="connectionEditorClear" type="button">清除全部</button>
-<span id="connectionEditorCount">0 條連線</span>
-</div>
-<main class="connection-editor-content">
-<section class="connection-editor-list-panel">
-<h3>目前連線</h3>
-<div class="connection-editor-list" id="connectionEditorList">
-<p class="connection-editor-empty">尚未建立連線</p>
-</div>
-</section>
-<section class="connection-editor-detail-panel">
-<h3>連線明細</h3>
-<div class="connection-editor-detail" id="connectionEditorDetail">
-<p>請從左側選擇一條連線。</p>
-</div>
-</section>
-</main>
-<footer class="connection-editor-footer">
-<button id="connectionEditorDone" type="button">完成</button>
-</footer>
-</div>
-</dialog>
-
-<script type="module" src="./scenes/montecarlo/scene-plugin.js?v=5.1.1"></script>
-<script type="module" src="./scenes/single-lane/scene-plugin.js?v=5.1.3.58"></script>
-
-<div class="debug-drawer-backdrop" hidden id="debugDrawerBackdrop"></div>
-<aside aria-hidden="true" aria-label="工程診斷中心" class="debug-center-drawer" id="debugCenterDrawer">
-  <header class="debug-drawer-header">
-    <div>
-      <strong>工程診斷中心</strong>
-      <small>背景記錄，系統異常時才需要查看</small>
-    </div>
-    <button aria-label="關閉工程診斷中心" id="debugCloseBtn" type="button">×</button>
+    <div class="version">6.3.1</div>
+    <button class="icon error-badge" id="errorBadge" title="錯誤診斷">✓</button>
+    <button class="icon" id="micBtn" aria-label="麥克風">🎤</button>
   </header>
 
-  <section class="debug-summary">
-    <div class="debug-summary-status">
-      <span class="debug-large-dot is-ok" id="debugLargeDot"></span>
-      <div><strong id="debugSummaryTitle">系統正常</strong><small id="debugSummaryText">目前沒有影響操作的錯誤</small></div>
-    </div>
-    <div class="debug-summary-counts">
-      <span>警告 <b id="debugWarnCount">0</b></span>
-      <span>錯誤 <b id="debugErrorCount">0</b></span>
-      <span>事件 <b id="debugEventCount">0</b></span>
-    </div>
-  </section>
-
-  <nav class="debug-tabs" aria-label="診斷功能">
-    <button class="active" data-debug-tab="recent" type="button">最近狀況</button>
-    <button data-debug-tab="console" type="button">完整紀錄</button>
-    <button data-debug-tab="issue" type="button">問題描述</button>
-    <button data-debug-tab="report" type="button">複製給 AI</button>
-    <button data-debug-tab="health" type="button">系統狀態</button>
-  </nav>
-
-  <section class="debug-tab-page active" data-debug-page="recent">
-    <div class="debug-actions compact">
-      <button data-debug-test="warning" type="button">測試警告</button>
-      <button data-debug-test="error" type="button">測試錯誤</button>
-      <button id="debugClearBtn" type="button">清除紀錄</button>
-    </div>
-    <div class="debug-recent-list" id="debugRecentList"></div>
-  </section>
-
-  <section class="debug-tab-page" data-debug-page="console">
-    <div class="debug-filter-row">
-      <select id="debugLevelFilter" aria-label="紀錄層級">
-        <option value="ALL">全部層級</option>
-        <option value="ACTION">操作</option>
-        <option value="INFO">資訊</option>
-        <option value="WARN">警告</option>
-        <option value="ERROR">錯誤</option>
-        <option value="SUCCESS">成功</option>
-      </select>
-      <input id="debugSearch" placeholder="搜尋設備、模組或錯誤…" type="search">
-    </div>
-    <pre class="debug-console" id="debugConsoleOutput"></pre>
-  </section>
-
-
-  <section class="debug-tab-page" data-debug-page="issue">
-    <div class="debug-issue-intro">
-      <strong>記錄這次「預期與實際差異」</strong>
-      <small>系統操作紀錄會自動附在報告後方，不必自己整理 CMD。</small>
-    </div>
-    <label class="debug-form-field"><span>剛才做了什麼？</span><textarea id="debugIssueAction" placeholder="例如：將柵欄機桿長由 3 公尺改成 5 公尺"></textarea></label>
-    <label class="debug-form-field"><span>預期結果</span><textarea id="debugIssueExpected" placeholder="例如：2D 與 3D 的欄杆都同步變成 5 公尺"></textarea></label>
-    <label class="debug-form-field"><span>實際結果</span><textarea id="debugIssueActual" placeholder="例如：3D 已更新，但 2D 仍停留在 3 公尺"></textarea></label>
-    <label class="debug-form-field"><span>如何重現</span><textarea id="debugIssueSteps" placeholder="例如：新增柵欄機 → 規格參數 → 輸入 5 → 按 Enter"></textarea></label>
-    <div class="debug-context-preview">
-      <strong>系統自動取得的操作環境</strong>
-      <pre id="debugContextPreview">等待操作資料…</pre>
-    </div>
-    <div class="debug-actions">
-      <button class="primary" id="debugSaveIssueBtn" type="button">加入診斷報告</button>
-      <button id="debugCaptureNowBtn" type="button">擷取目前狀態</button>
-      <button id="debugClearIssueBtn" type="button">清空描述</button>
-    </div>
-  </section>
-
-  <section class="debug-tab-page" data-debug-page="report">
-    <div class="debug-actions">
-      <button class="primary" id="debugCopyReportBtn" type="button">複製給 AI</button>
-      <button id="debugDownloadTxtBtn" type="button">下載 TXT</button>
-      <button id="debugDownloadJsonBtn" type="button">下載 JSON</button>
-    </div>
-    <textarea id="debugReportOutput" readonly spellcheck="false"></textarea>
-  </section>
-
-  <section class="debug-tab-page" data-debug-page="health">
-    <div class="debug-health-grid" id="debugHealthGrid"></div>
-  </section>
-</aside>
-
-<script type="module" src="./services/theme/theme-switcher-v4030.js?v=5.1.3.58"></script>
-<script type="module" src="./scenes/snow-road/scene-plugin.js?v=5.1.3.58"></script>
-
-<dialog id="environmentFxDialog" class="environment-fx-dialog">
-  <header class="environment-fx-head">
-    <div>
-      <strong>🌍 動態環境特效</strong>
-      <small>所有場景共用｜動畫效果會持續運行，不是靜態圖片</small>
-    </div>
-    <button id="closeEnvironmentFxDialog" type="button" aria-label="關閉">×</button>
-  </header>
-
-  <div class="environment-fx-body">
-    <nav id="environmentFxList" class="environment-fx-list" aria-label="環境效果">
-      <button class="active" data-fx="clear" type="button">☀️<span>晴天／關閉</span></button>
-      <button data-fx="rain" type="button">🌧<span>下雨</span></button>
-      <button data-fx="snow" type="button">❄️<span>下雪</span></button>
-      <button data-fx="hail" type="button">🧊<span>冰雹</span></button>
-      <button data-fx="meteor" type="button">☄️<span>流星雨</span></button>
-      <button data-fx="sandstorm" type="button">🌫<span>風沙</span></button>
-      <button data-fx="typhoon" type="button">🌀<span>颱風</span></button>
-      <button data-fx="tornado" type="button">🌪<span>龍捲風</span></button>
-      <button data-fx="storm" type="button">⛈<span>暴雨</span></button>
-      <button data-fx="flood" type="button">🌊<span>淹水</span></button>
-      <button data-fx="tsunami" type="button">🌊<span>海嘯</span></button>
-      <button data-fx="space" type="button">🌌<span>宇宙星空</span></button>
-      <button data-fx="spaceTour" type="button">🪐<span>太空漫遊・15星球</span></button>
-      <button data-fx="blackHole" type="button">⚫<span>黑洞邊緣</span></button>
-      <button data-fx="lavaMountains" type="button">🌋<span>岩漿山脈</span></button>
-      <button data-fx="crystalCave" type="button">💎<span>水晶礦洞</span></button>
-      <button data-fx="deepCrust" type="button">🪨<span>地殼深處</span></button>
-      <button data-fx="cellar" type="button">🛢️<span>地窖</span></button>
-      <button data-fx="retroPlatform" type="button">🎮<span>復古平台遊戲</span></button>
-      <button data-fx="waterfall" type="button">🏞️<span>瀑布</span></button>
-      <button data-fx="apocalypse" type="button">🔥<span>世界末日</span></button>
-      <button data-fx="underwater" type="button">🐠<span>海底世界</span></button>
-      <button data-fx="iceWorld" type="button">🧊<span>冰雪世界</span></button>
-      <button data-fx="desertWorld" type="button">🏜️<span>沙漠世界</span></button>
-      <button data-fx="forestWorld" type="button">🌲<span>森林世界</span></button>
-      <button data-fx="futureCity" type="button">🌃<span>未來都市</span></button>
-      <button data-fx="industrialFactory" type="button">🏭<span>工業工廠</span></button>
-    </nav>
-
-    <section class="environment-fx-settings">
-      <div class="environment-fx-summary">
-        <strong id="environmentFxTitle">晴天／關閉</strong>
-        <p id="environmentFxDescription">恢復正常場景，不顯示環境動畫。</p>
+  <main class="practice">
+    <section class="score-wrap" id="scoreWrap">
+      <div class="full-sheet-layer" id="fullSheetLayer" hidden>
+        <img id="fullSheetImage" alt="Canon in D 完整樂譜">
+        <div class="sheet-source-badge" id="sheetSourceBadge">已核對完整 1 頁樂譜 · Sheet ID 38031</div>
       </div>
-
-      <label class="environment-range-row">
-        <span>效果強度</span>
-        <input id="environmentFxIntensity" type="range" min="10" max="100" step="5" value="65">
-        <output id="environmentFxIntensityValue">65%</output>
-      </label>
-
-      <label class="environment-range-row">
-        <span>動畫速度</span>
-        <input id="environmentFxSpeed" type="range" min="25" max="250" step="5" value="100">
-        <output id="environmentFxSpeedValue">1.00×</output>
-      </label>
-
-      <label class="environment-range-row">
-        <span>風向／水平力</span>
-        <input id="environmentFxWind" type="range" min="-100" max="100" step="5" value="15">
-        <output id="environmentFxWindValue">15</output>
-      </label>
-
-      <label class="environment-range-row environment-water-row">
-        <span>水位／浪高</span>
-        <input id="environmentFxWater" type="range" min="0" max="100" step="5" value="35">
-        <output id="environmentFxWaterValue">35%</output>
-      </label>
-
-      <div class="environment-check-grid">
-        <label>
-          <input id="environmentFxCameraShake" type="checkbox">
-          <span>攝影機晃動</span>
-        </label>
-        <label>
-          <input id="environmentFxLighting" type="checkbox" checked>
-          <span>同步天空與光線</span>
-        </label>
-        <label>
-          <input id="environmentFxFog" type="checkbox" checked>
-          <span>同步能見度／霧效</span>
-        </label>
-        <label>
-          <input id="environmentFxDeviceImpact" type="checkbox">
-          <span>顯示設備環境警示</span>
-        </label>
+      <div class="score-track" id="scoreTrack">
+        <svg id="scoreSvg" class="score-svg" aria-label="正規鋼琴五線譜"></svg>
       </div>
-
-      <div class="environment-fx-controls">
-        <button id="environmentFxPlay" class="primary" type="button">▶ 播放</button>
-        <button id="environmentFxPause" type="button">⏸ 暫停</button>
-        <button id="environmentFxStop" class="danger" type="button">■ 停止</button>
-        <button id="environmentFxReset" type="button">↺ 重設</button>
-      </div>
-
-      <div id="environmentFxStatus" class="environment-fx-status">
-        狀態：晴天
+      <div class="playhead" id="playhead" aria-label="演奏判定線"></div>
+      <div class="ready-overlay" id="readyOverlay">
+        <div class="ready-box">
+          <div class="ready-num" id="readyNum">1</div>
+          <small>準備拍</small>
+        </div>
       </div>
     </section>
+
+    <div class="controls">
+      <span class="pill" id="beatStatus">準備</span>
+      <button class="mainbtn transport-btn" id="playBtn" title="播放">▶</button>
+      <button class="transport-btn" id="pauseBtn" title="暫停">⏸</button>
+      <button class="transport-btn" id="restartBtn" title="重新開始">↺</button>
+      <span class="pill" id="bpmStatus">♩ 60</span>
+      <span class="pill" id="progress">0%</span>
+    </div>
+
+    <section class="keyboard" id="keyboard" aria-label="鋼琴鍵盤"></section>
+  </main>
+</div>
+
+<div class="drawer-mask" id="mask"></div>
+
+<aside class="drawer" id="drawer">
+  <div class="drawer-head">
+    <b>PIANO LEARNING <small>6.3.1</small></b>
+    <button id="closeDrawer">✕</button>
   </div>
-</dialog>
 
+  <div class="drawer-menu">
+    <button data-page="songs" class="on">歌曲・分類</button>
+    <button data-page="import">拍照歌譜</button>
+    <button data-page="settings">參數設定</button>
+    <button data-page="practice">練習</button>
+    <button data-page="diagnostics" class="diag-menu">錯誤診斷</button>
+  </div>
 
-<div id="planDimensionReport" class="plan-dimension-report" hidden>
-  <header>
-    <strong>2D／3D 比例檢查</strong>
-    <button id="closePlanDimensionReport" type="button">×</button>
-  </header>
-  <div id="planDimensionReportBody"></div>
-  <footer>
-    <button id="applyPlanDimensionFixes" type="button">套用安全尺寸</button>
-    <button id="recheckPlanDimensions" type="button">重新檢查</button>
-  </footer>
-</div>
+  <section class="drawer-page on" id="page-songs">
+    <div class="section">
+      <h3>歌曲・分類</h3><p class="muted">切換歌曲會重新載入該歌曲自己的電子樂譜、BPM 與鋼琴聲音，不再只換標題。</p>
+      <div class="chips">
+        <button class="chip on">全部</button>
+        <button class="chip">課本教材</button>
+        <button class="chip">古典</button>
+        <button class="chip">練習曲</button>
+      </div>
+    </div>
+    <div id="songList"></div>
+  </section>
 
+  <section class="drawer-page" id="page-import">
+    <div class="section">
+      <h3>拍照歌譜 → 電子譜</h3>
+      <div class="upload">
+        <b>拍攝課本或選擇樂譜圖片</b>
+        <p class="muted">手機可直接開相機拍攝。</p>
+        <div class="section import-electronic-score">
+        <h4>電子樂譜轉換</h4>
+        <p class="muted">匯入與紙本完全相同版本的 MIDI，轉成網站可讀的拍點、左右手、音高與音值。</p>
+        <input id="midiInput" type="file" accept=".mid,.midi,audio/midi,audio/x-midi">
+        <div class="row"><span>轉換狀態</span><b id="midiStatus">尚未載入</b></div>
+        <div class="row"><span>音符事件</span><b id="midiEventCount">0</b></div>
+        <div class="row"><span>總拍數</span><b id="midiTotalBeats">0</b></div>
+        <div class="row"><span>BPM</span><b id="midiBpm">-</b></div>
+        <div class="actions">
+          <button id="useMidiScore" disabled>套用到練習</button>
+          <button id="exportElectronicScore" disabled>下載電子樂譜 JSON</button>
+        </div>
+      </div>
+      <input id="photoInput" type="file" accept="image/*" capture="environment">
+        <img id="photoPreview" alt="樂譜照片預覽">
+      </div>
 
+      <div class="field">
+        <label>歌曲名稱</label>
+        <input id="importTitle" placeholder="例如：教材第 12 首">
+      </div>
 
+      <div class="field">
+        <label>分類</label>
+        <select id="importCategory">
+          <option>課本教材</option>
+          <option>古典</option>
+          <option>練習曲</option>
+        </select>
+      </div>
 
+      <button class="action" id="saveImport">存入網站曲庫</button>
+      <div class="notice" id="importMsg">本版先強化練習介面的正規五線譜顯示。拍照上傳、網站內存檔與後續 OMR → MusicXML 電子譜接口已保留。</div>
+    </div>
+  </section>
 
-<div id="worldEngineBadge" class="world-engine-badge" title="2D與3D共用世界座標">
-  <span>World Sync</span>
-  <button id="worldSyncAudit" type="button">檢查</button>
-  <button id="worldSyncRepair" type="button">重新同步</button>
-</div>
+  <section class="drawer-page" id="page-settings">
+    <div class="section">
+      <h3>五線譜顯示</h3>
+      <div class="chips">
+        <button class="chip" data-hand="right">右手</button>
+        <button class="chip" data-hand="left">左手</button>
+        <button class="chip on" data-hand="both">雙手</button>
+      </div>
+      <p class="muted">練單手時，只顯示單一譜表並放大。</p>
+    </div>
 
-<script type="module" src="services/workspace-v5/workspace-v5.js?v=5.1.3.43-shortcut-message-view-left-20260830"></script>
+    <div class="section">
+      <h3>速度與準備</h3>
+      <div class="row"><span>BPM</span><b><span id="bpmLabel">60</span></b></div>
+      <input id="bpm" class="range" type="range" min="30" max="180" value="60">
+      <div class="row">
+        <label for="metronome"><b>拍子聲音</b><br><span class="muted">練習時播放 1、2、3、4 節拍</span></label>
+        <input id="metronome" type="checkbox" checked>
+      </div>
+      <div class="row"><span>拍子音量</span><b id="metronomeVolumeValue">16%</b></div>
+      <input id="metronomeVolume" class="range" type="range" min="5" max="35" value="16">
+      <div class="row">
+        <label for="countBars">準備拍</label>
+        <select id="countBars">
+          <option value="0">關閉</option>
+          <option value="1" selected>1 小節</option>
+          <option value="2">2 小節</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>樂譜鋼琴聲音</h3>
+      <div class="row"><span>網站內建鋼琴音</span><input id="scoreSound" type="checkbox" checked></div>
+      <div class="row"><span>鋼琴音量</span><b id="pianoVolumeValue">82%</b></div>
+      <input id="volume" class="range" type="range" min="0" max="100" value="82">
+      <div class="row"><label for="audioQuality">音質模式</label>
+        <select id="audioQuality">
+          <option value="auto" selected>自動（推薦）</option>
+          <option value="web-hifi">Hi‑Fi 三角鋼琴</option>
+          <option value="demo">示範音源</option>
+        </select>
+      </div>
+      <div class="notice" id="audioQualityStatus">音源偵測中…</div>
+      <p class="muted">音源使用網站自己的 <code>assets/audio/piano/</code>；本版內附 48 kHz / 24-bit stereo WAV 示範音源。</p>
+    </div>
+  </section>
+
+  <section class="drawer-page" id="page-practice">
+    <div class="section">
+      <h3>練習</h3>
+      <div class="practice-grid">
+        <button class="primary" id="practiceStart">開始練習</button>
+        <button id="practiceReset">重新開始</button>
+      </div>
+      <p class="muted">Canon in D 顯示完整一頁樂譜。紅線從第一排開始，依拍點由左往右；該排結束後跳到第二排起點，再依序往下。</p>
+    </div>
+
+    <div class="section">
+      <h3>本版修正重點</h3>
+      <p class="muted">已把五線譜放大、減少上下留白，並把音符重新放回正規譜表位置，避免浮在五線譜外面。</p>
+    </div>
+  </section>
+
+  <section class="drawer-page" id="page-diagnostics">
+    <div class="section">
+      <h3>錯誤診斷</h3>
+      <p class="muted">網站會自動記錄 JavaScript、音源、網路、麥克風與資源載入錯誤。發生問題時，把「複製錯誤報告」內容交給 AI，就能看到版本、時間、檔案、行號與建議方向。</p>
+      <div class="practice-grid">
+        <button class="primary" id="copyErrorReport">複製錯誤報告</button>
+        <button id="clearErrorReport">清除紀錄</button>
+      </div>
+    </div>
+    <div id="diagnosticList"></div>
+  </section>
+
+</aside>
+
 
 <script>
 (function(){
-  const KEY='utop-sidebar-pane-state-v512';
+  const VERSION="6.3.1";
+  let lastError="";
+  function modal(){
+    return document.getElementById("bootErrorModal");
+  }
+  function show(msg,meta){
+    lastError = `[PIANO LEARNING V${VERSION}]\n${msg}\n${meta||""}`;
+    const m=modal(); if(!m) return;
+    document.getElementById("bootErrorSummary").textContent=String(msg||"未知錯誤");
+    document.getElementById("bootErrorDetail").textContent=String(meta||"");
+    m.classList.add("on");
+  }
+  window.__PIANO_BOOT_SHOW_ERROR__=show;
 
-  function init(){
-    const sidebar=document.querySelector('.professional-sidebar');
-    const modulePane=document.getElementById('moduleLibraryPane');
-    const moduleToggle=document.getElementById('moduleLibraryToggle');
-    const moduleContent=document.getElementById('moduleLibraryContent');
-    const settingsPane=document.getElementById('settingsPane');
-    const settingsToggle=document.getElementById('deviceInspectorToggle');
-    const settingsShell=document.getElementById('deviceInspectorShell');
-    const settingsArea=settingsPane?.querySelector('.settings-scroll-area');
-
-    if(!sidebar||!modulePane||!moduleToggle||!settingsPane||!settingsToggle){
+  window.addEventListener("error",function(e){
+    if(e.target && e.target!==window){
+      const src=e.target.src||e.target.href||e.target.tagName;
+      show("資源載入失敗",String(src||""));
       return;
     }
+    show(e.message||"JavaScript 執行錯誤",`${e.filename||""}:${e.lineno||0}:${e.colno||0}\n${e.error?.stack||""}`);
+  },true);
 
-    function icon(toggle,className){
-      let node=toggle.querySelector('.sidebar-collapse-icon');
-      if(!node){
-        node=document.createElement('span');
-        node.className=`sidebar-collapse-icon ${className}`;
-        node.setAttribute('aria-hidden','true');
-        toggle.appendChild(node);
+  window.addEventListener("unhandledrejection",function(e){
+    const r=e.reason;
+    show(r?.message||String(r||"Promise 執行錯誤"),r?.stack||"");
+  });
+
+  document.addEventListener("DOMContentLoaded",function(){
+    // Emergency recovery: nothing invisible is allowed to capture input on load.
+    document.getElementById("mask")?.classList.remove("on");
+    document.getElementById("readyOverlay")?.classList.remove("show");
+
+    const m=modal();
+    document.getElementById("bootCloseError").onclick=()=>m.classList.remove("on");
+    document.getElementById("bootCopyError").onclick=async()=>{
+      try{await navigator.clipboard.writeText(lastError)}catch{}
+    };
+    document.getElementById("bootOpenDiagnostics").onclick=()=>{
+      m.classList.remove("on");
+      if(typeof window.openPianoDiagnostics==="function") window.openPianoDiagnostics();
+      else document.getElementById("errorBadge")?.click();
+    };
+
+    // Minimal drawer behavior works even if app.js crashes.
+    document.getElementById("menuBtn")?.addEventListener("click",function(){
+      document.getElementById("drawer")?.classList.add("on");
+      document.getElementById("mask")?.classList.add("on");
+    });
+    document.getElementById("closeDrawer")?.addEventListener("click",function(){
+      document.getElementById("drawer")?.classList.remove("on");
+      document.getElementById("mask")?.classList.remove("on");
+    });
+    document.getElementById("mask")?.addEventListener("click",function(){
+      document.getElementById("drawer")?.classList.remove("on");
+      document.getElementById("mask")?.classList.remove("on");
+    });
+
+    // If the main app never finishes initialization, tell the user immediately.
+    setTimeout(function(){
+      if(!window.__PIANO_APP_READY__){
+        show("主程式沒有完成初始化","app.js 未完成 DOMContentLoaded 初始化。請打開「錯誤診斷」查看詳細錯誤。");
       }
-      return node;
-    }
-
-    const moduleIcon=icon(moduleToggle,'module-collapse-icon');
-    const settingsIcon=icon(settingsToggle,'device-inspector-chevron');
-
-    function read(){
-      try{
-        return JSON.parse(localStorage.getItem(KEY)||'{}');
-      }catch(_){
-        return {};
-      }
-    }
-
-    function save(moduleOpen,settingsOpen){
-      try{
-        localStorage.setItem(KEY,JSON.stringify({moduleOpen,settingsOpen}));
-      }catch(_){}
-    }
-
-    function grid(moduleOpen,settingsOpen){
-      sidebar.classList.toggle('module-pane-collapsed',!moduleOpen);
-      sidebar.classList.toggle('settings-pane-collapsed',!settingsOpen);
-      sidebar.style.setProperty(
-        '--sidebar-module-row',
-        moduleOpen?'minmax(160px,1fr)':'48px'
-      );
-      sidebar.style.setProperty(
-        '--sidebar-settings-row',
-        settingsOpen?'minmax(160px,1fr)':'48px'
-      );
-    }
-
-    function setModule(open,persist=true){
-      modulePane.classList.toggle('is-open',open);
-      modulePane.classList.toggle('is-collapsed',!open);
-      moduleToggle.setAttribute('aria-expanded',String(open));
-      moduleIcon.textContent=open?'▾':'▸';
-
-      if(moduleContent){
-        moduleContent.hidden=!open;
-        moduleContent.setAttribute('aria-hidden',String(!open));
-      }
-
-      const settingsOpen=settingsShell?.classList.contains('is-open')!==false;
-      grid(open,settingsOpen);
-      if(persist)save(open,settingsOpen);
-    }
-
-    function setSettings(open,persist=true){
-      settingsPane.classList.toggle('is-open',open);
-      settingsPane.classList.toggle('is-collapsed',!open);
-      settingsToggle.setAttribute('aria-expanded',String(open));
-      settingsIcon.textContent=open?'▾':'▸';
-
-      if(settingsShell){
-        settingsShell.classList.toggle('is-open',open);
-        settingsShell.classList.toggle('is-collapsed',!open);
-      }
-      if(settingsArea){
-        settingsArea.hidden=!open;
-        settingsArea.setAttribute('aria-hidden',String(!open));
-      }
-
-      const moduleOpen=modulePane.classList.contains('is-open');
-      grid(moduleOpen,open);
-      if(persist)save(moduleOpen,open);
-    }
-
-    moduleToggle.addEventListener('click',event=>{
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      setModule(!modulePane.classList.contains('is-open'));
-    },true);
-
-    settingsToggle.addEventListener('click',event=>{
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      const open=settingsShell?.classList.contains('is-open')!==false;
-      setSettings(!open);
-    },true);
-
-    const stored=read();
-    setModule(
-      typeof stored.moduleOpen==='boolean'?stored.moduleOpen:true,
-      false
-    );
-    setSettings(
-      typeof stored.settingsOpen==='boolean'?stored.settingsOpen:true,
-      false
-    );
-  }
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',init,{once:true});
-  }else{
-    init();
-  }
+    },1800);
+  });
 })();
 </script>
 
-<script>
-/* V5.1.3.4 Unified Sidebar Accordion Manager
-   Two vertically stacked panes, independent collapse, one edge collapse authority. */
-(function(){
-  const STATE_KEY='utop-sidebar-manager-v5134';
-  function init(){
-    const sidebar=document.querySelector('.professional-sidebar');
-    const edgeToggle=document.getElementById('mobileSidebarToggle');
-    if(!sidebar||!edgeToggle)return;
-
-    function read(){
-      try{return JSON.parse(localStorage.getItem(STATE_KEY)||'{}')}catch(_){return {}}
-    }
-    function write(data){
-      try{localStorage.setItem(STATE_KEY,JSON.stringify(data))}catch(_){}
-    }
-    let state=Object.assign({collapsed:false},read());
-
-    // V5.1.3.33：展開把手移到 body，避免 Sidebar 收合 transform 把按鈕一起移出畫面。
-    if(edgeToggle.parentElement!==document.body){
-      document.body.appendChild(edgeToggle);
-    }
-
-    function placeEdgeToggle(){
-      if(state.collapsed){
-        edgeToggle.style.left='0px';
-      }else{
-        const rect=sidebar.getBoundingClientRect();
-        edgeToggle.style.left=`${Math.max(0,Math.round(rect.right))}px`;
-      }
-    }
-
-    function setCollapsed(collapsed,persist=true){
-      state.collapsed=!!collapsed;
-      document.body.classList.toggle('sidebar-manager-collapsed',state.collapsed);
-      sidebar.classList.toggle('is-collapsed',state.collapsed);
-      edgeToggle.textContent=state.collapsed?'›':'‹';
-      edgeToggle.setAttribute('aria-label',state.collapsed?'展開左側欄':'收起左側欄');
-      edgeToggle.setAttribute('aria-expanded',state.collapsed?'false':'true');
-      edgeToggle.title=state.collapsed?'展開左側欄':'收起左側欄';
-      placeEdgeToggle();
-      if(persist)write(state);
-      requestAnimationFrame(placeEdgeToggle);
-    }
-
-    edgeToggle.addEventListener('click',(event)=>{
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      setCollapsed(!state.collapsed);
-    },true);
-
-    // 模組庫內使用滑鼠滾輪時，只捲動模組清單，不讓3D畫布或外層工作區攔截。
-    const moduleScroller=document.querySelector('#moduleLibraryPane .module-scroll-area');
-    if(moduleScroller){
-      moduleScroller.addEventListener('wheel',(event)=>{
-        const maxScroll=moduleScroller.scrollHeight-moduleScroller.clientHeight;
-        if(maxScroll<=0)return;
-        const movingDown=event.deltaY>0;
-        const canMove=movingDown
-          ? moduleScroller.scrollTop<maxScroll-1
-          : moduleScroller.scrollTop>1;
-        if(canMove){
-          event.preventDefault();
-          event.stopImmediatePropagation();
-          moduleScroller.scrollTop+=event.deltaY;
-        }
-      },{capture:true,passive:false});
-    }
-
-    window.addEventListener('resize',placeEdgeToggle,{passive:true});
-    window.addEventListener('orientationchange',()=>setTimeout(placeEdgeToggle,120),{passive:true});
-    setCollapsed(state.collapsed,false);
-  }
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',init,{once:true});
-  }else{
-    init();
-  }
-})();
-</script>
-
-<script>
-/* V5.1.3.16 3D Presentation Fullscreen Controller */
-(function(){
-  function init3DPresentation(){
-    const button=document.getElementById('fullscreen3DView');
-    const card=document.querySelector('.views .scene-card');
-    const sceneWrap=document.getElementById('sceneWrap');
-    const toolbar=document.getElementById('presentationToolbar');
-    const cornerControls=document.getElementById('presentationCornerControls');
-    const pointerToggle=document.getElementById('presentationPointerToggle');
-    const pointer=document.getElementById('presentationLaserPointer');
-    const deviceName=document.getElementById('presentationDeviceName');
-    const deviceButtons=document.getElementById('presentationDeviceButtons');
-    if(!button||!card||!sceneWrap||!toolbar)return;
-
-    const supported=Boolean(card.requestFullscreen||card.webkitRequestFullscreen);
-    let fallback=false;
-    let pointerMode=false;
-
-
-
-    function active(){
-      return document.fullscreenElement===card||document.webkitFullscreenElement===card||fallback;
-    }
-    function setPointerMode(on){
-      pointerMode=Boolean(on)&&active();
-      pointerToggle?.setAttribute('aria-pressed',String(pointerMode));
-      pointerToggle?.classList.toggle('active',pointerMode);
-      sceneWrap.classList.toggle('presentation-pointer-mode',pointerMode);
-      if(pointer)pointer.hidden=!pointerMode;
-    }
-    function renderDeviceControls(){
-      if(!deviceName||!deviceButtons)return;
-      const info=window.UTOP_DEVICE_CONTROL?.getSelected?.();
-      deviceButtons.innerHTML='';
-      if(!info){
-        deviceName.textContent='尚未選取設備';
-        deviceButtons.innerHTML='<span>點選3D設備後顯示控制</span>';
-        return;
-      }
-      deviceName.textContent=info.name||'已選設備';
-      window.UTOP_QUICK_CONTROL?.refresh?.();
-      const sourceButtons=[...document.querySelectorAll('#deviceQuickButtons button')];
-      if(!sourceButtons.length){
-        deviceButtons.innerHTML='<span>此設備暫無快速控制</span>';
-        return;
-      }
-      sourceButtons.forEach((source)=>{
-        const b=document.createElement('button');
-        b.type='button';
-        b.textContent=source.textContent||'控制';
-        b.className=source.className;
-        b.addEventListener('click',(event)=>{
-          event.preventDefault(); event.stopPropagation();
-          source.click();
-          requestAnimationFrame(renderDeviceControls);
-        });
-        deviceButtons.appendChild(b);
-      });
-    }
-    function sync(){
-      const on=active();
-      button.textContent=on?'✕ 退出全畫面':'⛶ 全畫面';
-      button.title=on?'退出3D簡報全畫面':'3D簡報全畫面顯示';
-      button.setAttribute('aria-pressed',String(on));
-      card.classList.toggle('is-3d-fullscreen',on);
-      card.classList.toggle('is-presentation-mode',on);
-      toolbar.hidden=!on;
-      if(cornerControls)cornerControls.hidden=!on;
-      if(on){
-        toolbar.classList.add('is-collapsed');
-        const collapseBtn=document.getElementById('presentationToolbarCollapse');
-        if(collapseBtn){collapseBtn.textContent='▴ 控制';collapseBtn.setAttribute('aria-expanded','false');}
-      }
-      document.body.classList.toggle('utop-3d-fullscreen-fallback',fallback);
-      if(!on)setPointerMode(false);
-      renderDeviceControls();
-      requestAnimationFrame(()=>{
-        window.dispatchEvent(new Event('resize'));
-        setTimeout(()=>window.dispatchEvent(new Event('resize')),180);
-      });
-    }
-    async function enter(){
-      try{
-        if(card.requestFullscreen)await card.requestFullscreen({navigationUI:'hide'});
-        else if(card.webkitRequestFullscreen)card.webkitRequestFullscreen();
-        else{fallback=true;sync();}
-      }catch(_){fallback=true;sync();}
-    }
-    async function leave(){
-      try{
-        if(document.fullscreenElement&&document.exitFullscreen)await document.exitFullscreen();
-        else if(document.webkitFullscreenElement&&document.webkitExitFullscreen)document.webkitExitFullscreen();
-      }catch(_){}
-      fallback=false;sync();
-    }
-
-    button.addEventListener('click',(event)=>{event.preventDefault();active()?leave():enter();});
-    document.getElementById('presentationExitFullscreen')?.addEventListener('click',leave);
-    pointerToggle?.addEventListener('click',()=>setPointerMode(!pointerMode));
-    document.getElementById('presentationResetView')?.addEventListener('click',()=>document.getElementById('resetViewBtn')?.click());
-    document.getElementById('presentationLabelsToggle')?.addEventListener('click',()=>document.getElementById('globalLabelToggle')?.click());
-    document.getElementById('presentationEnvironmentFx')?.addEventListener('click',()=>document.getElementById('environmentFxBtn')?.click());
-    const toolbarCollapse=document.getElementById('presentationToolbarCollapse');
-    toolbarCollapse?.addEventListener('click',()=>{
-      const collapsed=toolbar.classList.toggle('is-collapsed');
-      toolbarCollapse.textContent=collapsed?'▴ 控制':'▾ 收合';
-      toolbarCollapse.setAttribute('aria-expanded',String(!collapsed));
-    });
-
-
-    sceneWrap.addEventListener('pointermove',(event)=>{
-      if(!pointerMode||!pointer)return;
-      const rect=sceneWrap.getBoundingClientRect();
-      pointer.style.left=`${event.clientX-rect.left}px`;
-      pointer.style.top=`${event.clientY-rect.top}px`;
-    });
-    sceneWrap.addEventListener('pointerleave',()=>{if(pointerMode&&pointer)pointer.style.opacity='0';});
-    sceneWrap.addEventListener('pointerenter',()=>{if(pointerMode&&pointer)pointer.style.opacity='1';});
-
-    ['utop-device-control-updated','utop-selection-changed','utop-primary-selection-changed'].forEach(name=>
-      window.addEventListener(name,()=>requestAnimationFrame(renderDeviceControls))
-    );
-    document.addEventListener('fullscreenchange',sync);
-    document.addEventListener('webkitfullscreenchange',sync);
-    document.addEventListener('keydown',(event)=>{
-      if(event.key==='Escape'&&fallback){fallback=false;sync();}
-      if((event.key==='p'||event.key==='P')&&active())setPointerMode(!pointerMode);
-    });
-    if(!supported)button.title='3D簡報全畫面顯示（相容模式）';
-    sync();
-  }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init3DPresentation,{once:true});
-  else init3DPresentation();
-})();
-</script>
-
+<script src="js/diagnostics.js"></script>
+<script src="js/audio-engine.js"></script>
+<script src="js/core/note-utils.js"></script>
+<script src="js/core/staff-geometry.js"></script>
+<script src="js/score/score-model.js"></script>
+<script src="js/score/song-loader.js"></script>
+<script src="js/score/timeline-map.js"></script>
+<script src="js/score/score-renderer.js"></script>
+<script src="js/practice/transport.js"></script>
+<script src="js/practice/playhead.js"></script>
+<script src="js/practice/metronome.js"></script>
+<script src="js/practice/keyboard.js"></script>
+<script src="js/practice/practice-controller.js"></script>
+<script src="js/import/midi-parser.js"></script>
+<script src="js/import/midi-to-score.js"></script>
+<script src="js/import/electronic-score.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

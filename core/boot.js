@@ -1,4 +1,4 @@
-import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.57-view-control-stacked-20260830';
+import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.58-auto-control-direction-recognizer-20260830';
 
 const STAGES = Object.freeze([
   {
@@ -7,7 +7,7 @@ const STAGES = Object.freeze([
   },
   {
     name: '3D與設備核心',
-    url: '../runtime/showcase/runtime-v51357-view-control-stacked.js?v=5.1.3.57-view-control-stacked-20260830'
+    url: '../runtime/showcase/runtime-v51358-auto-control-direction-recognizer.js?v=5.1.3.58-auto-control-direction-recognizer-20260830'
   },
   {
     name: 'Foundation健康檢查',
@@ -36,7 +36,7 @@ async function importStage(stage) {
 
 async function startShowcase() {
   document.documentElement.dataset.utopBoot = 'loading';
-  updateStatus('V5.1.3.57 左下視角上下排列 啟動中…');
+  updateStatus('V5.1.3.58 自動控制方向辨識器 啟動中…');
 
   for (const stage of STAGES) {
     await importStage(stage);
@@ -53,11 +53,11 @@ async function startShowcase() {
 
   document.title = `${APP_CONFIG.appName} V${APP_CONFIG.version}`;
   document.documentElement.dataset.utopBoot = 'ready';
-  updateStatus('V5.1.3.49 鐵捲門車輛通行修正 系統準備就緒');
+  updateStatus('V5.1.3.58 自動控制方向辨識器 系統準備就緒');
 
   window.UTOP_APP = Object.freeze({
     config: APP_CONFIG,
-    bootRevision: 'V51342_SCENE_PHYSICS_OBJECTS',
+    bootRevision: 'V51358_AUTO_CONTROL_DIRECTION_RECOGNIZER',
     health
   });
 }
@@ -66,7 +66,7 @@ startShowcase().catch((error) => {
   if (window.__UTOP_IS_IGNORABLE_ERROR__?.(error)) {
     window.__UTOP_HIDE_BOOT_ERROR__?.();
     document.documentElement.dataset.utopBoot = 'ready';
-    updateStatus('V5.1.3.49 鐵捲門車輛通行修正 系統準備就緒');
+    updateStatus('V5.1.3.58 自動控制方向辨識器 系統準備就緒');
     return;
   }
 

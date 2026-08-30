@@ -1,6 +1,6 @@
 
 window.PianoDiagnostics = (() => {
-  const STORE_KEY = "piano_learning_error_log_6.3.1";
+  const STORE_KEY = "piano_learning_error_log_6.3.2";
   const MAX = 60;
   const listeners = new Set();
 
@@ -34,7 +34,7 @@ window.PianoDiagnostics = (() => {
     const item = {
       id: Date.now()+"-"+Math.random().toString(16).slice(2),
       time: new Date().toISOString(),
-      version: "6.3.1",
+      version: "6.3.2",
       kind, category, title, advice,
       message: String(message||"未知錯誤"),
       source: source||"",
@@ -111,7 +111,7 @@ window.PianoDiagnostics = (() => {
   function clear(){ save([]); emit(); showBadge(); }
 
   function copyReport(){
-    const text = JSON.stringify({app:"PIANO LEARNING",version:"6.3.1",generated:new Date().toISOString(),logs:load()},null,2);
+    const text = JSON.stringify({app:"PIANO LEARNING",version:"6.3.2",generated:new Date().toISOString(),logs:load()},null,2);
     if(navigator.clipboard?.writeText) return navigator.clipboard.writeText(text);
     const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();
     return Promise.resolve();

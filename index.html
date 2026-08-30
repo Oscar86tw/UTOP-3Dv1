@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>PIANO LEARNING 6.3.1｜經典教材型練習</title>
+  <title>PIANO LEARNING 6.3.2｜經典教材型練習</title>
   <link rel="stylesheet" href="css/app.css">
 
 <style id="criticalBootStyle">
@@ -37,7 +37,7 @@
       <b id="songTitle">Lesson Practice 01</b>
       <small id="micTitle">正規左右手橫向練習</small>
     </div>
-    <div class="version">6.3.1</div>
+    <div class="version">6.3.2</div>
     <button class="icon error-badge" id="errorBadge" title="錯誤診斷">✓</button>
     <button class="icon" id="micBtn" aria-label="麥克風">🎤</button>
   </header>
@@ -77,7 +77,7 @@
 
 <aside class="drawer" id="drawer">
   <div class="drawer-head">
-    <b>PIANO LEARNING <small>6.3.1</small></b>
+    <b>PIANO LEARNING <small>6.3.2</small></b>
     <button id="closeDrawer">✕</button>
   </div>
 
@@ -111,7 +111,19 @@
         <div class="section import-electronic-score">
         <h4>電子樂譜轉換</h4>
         <p class="muted">匯入與紙本完全相同版本的 MIDI，轉成網站可讀的拍點、左右手、音高與音值。</p>
-        <input id="midiInput" type="file" accept=".mid,.midi,audio/midi,audio/x-midi">
+        <div class="section image-score-electronic">
+        <h4>從樂譜圖片建立電子樂譜</h4>
+        <p class="muted">沒有 MIDI 也可以。先載入樂譜圖片，再建立「拍點 + 音名 + 左右手 + 圖片位置」資料。紅線碰到該拍點時就播放對應鋼琴音。</p>
+        <div class="row"><span>模式</span><b>圖片樂譜 → 電子事件</b></div>
+        <div class="row"><span>辨識狀態</span><b id="imageScoreStatus">等待樂譜圖片</b></div>
+        <div class="row"><span>事件數</span><b id="imageScoreEventCount">0</b></div>
+        <div class="actions">
+          <button id="useImageScore" disabled>套用圖片電子譜</button>
+          <button id="exportImageScore" disabled>下載圖片電子譜 JSON</button>
+        </div>
+        <p class="muted">目前已完成電子譜資料結構與播放邏輯；自動 OMR 辨識仍需接辨識引擎。若辨識結果有誤，可用後續校對介面修正單顆音符。</p>
+      </div>
+      <input id="midiInput" type="file" accept=".mid,.midi,audio/midi,audio/x-midi">
         <div class="row"><span>轉換狀態</span><b id="midiStatus">尚未載入</b></div>
         <div class="row"><span>音符事件</span><b id="midiEventCount">0</b></div>
         <div class="row"><span>總拍數</span><b id="midiTotalBeats">0</b></div>
@@ -225,7 +237,7 @@
 
 <script>
 (function(){
-  const VERSION="6.3.1";
+  const VERSION="6.3.2";
   let lastError="";
   function modal(){
     return document.getElementById("bootErrorModal");
@@ -309,6 +321,8 @@
 <script src="js/import/midi-parser.js"></script>
 <script src="js/import/midi-to-score.js"></script>
 <script src="js/import/electronic-score.js"></script>
+<script src="js/import/image-score-map.js"></script>
+<script src="js/import/image-score-player.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

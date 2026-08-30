@@ -1,36 +1,28 @@
-# PIANO LEARNING V6.3.1
+# PIANO LEARNING V6.3.2
 
-## Electronic Score Pipeline 第一階段
+## 沒有 MIDI，也能從樂譜建立電子樂譜
 
-本版正式加入：
-- MIDI Parser
-- MIDI → ScoreModel Converter
-- Electronic Score JSON Export
+本版增加圖片樂譜電子化資料層。
 
-### MIDI 匯入後可取得
-- BPM
-- 拍號
-- 調號
-- 每顆音符的音高
-- 起始 beat
+每顆辨識出的音符資料包含：
+- beat
 - duration
-- velocity
-- 左右手
+- notes
+- hand
+- xNorm
+- yNorm
 
-如果 MIDI 有多條 note tracks：
-- 平均音高最高 track 判定為右手
-- 其餘 note tracks 判定為左手
+只要辨識完成，紅線到達該 beat 時，就直接播放該 notes 的鋼琴聲。
 
-如果只有一條：
-- C4（MIDI 60）以上預設右手
-- C4 以下預設左手
+### 重要
+這版完成的是：
+- 圖片電子樂譜資料格式
+- 圖片音符事件 → ScoreModel
+- 紅線 / 拍點 / 鋼琴聲的資料結構
 
-### 套用到練習
-按「套用到練習」後，
-五線譜、紅線、鋼琴聲與底部琴鍵都改讀同一份 ScoreModel。
+尚未把真正 OMR 視覺辨識引擎塞進前端。
+也就是：
+「能存、能播、能轉成網站電子譜」已完成，
+「自動從圖片看出每一顆音符」下一步接 OMR。
 
-### Canon 38031
-網路已確認相同版本存在對應 MIDI：
-`38031-canon-in-d-sheet-piano-easy-fingering.mid`
-但下載頁需購買，因此本專案沒有繞過付款取得檔案。
-合法取得後，可直接在本版上傳轉成電子譜。
+這樣不會再拿上一首歌的音符假裝成新圖片。

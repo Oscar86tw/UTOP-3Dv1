@@ -6,8 +6,15 @@
 /* mindmap */ body[data-view="mindmap"]{--bg:#f4f7ff;--panel:#fff;--text:#152444;--muted:#71809d;--line:#dae2f2;--accent:#5e66f4}
 @media(max-width:1050px){.workspace{grid-template-columns:1fr}.sidebar,.inspector{display:none}.brand{font-size:17px}.topbar{padding:0 10px}.search{min-width:140px}.legend{max-width:90%}}
 
-/* V5.1.3.60 3D relationship views */
+/* V5.1.3.61 3D relationship views */
 .graph-3d{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;background:radial-gradient(circle at 50% 40%,rgba(75,105,150,.09),transparent 58%)}
 .graph-3d canvas{display:block;width:100%!important;height:100%!important;touch-action:none;cursor:grab}.graph-3d canvas:active{cursor:grabbing}
 .drag-help{position:absolute;right:14px;bottom:14px;z-index:6;background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:12px;padding:8px 11px;font-size:12px;color:var(--muted);box-shadow:var(--shadow)}
 body[data-view="network"] .drag-help{background:rgba(13,23,35,.92);color:#b8c7da}
+
+/* V5.1.3.61 InfraNodus-like network */
+body[data-view="network"] .canvas-wrap{background:radial-gradient(circle at 50% 45%,#101c2b 0,#071019 66%,#04090e 100%)}
+body[data-view="network"] .graph-3d{background:radial-gradient(circle at 50% 44%,rgba(42,79,122,.18),transparent 58%)}
+body[data-view="network"] .btn.active-toggle{border-color:#8d5cff;background:#241b3a;color:#d8c0ff;box-shadow:0 0 0 1px rgba(162,92,255,.15) inset}
+body[data-view="network"] .inspector{background:linear-gradient(180deg,#0d1723,#09121d)}
+body[data-view="network"] .selected-card.focused{border-color:#8f62ff;box-shadow:0 0 26px rgba(143,98,255,.12)}

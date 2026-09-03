@@ -1,4 +1,4 @@
-import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.60-relationship-3d-views-20260903';
+import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.62-relationship-data-sync-20260903';
 
 const STAGES = Object.freeze([
   {
@@ -7,7 +7,7 @@ const STAGES = Object.freeze([
   },
   {
     name: '3D與設備核心',
-    url: '../runtime/showcase/runtime-v51360-relationship-3d-views.js?v=5.1.3.60-relationship-3d-views-20260903'
+    url: '../runtime/showcase/runtime-v51362-relationship-data-sync.js?v=5.1.3.62-relationship-data-sync-20260903'
   },
   {
     name: 'Foundation健康檢查',

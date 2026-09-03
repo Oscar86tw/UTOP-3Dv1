@@ -10,8 +10,38 @@ const typeGroups={loop:'sensor',loopdetector:'sensor',infrared:'safety',radar:'s
 const demo={items:[['loop_1','入口地感線圈','loop'],['loop_2','出口地感線圈','loop'],['ir_1','紅外線對射A','infrared'],['ir_2','紅外線對射B','infrared'],['dir_1','方向辨識器 LK-121','directionrecognizer'],['sig_1','雙向號誌主機','signal2way'],['bar_1','柵欄機','barrier'],['shu_1','鐵捲門','shutter'],['etag_1','ETAG讀頭','etag'],['card_1','卡機','cardreader'],['ctrl_1','門禁控制器','controller'],['int_1','對講機','intercom'],['mon_1','中央監控','ipcamera']].map(([id,name,type])=>({id,name,type,di:[],do:[]})),wires:[]};
 const demoPairs=[['loop_1','dir_1','DO1','DI1'],['loop_2','dir_1','DO1','DI2'],['dir_1','sig_1','DO1','DI1'],['dir_1','bar_1','DO3','DI1'],['ir_1','bar_1','DO1','DI4'],['ir_2','shu_1','DO1','DI5'],['etag_1','ctrl_1','DO1','DI1'],['card_1','ctrl_1','DO1','DI2'],['ctrl_1','bar_1','DO1','DI1'],['ctrl_1','shu_1','DO1','DI1'],['bar_1','mon_1','DO1','DI1'],['shu_1','mon_1','DO1','DI2'],['int_1','ctrl_1','DO1','DI3']];
 demo.wires=demoPairs.map((p,i)=>({id:'w'+i,sourceId:p[0],targetId:p[1],sourcePort:p[2],targetPort:p[3]}));
-function loadSnapshot(){try{const api=window.opener?.UTOP_RELATIONSHIP_API;if(api?.getSnapshot)return api.getSnapshot()}catch{}try{const x=JSON.parse(localStorage.getItem('utop3d.relationship.snapshot')||'null');if(x?.items?.length)return x}catch{}return structuredClone(demo)}
+function validSnapshot(x){return !!(x&&Array.isArray(x.items)&&x.items.length>0)}
+function cachedSnapshot(){try{const x=JSON.parse(localStorage.getItem('utop3d.relationship.snapshot')||'null');if(validSnapshot(x))return x}catch{}return null}
+function openerSnapshot(){try{const api=window.opener?.UTOP_RELATIONSHIP_API;if(api?.refreshSnapshot){const x=api.refreshSnapshot();if(validSnapshot(x))return x}if(api?.getSnapshot){const x=api.getSnapshot();if(validSnapshot(x))return x}const storage=window.opener?.UTOP_STORAGE_API;if(storage?.getProjectData){const raw=storage.getProjectData();if(raw?.items?.length)return {version:'5.1.3.62',generatedAt:new Date().toISOString(),projectName:window.opener?.document?.title||'UTOP-3D',items:raw.items,wires:Array.isArray(raw.wires)?raw.wires:[],shortcuts:Array.isArray(raw.shortcuts)?raw.shortcuts:[]}}}catch{}return null}
+function loadSnapshot(){return openerSnapshot()||cachedSnapshot()||structuredClone(demo)}
 let snapshot=loadSnapshot(),selectedId=null,relationStrength=0,connectedOnly=false;
+let snapshotSyncAttempts=0;
+function applyIncomingSnapshot(next){
+ if(!validSnapshot(next))return false;
+ snapshot=next;
+ enrich();
+ selectedId=null;
+ nodePositions.clear();
+ rebuild();
+ fit();
+ return true;
+}
+function requestLiveSnapshot(){
+ const direct=openerSnapshot();
+ if(direct&&applyIncomingSnapshot(direct))return;
+ try{window.opener?.postMessage({type:'UTOP_RELATIONSHIP_REQUEST_SNAPSHOT'},location.origin)}catch{}
+ const cached=cachedSnapshot();
+ if(cached)applyIncomingSnapshot(cached);
+}
+window.addEventListener('message',event=>{
+ if(event.origin!==location.origin)return;
+ if(event.data?.type!=='UTOP_RELATIONSHIP_SNAPSHOT')return;
+ applyIncomingSnapshot(event.data.snapshot);
+});
+window.addEventListener('storage',event=>{
+ if(event.key!=='utop3d.relationship.snapshot'||!event.newValue)return;
+ try{applyIncomingSnapshot(JSON.parse(event.newValue))}catch{}
+});
 let forceEnabled=view==='network', forceTemperature=1, forceSettledFrames=0; const pinnedNodes=new Set();
 const velocities=new Map();
 function enrich(){snapshot.items=(snapshot.items||[]).map(i=>({...i,group:typeGroups[i.type]||(/^object_/.test(i.type)?'object':'other')}));snapshot.wires=snapshot.wires||[];snapshot.itemsById=Object.fromEntries(snapshot.items.map(i=>[i.id,i]));} enrich();
@@ -69,8 +99,8 @@ renderer.domElement.addEventListener('pointerup',endDrag);renderer.domElement.ad
 renderer.domElement.addEventListener('dblclick',e=>{pointerNdc(e);const hit=nodeIntersections()[0];if(!hit)return;const pair=[...nodeMeshes.entries()].find(([,g])=>g.children.includes(hit.object));if(pair){setSelected(pair[0]);controls.target.copy(pair[1].position)}});
 renderer.domElement.addEventListener('click',e=>{if(dragNode)return;pointerNdc(e);if(!nodeIntersections()[0]&&selectedId){setSelected(null)}});
 function fit(){camera.position.set(0,16,34);controls.target.set(0,0,0);controls.update()}
-$('#fitBtn').onclick=fit;$('#reloadBtn').onclick=()=>{snapshot=loadSnapshot();enrich();selectedId=null;nodePositions.clear();rebuild();fit()};$('#backBtn').onclick=()=>{try{if(window.opener&&!window.opener.closed){window.opener.focus();const dlg=window.opener.document.getElementById('wiringDialog');if(dlg&&!dlg.open)dlg.showModal();return}}catch{}location.href='../../index.html'};$('#exportBtn').onclick=()=>{const positions=Object.fromEntries([...nodeMeshes].map(([id,g])=>[id,{x:g.position.x,y:g.position.y,z:g.position.z}]));const blob=new Blob([JSON.stringify({version:'5.1.3.61',view,snapshot,positions},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`UTOP-${view}-3d-relations.json`;a.click();URL.revokeObjectURL(a.href)};
+$('#fitBtn').onclick=fit;$('#reloadBtn').onclick=()=>{requestLiveSnapshot()};$('#backBtn').onclick=()=>{try{if(window.opener&&!window.opener.closed){window.opener.focus();const dlg=window.opener.document.getElementById('wiringDialog');if(dlg&&!dlg.open)dlg.showModal();return}}catch{}location.href='../../index.html'};$('#exportBtn').onclick=()=>{const positions=Object.fromEntries([...nodeMeshes].map(([id,g])=>[id,{x:g.position.x,y:g.position.y,z:g.position.z}]));const blob=new Blob([JSON.stringify({version:'5.1.3.62',view,snapshot,positions},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`UTOP-${view}-3d-relations.json`;a.click();URL.revokeObjectURL(a.href)};
 const forceBtn=$('#forceBtn');if(forceBtn)forceBtn.onclick=()=>{forceEnabled=!forceEnabled;forceBtn.textContent=`◎ 力導向：${forceEnabled?'開':'關'}`;forceBtn.classList.toggle('active-toggle',forceEnabled);if(forceEnabled){forceTemperature=.9;forceSettledFrames=0}};const releasePinsBtn=$('#releasePinsBtn');if(releasePinsBtn)releasePinsBtn.onclick=()=>{pinnedNodes.clear();try{localStorage.removeItem(positionStorageKey)}catch{}forceTemperature=1;forceSettledFrames=0};
 $('#search').addEventListener('input',rebuild);$$('[data-group-filter]').forEach(x=>x.addEventListener('change',rebuild));const strength=$('#strengthInput');if(strength)strength.addEventListener('input',()=>{relationStrength=Number(strength.value)||0;rebuild()});$$('[data-action]').forEach(b=>b.addEventListener('click',()=>{const a=b.dataset.action;if(a==='connected-only'){connectedOnly=true;rebuild()}if(a==='show-all'){connectedOnly=false;$$('[data-group-filter]').forEach(x=>x.checked=true);rebuild()}if(a==='flow-only'){connectedOnly=false;const keep=new Set(['sensor','auto','control','output','monitor']);$$('[data-group-filter]').forEach(x=>x.checked=keep.has(x.value));rebuild()}if(a==='control-chain'){connectedOnly=true;const keep=new Set(['sensor','safety','auto','control','access','output','monitor']);$$('[data-group-filter]').forEach(x=>x.checked=keep.has(x.value));rebuild()}if(a==='auto-layout'){try{localStorage.removeItem(positionStorageKey)}catch{}pinnedNodes.clear();nodePositions.clear();forceTemperature=1;forceSettledFrames=0;rebuild();fit()}}));
 const help=document.createElement('div');help.className='drag-help';help.textContent='拖曳模組可搬移｜左鍵旋轉／右鍵平移／滾輪縮放｜雙擊模組置中';container.parentElement.append(help);
-function animate(){requestAnimationFrame(animate);stepForce();if(view==='network'&&selectedId){const g=nodeMeshes.get(selectedId),halo=g?.children.find(o=>o.userData?.halo);if(halo){const p=1+Math.sin(performance.now()*.004)*.055;halo.scale.setScalar(p)}}controls.update();renderer.render(scene,camera)}rebuild();fit();animate();
+function animate(){requestAnimationFrame(animate);stepForce();if(view==='network'&&selectedId){const g=nodeMeshes.get(selectedId),halo=g?.children.find(o=>o.userData?.halo);if(halo){const p=1+Math.sin(performance.now()*.004)*.055;halo.scale.setScalar(p)}}controls.update();renderer.render(scene,camera)}rebuild();fit();requestLiveSnapshot();setTimeout(requestLiveSnapshot,450);setTimeout(requestLiveSnapshot,1200);animate();

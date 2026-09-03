@@ -8,7 +8,7 @@
  function fromHost(){
   const h=host();
   try{const api=h?.UTOP_RELATIONSHIP_API;const x=api?.getSnapshot?.();if(valid(x))return x}catch{}
-  try{const raw=h?.UTOP_STORAGE_API?.getProjectData?.();if(raw&&Array.isArray(raw.items)&&raw.items.length)return {version:'5.1.3.65',generatedAt:new Date().toISOString(),projectName:h?.document?.title||'UTOP-3D',items:raw.items,wires:Array.isArray(raw.wires)?raw.wires:[],shortcuts:Array.isArray(raw.shortcuts)?raw.shortcuts:[]}}catch{}
+  try{const raw=h?.UTOP_STORAGE_API?.getProjectData?.();if(raw&&Array.isArray(raw.items)&&raw.items.length)return {version:'5.1.3.66',generatedAt:new Date().toISOString(),projectName:h?.document?.title||'UTOP-3D',items:raw.items,wires:Array.isArray(raw.wires)?raw.wires:[],shortcuts:Array.isArray(raw.shortcuts)?raw.shortcuts:[]}}catch{}
   return null;
  }
  function cached(){

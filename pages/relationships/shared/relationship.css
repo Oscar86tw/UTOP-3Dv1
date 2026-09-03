@@ -5,3 +5,9 @@
 /* knowledge */ body[data-view="knowledge"]{--bg:#f6faf7;--panel:#ffffff;--text:#173047;--muted:#65768a;--line:#dbe8e0;--accent:#30986b}
 /* mindmap */ body[data-view="mindmap"]{--bg:#f4f7ff;--panel:#fff;--text:#152444;--muted:#71809d;--line:#dae2f2;--accent:#5e66f4}
 @media(max-width:1050px){.workspace{grid-template-columns:1fr}.sidebar,.inspector{display:none}.brand{font-size:17px}.topbar{padding:0 10px}.search{min-width:140px}.legend{max-width:90%}}
+
+/* V5.1.3.60 3D relationship views */
+.graph-3d{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;background:radial-gradient(circle at 50% 40%,rgba(75,105,150,.09),transparent 58%)}
+.graph-3d canvas{display:block;width:100%!important;height:100%!important;touch-action:none;cursor:grab}.graph-3d canvas:active{cursor:grabbing}
+.drag-help{position:absolute;right:14px;bottom:14px;z-index:6;background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:12px;padding:8px 11px;font-size:12px;color:var(--muted);box-shadow:var(--shadow)}
+body[data-view="network"] .drag-help{background:rgba(13,23,35,.92);color:#b8c7da}

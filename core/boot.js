@@ -1,4 +1,4 @@
-import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.59-relationship-views-20260903';
+import { APP_CONFIG } from '../config/app-config.js?v=5.1.3.60-relationship-3d-views-20260903';
 
 const STAGES = Object.freeze([
   {
@@ -7,7 +7,7 @@ const STAGES = Object.freeze([
   },
   {
     name: '3D與設備核心',
-    url: '../runtime/showcase/runtime-v51359-relationship-views.js?v=5.1.3.59-relationship-views-20260903'
+    url: '../runtime/showcase/runtime-v51360-relationship-3d-views.js?v=5.1.3.60-relationship-3d-views-20260903'
   },
   {
     name: 'Foundation健康檢查',
@@ -36,7 +36,7 @@ async function importStage(stage) {
 
 async function startShowcase() {
   document.documentElement.dataset.utopBoot = 'loading';
-  updateStatus('V5.1.3.59 四種模組關聯視圖 啟動中…');
+  updateStatus('V5.1.3.60 四種3D模組關聯視圖 啟動中…');
 
   for (const stage of STAGES) {
     await importStage(stage);
@@ -53,11 +53,11 @@ async function startShowcase() {
 
   document.title = `${APP_CONFIG.appName} V${APP_CONFIG.version}`;
   document.documentElement.dataset.utopBoot = 'ready';
-  updateStatus('V5.1.3.59 四種模組關聯視圖 系統準備就緒');
+  updateStatus('V5.1.3.60 四種3D模組關聯視圖 系統準備就緒');
 
   window.UTOP_APP = Object.freeze({
     config: APP_CONFIG,
-    bootRevision: 'V51359_RELATIONSHIP_VIEWS',
+    bootRevision: 'V51360_RELATIONSHIP_3D_VIEWS',
     health
   });
 }
@@ -66,7 +66,7 @@ startShowcase().catch((error) => {
   if (window.__UTOP_IS_IGNORABLE_ERROR__?.(error)) {
     window.__UTOP_HIDE_BOOT_ERROR__?.();
     document.documentElement.dataset.utopBoot = 'ready';
-    updateStatus('V5.1.3.59 四種模組關聯視圖 系統準備就緒');
+    updateStatus('V5.1.3.60 四種3D模組關聯視圖 系統準備就緒');
     return;
   }
 

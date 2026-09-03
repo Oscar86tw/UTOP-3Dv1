@@ -1,0 +1,10 @@
+UTOP-3D V5.1.3.59
+
+新增四個獨立 HTML 分頁，位於接線模擬功能：
+1. pages/relationships/network-graph.html — 模組連結網絡
+2. pages/relationships/relation-tree.html — 模組關聯樹
+3. pages/relationships/knowledge-tree.html — 知識樹
+4. pages/relationships/ai-mindmap.html — AI 心智圖
+
+四頁共用目前專案的模組與 wires 接線資料，可搜尋、分類篩選、節點點選、縮放平移、查看上下游與匯出關聯 JSON。
+原接線模擬工具列增加四個入口。

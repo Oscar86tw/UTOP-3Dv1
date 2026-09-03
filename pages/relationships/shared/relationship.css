@@ -18,3 +18,5 @@ body[data-view="network"] .graph-3d{background:radial-gradient(circle at 50% 44%
 body[data-view="network"] .btn.active-toggle{border-color:#8d5cff;background:#241b3a;color:#d8c0ff;box-shadow:0 0 0 1px rgba(162,92,255,.15) inset}
 body[data-view="network"] .inspector{background:linear-gradient(180deg,#0d1723,#09121d)}
 body[data-view="network"] .selected-card.focused{border-color:#8f62ff;box-shadow:0 0 26px rgba(143,98,255,.12)}
+
+.relationship-canvas3d{display:block;width:100%;height:100%;touch-action:none;cursor:grab}.relationship-canvas3d:active{cursor:grabbing}

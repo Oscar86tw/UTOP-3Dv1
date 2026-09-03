@@ -7,7 +7,7 @@ const STAGES = Object.freeze([
   },
   {
     name: '3D與設備核心',
-    url: '../runtime/showcase/runtime-v51362-relationship-data-sync.js?v=5.1.3.62-relationship-data-sync-20260903'
+    url: '../runtime/showcase/runtime-v51363-relationship-drawer.js?v=5.1.3.63-relationship-drawer-20260903'
   },
   {
     name: 'Foundation健康檢查',
